@@ -9,7 +9,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <style>
 
 /* ===== BASE ===== */
@@ -17,10 +16,7 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+background:#0b0f1a;
 color:white;
 line-height:1.7;
 }
@@ -35,12 +31,11 @@ background-position:center;
 background-repeat:no-repeat;
 
 text-align:center;
-padding:120px 20px;
-
+padding:90px 20px;
 position:relative;
 }
 
-/* Filtre sombre */
+/* Overlay sombre */
 header::before{
 content:"";
 position:absolute;
@@ -49,17 +44,15 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.55);
-z-index:0;
 }
 
-/* Texte au-dessus */
 header *{
 position:relative;
-z-index:1;
+z-index:2;
 }
 
 header h1{
-font-size:54px;
+font-size:56px;
 margin-bottom:10px;
 }
 
@@ -71,7 +64,7 @@ font-size:22px;
 /* ===== MENU ===== */
 
 nav{
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.85);
 padding:15px;
 text-align:center;
 position:sticky;
@@ -98,7 +91,7 @@ section{
 max-width:1100px;
 margin:50px auto;
 padding:40px 30px;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.7);
 border-radius:15px;
 }
 
@@ -123,13 +116,19 @@ gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,0.15);
+background:rgba(255,255,255,0.12);
 padding:25px;
 border-radius:12px;
 text-align:center;
-font-size:18px;
+font-size:19px;
 font-weight:bold;
-box-shadow:0 5px 12px rgba(0,0,0,0.4);
+box-shadow:0 5px 12px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.2);
 }
 
 
@@ -150,18 +149,18 @@ background:rgba(255,255,255,0.12);
 padding:25px;
 border-radius:12px;
 text-align:center;
-margin-top:20px;
+margin-top:25px;
 }
 
-.avis-box p{
-text-align:center;
+.avis-box h3{
+font-size:24px;
 }
 
 
 /* ===== CONTACT ===== */
 
 .contact{
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.8);
 text-align:center;
 }
 
@@ -194,7 +193,7 @@ transform:scale(1.05);
 /* ===== FOOTER ===== */
 
 footer{
-background:rgba(233,236,239,0.95);
+background:#e9ecef;
 color:black;
 text-align:center;
 padding:20px;
@@ -373,11 +372,7 @@ target="_blank">
 <h3>📢 Avis Google en direct</h3>
 
 <p>
-Les avis clients apparaîtront automatiquement ici.
-</p>
-
-<p>
-(Widget Google à connecter)
+Les avis clients apparaîtront automatiquement ici prochainement.
 </p>
 
 </div>
@@ -398,7 +393,7 @@ Les avis clients apparaîtront automatiquement ici.
 <p>📱 07 60 33 05 02</p>
 
 <a class="btn" href="tel:0760330502">
-Appeler maintenant
+📞 Appeler maintenant
 </a>
 
 </section>

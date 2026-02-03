@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,30 +32,9 @@ line-height:1.7;
 /* ================= HEADER ================= */
 
 header{
-background-image:url("images/header.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+background:rgba(11,94,215,0.9);
 text-align:center;
-padding:90px 20px;
-position:relative;
-}
-
-/* voile sombre */
-header::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-}
-
-header *{
-position:relative;
-z-index:2;
+padding:50px 20px;
 }
 
 header h1{
@@ -70,12 +50,9 @@ font-size:22px;
 /* ================= MENU ================= */
 
 nav{
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.7);
 text-align:center;
 padding:12px;
-position:sticky;
-top:0;
-z-index:999;
 }
 
 nav a{
@@ -87,7 +64,7 @@ font-weight:bold;
 }
 
 nav a:hover{
-color:#4dabf7;
+color:#0b5ed7;
 }
 
 
@@ -146,14 +123,6 @@ border-radius:8px;
 
 .avis strong{
 color:#4dabf7;
-}
-
-.avis-box{
-background:rgba(255,255,255,0.12);
-padding:25px;
-border-radius:10px;
-margin-top:25px;
-text-align:center;
 }
 
 
@@ -240,8 +209,6 @@ margin:8px 0;
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
 <h1>St Mars Informatique</h1>
@@ -277,14 +244,30 @@ et communes environnantes
 <p>
 Je m’appelle <strong>Fabrice</strong> et j’accompagne particuliers et professionnels
 dans leurs besoins informatiques depuis de nombreuses années.
+Passionné par les nouvelles technologies, je mets mon savoir-faire
+au service de vos équipements pour vous garantir des solutions simples,
+efficaces et durables.
 </p>
 
 <p>
-Implanté en Loire-Atlantique (44), j’interviens dans un rayon de 25 km.
+Implanté en Loire-Atlantique (44), j’interviens directement chez vous
+ou sur votre lieu de travail dans un périmètre d’environ 25 km.
 </p>
 
 <p>
-Dépannage, installation, optimisation, réparation et montage PC.
+Je propose des prestations complètes : dépannage, optimisation,
+installation, entretien, réparation de smartphones, tablettes et consoles,
+ainsi que le remplacement de composants.
+</p>
+
+<p>
+Besoin d’un nouvel ordinateur ? Je vous accompagne dans le choix
+et l’assemblage d’un PC personnalisé, adapté à votre budget.
+</p>
+
+<p>
+Disponible et réactif, je m’engage à vous offrir un service de proximité,
+basé sur la confiance et la satisfaction client.
 </p>
 
 </section>
@@ -302,11 +285,11 @@ Dépannage, installation, optimisation, réparation et montage PC.
 <div class="card">💻 Dépannage PC & portables</div>
 <div class="card">🦠 Suppression de virus</div>
 <div class="card">⚡ Optimisation système</div>
-<div class="card">💾 Installation logiciels</div>
+<div class="card">💾 Installation Windows & logiciels</div>
 <div class="card">📡 Assistance à distance</div>
 <div class="card">📱 Smartphones & consoles</div>
 <div class="card">🖥️ Montage PC personnalisé</div>
-<div class="card">🏠 À domicile</div>
+<div class="card">🏠 Intervention à domicile</div>
 
 </div>
 
@@ -321,7 +304,7 @@ Dépannage, installation, optimisation, réparation et montage PC.
 <h2>📍 Zone d’intervention</h2>
 
 <p style="text-align:center;">
-Saint-Mars-de-Coutais – Rayon 25 km
+Saint-Mars-de-Coutais et rayon de 25 km
 </p>
 
 <br>
@@ -343,52 +326,22 @@ src="https://www.google.com/maps?q=Saint-Mars-de-Coutais&output=embed">
 
 <div class="avis">
 <strong>Marie L.</strong><br>
-“Très professionnel, rapide et efficace.”
+“Très professionnel, rapide et efficace. Je recommande à 100%.”
 </div>
 
 <div class="avis">
 <strong>Jean P.</strong><br>
-“Service impeccable.”
+“Ordinateur réparé en 24h, service impeccable.”
 </div>
 
 <div class="avis">
 <strong>Sophie R.</strong><br>
-“Très bon conseil.”
+“Très bon conseil pour mon nouvel ordinateur.”
 </div>
 
-
-<!-- Bouton Google -->
-
-<div style="text-align:center;">
-
-<a class="btn"
-href="https://www.google.com/search?q=St+Mars+Informatique+Saint+Mars+de+Coutais"
-target="_blank">
-
-✍️ Laisser un avis Google
-
-</a>
-
-</div>
-
-
-<!-- Zone widget -->
-
-<div class="avis-box">
-
-<h3>📢 Avis Google automatiques</h3>
-
-<p>
-Les avis apparaîtront ici automatiquement.
+<p style="text-align:center; margin-top:20px;">
+💬 Vos avis comptent !
 </p>
-
-<p>
-(Colle ton widget Elfsight ici plus tard)
-</p>
-
-<!-- COLLER ICI LE WIDGET -->
-
-</div>
 
 </section>
 
@@ -412,11 +365,9 @@ Appeler maintenant
 
 
 
-<!-- FOOTER -->
-
 <footer>
 
-© 2026 – St Mars Informatique  
+© 2026 – St Mars Informatique 
 | Dépannage informatique – Loire-Atlantique
 
 </footer>
@@ -424,3 +375,4 @@ Appeler maintenant
 
 </body>
 </html>
+

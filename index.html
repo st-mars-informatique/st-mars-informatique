@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,55 +6,40 @@
 
 <title>St Mars Informatique – Dépannage à Saint-Mars-de-Coutais</title>
 
-<meta name="description" content="Dépannage informatique à Saint Mars de Coutais. PC, smartphones, assistance, réparation.">
+<meta name="description" content="Dépannage informatique à Saint Mars de Coutais. Réparation PC, assistance informatique, installation et optimisation.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <style>
 
-/* ===== BASE ===== */
+/* ================= BASE ================= */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0b0f1a;
+
+background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
 color:white;
 line-height:1.7;
 }
 
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 
 header{
-background-image:url("images/header.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+background:rgba(11,94,215,0.9);
 text-align:center;
-padding:90px 20px;
-position:relative;
-}
-
-/* Overlay sombre */
-header::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-}
-
-header *{
-position:relative;
-z-index:2;
+padding:50px 20px;
 }
 
 header h1{
-font-size:56px;
-margin-bottom:10px;
+font-size:52px;
+margin-bottom:15px;
 }
 
 header p{
@@ -61,106 +47,99 @@ font-size:22px;
 }
 
 
-/* ===== MENU ===== */
+/* ================= MENU ================= */
 
 nav{
-background:rgba(0,0,0,0.85);
-padding:15px;
+background:rgba(0,0,0,0.7);
 text-align:center;
-position:sticky;
-top:0;
-z-index:999;
+padding:12px;
 }
 
 nav a{
 color:white;
-margin:0 15px;
 text-decoration:none;
+margin:0 15px;
 font-size:18px;
 font-weight:bold;
 }
 
 nav a:hover{
-color:#4dabf7;
+color:#0b5ed7;
 }
 
 
-/* ===== SECTIONS ===== */
+/* ================= SECTIONS ================= */
 
 section{
-max-width:1100px;
-margin:50px auto;
-padding:40px 30px;
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+max-width:1000px;
+margin:40px auto;
+padding:35px 25px;
+
+background:rgba(0,0,0,0.55);
+border-radius:12px;
 }
 
 section h2{
-font-size:36px;
+font-size:34px;
 text-align:center;
 margin-bottom:25px;
 }
 
 section p{
-font-size:20px;
+font-size:19px;
 text-align:justify;
 }
 
 
-/* ===== SERVICES ===== */
+/* ================= SERVICES ================= */
 
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.12);
+background:rgba(255,255,255,0.15);
 padding:25px;
-border-radius:12px;
+border-radius:10px;
 text-align:center;
-font-size:19px;
+
+font-size:18px;
 font-weight:bold;
-box-shadow:0 5px 12px rgba(0,0,0,0.5);
-transition:0.3s;
-}
 
-.card:hover{
-transform:translateY(-5px);
-background:rgba(255,255,255,0.2);
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 
-/* ===== MAP ===== */
+/* ================= AVIS ================= */
+
+.avis{
+background:rgba(255,255,255,0.1);
+padding:20px;
+margin:15px 0;
+border-radius:8px;
+}
+
+.avis strong{
+color:#4dabf7;
+}
+
+
+/* ================= MAP ================= */
 
 .map{
 width:100%;
-height:380px;
+height:350px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 }
 
 
-/* ===== AVIS ===== */
-
-.avis-box{
-background:rgba(255,255,255,0.12);
-padding:25px;
-border-radius:12px;
-text-align:center;
-margin-top:25px;
-}
-
-.avis-box h3{
-font-size:24px;
-}
-
-
-/* ===== CONTACT ===== */
+/* ================= CONTACT ================= */
 
 .contact{
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.65);
 text-align:center;
 }
 
@@ -169,18 +148,23 @@ font-size:21px;
 }
 
 
-/* ===== BOUTON ===== */
+/* ================= BOUTON ================= */
 
 .btn{
 display:inline-block;
+
 margin-top:20px;
-padding:15px 35px;
+padding:15px 30px;
+
 background:#0b5ed7;
 color:white;
-border-radius:8px;
+
+text-decoration:none;
+border-radius:6px;
+
 font-size:20px;
 font-weight:bold;
-text-decoration:none;
+
 transition:0.3s;
 }
 
@@ -190,23 +174,25 @@ transform:scale(1.05);
 }
 
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 
 footer{
-background:#e9ecef;
+background:rgba(233,236,239,0.95);
 color:black;
 text-align:center;
-padding:20px;
+
+padding:18px;
 font-size:15px;
 }
 
 
-/* ===== MOBILE ===== */
+/* ================= MOBILE ================= */
 
 @media(max-width:768px){
 
 header h1{font-size:38px;}
 header p{font-size:18px;}
+
 section h2{font-size:28px;}
 
 nav a{
@@ -223,15 +209,13 @@ margin:8px 0;
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
 <h1>St Mars Informatique</h1>
 
 <p>
-Dépannage & Assistance Informatique<br>
-Saint-Mars-de-Coutais – Loire-Atlantique
+Dépannage informatique à Saint-Mars-de-Coutais<br>
+et communes environnantes
 </p>
 
 </header>
@@ -243,105 +227,95 @@ Saint-Mars-de-Coutais – Loire-Atlantique
 
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
-<a href="#zone">Localisation</a>
-<a href="#avis">Avis clients</a>
+<a href="#zone">Zone</a>
+<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 
 </nav>
+
 
 
 <!-- PRESENTATION -->
 
 <section id="presentation">
 
-<h2>👨‍💻 Qui suis-je ?</h2>
+<h2>👨‍💻 Présentation</h2>
 
 <p>
 Je m’appelle <strong>Fabrice</strong> et j’accompagne particuliers et professionnels
 dans leurs besoins informatiques depuis de nombreuses années.
+Passionné par les nouvelles technologies, je mets mon savoir-faire
+au service de vos équipements pour vous garantir des solutions simples,
+efficaces et durables.
 </p>
 
 <p>
-Passionné par les nouvelles technologies, je vous propose
-des solutions simples, efficaces et durables.
+Implanté en Loire-Atlantique (44), j’interviens directement chez vous
+ou sur votre lieu de travail dans un périmètre d’environ 25 km.
 </p>
 
 <p>
-J’interviens à domicile ou sur site dans un rayon de 25 km
-autour de Saint-Mars-de-Coutais.
+Je propose des prestations complètes : dépannage, optimisation,
+installation, entretien, réparation de smartphones, tablettes et consoles,
+ainsi que le remplacement de composants.
 </p>
 
 <p>
-Dépannage, installation, réparation, smartphones, consoles,
-montage PC sur mesure : je prends soin de vos équipements.
+Besoin d’un nouvel ordinateur ? Je vous accompagne dans le choix
+et l’assemblage d’un PC personnalisé, adapté à votre budget.
 </p>
 
 <p>
-Mon engagement : proximité, transparence et satisfaction client.
+Disponible et réactif, je m’engage à vous offrir un service de proximité,
+basé sur la confiance et la satisfaction client.
 </p>
 
 </section>
+
 
 
 <!-- SERVICES -->
 
 <section id="services">
 
-<h2>🛠️ Services</h2>
+<h2>🛠️ Mes services</h2>
 
 <div class="services">
 
-<div class="card">💻 Dépannage PC</div>
-<div class="card">🦠 Nettoyage virus</div>
+<div class="card">💻 Dépannage PC & portables</div>
+<div class="card">🦠 Suppression de virus</div>
 <div class="card">⚡ Optimisation système</div>
-<div class="card">💾 Installation logiciels</div>
+<div class="card">💾 Installation Windows & logiciels</div>
 <div class="card">📡 Assistance à distance</div>
 <div class="card">📱 Smartphones & consoles</div>
-<div class="card">🖥️ Montage PC</div>
-<div class="card">🏠 À domicile</div>
+<div class="card">🖥️ Montage PC personnalisé</div>
+<div class="card">🏠 Intervention à domicile</div>
 
 </div>
 
 </section>
 
 
-<!-- LOCALISATION -->
+
+<!-- ZONE -->
 
 <section id="zone">
 
-<h2>📍 Localisation</h2>
+<h2>📍 Zone d’intervention</h2>
 
 <p style="text-align:center;">
-2 rue des Millauds<br>
-44680 Saint-Mars-de-Coutais
-</p>
-
-<p style="text-align:center;">
-Zone d’intervention : 25 km
+Saint-Mars-de-Coutais et rayon de 25 km
 </p>
 
 <br>
 
 <iframe
 class="map"
-src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint-Mars-de-Coutais&output=embed">
+src="https://www.google.com/maps?q=Saint-Mars-de-Coutais&output=embed">
 </iframe>
 
-<br><br>
-
-<div style="text-align:center;">
-
-<a class="btn"
-href="https://www.google.com/maps/dir/?api=1&destination=2+rue+des+Millauds+44680+Saint-Mars-de-Coutais"
-target="_blank">
-
-🗺️ Itinéraire
-
-</a>
-
-</div>
-
 </section>
+
 
 
 <!-- AVIS -->
@@ -350,34 +324,27 @@ target="_blank">
 
 <h2>⭐ Avis clients</h2>
 
-<p style="text-align:center;">
-Votre avis est essentiel pour mon activité 🙏
-</p>
-
-<div style="text-align:center;">
-
-<a class="btn"
-href="https://www.google.com/search?q=St+Mars+Informatique+Saint+Mars+de+Coutais"
-target="_blank">
-
-✍️ Laisser un avis Google
-
-</a>
-
+<div class="avis">
+<strong>Marie L.</strong><br>
+“Très professionnel, rapide et efficace. Je recommande à 100%.”
 </div>
 
-
-<div class="avis-box">
-
-<h3>📢 Avis Google en direct</h3>
-
-<p>
-Les avis clients apparaîtront automatiquement ici prochainement.
-</p>
-
+<div class="avis">
+<strong>Jean P.</strong><br>
+“Ordinateur réparé en 24h, service impeccable.”
 </div>
+
+<div class="avis">
+<strong>Sophie R.</strong><br>
+“Très bon conseil pour mon nouvel ordinateur.”
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+💬 Vos avis comptent !
+</p>
 
 </section>
+
 
 
 <!-- CONTACT -->
@@ -388,26 +355,24 @@ Les avis clients apparaîtront automatiquement ici prochainement.
 
 <p><strong>Fabrice Ropers</strong></p>
 
-<p>📍 2 rue des Millauds, 44680 Saint-Mars-de-Coutais</p>
-
 <p>📱 07 60 33 05 02</p>
 
 <a class="btn" href="tel:0760330502">
-📞 Appeler maintenant
+Appeler maintenant
 </a>
 
 </section>
 
 
-<!-- FOOTER -->
 
 <footer>
 
-© 2026 – St Mars Informatique  
-| Loire-Atlantique – Dépannage informatique
+© 2026 – St Mars Informatique 
+| Dépannage informatique – Loire-Atlantique
 
 </footer>
 
 
 </body>
 </html>
+

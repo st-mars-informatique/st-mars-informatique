@@ -29,9 +29,33 @@ line-height:1.7;
 /* ===== HEADER ===== */
 
 header{
-background:rgba(11,94,215,0.9);
+background-image:url("images/header.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
 text-align:center;
-padding:60px 20px;
+padding:120px 20px;
+
+position:relative;
+}
+
+/* Filtre sombre */
+header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:0;
+}
+
+/* Texte au-dessus */
+header *{
+position:relative;
+z-index:1;
 }
 
 header h1{
@@ -344,8 +368,6 @@ target="_blank">
 </div>
 
 
-<!-- ZONE AUTOMATIQUE -->
-
 <div class="avis-box">
 
 <h3>📢 Avis Google en direct</h3>
@@ -357,8 +379,6 @@ Les avis clients apparaîtront automatiquement ici.
 <p>
 (Widget Google à connecter)
 </p>
-
-<!-- ICI tu colleras ton widget Elfsight plus tard -->
 
 </div>
 

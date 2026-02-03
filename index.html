@@ -2,67 +2,70 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>St Mars Informatique – Services et dépannage informatique à Saint‑Mars‑de‑Coutais et dans les communes environnantes </title>
+    <title>St Mars Informatique – Services et dépannage informatique à Saint‑Mars‑de‑Coutais et dans les communes environnantes</title>
     <meta name="description" content="Dépannage informatique à Saint Mars de Coutais. Réparation PC, suppression de virus, assistance à domicile et à distance.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-     /* Texte général (fond bleu) */
-body {
-  color: white;
-}
-
-/* Titres */
-h1, h2, h3 {
-  color: white;
-}
-
-/* Rectangles blancs */
-.card, .service-box, .box {
-  color: black;
-}
-
-}
-
-}
-
-}
-
-}
-
+        /* FOND D'ÉCRAN PERSONNALISÉ */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* texte blanc pour lisibilité */
         }
+
+        /* En-tête */
         header {
-            background: #0b5ed7;
+            background: rgba(11, 94, 215, 0.85); /* bleu semi-transparent pour voir le fond derrière */
             color: white;
             padding: 30px 15px;
             text-align: center;
         }
+
+        /* Sections */
         section {
             max-width: 900px;
             margin: auto;
             padding: 30px 15px;
+            background: rgba(0, 0, 0, 0.5); /* noir semi-transparent pour lisibilité */
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
-        h2 {
-            color: #0b5ed7;
+
+        h1, h2, h3 {
+            color: white;
         }
+
+        /* Services en grille */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
         }
+
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1); /* blanc très transparent pour que le fond apparaisse */
+            color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
+
+        /* Section contact */
         .contact {
-            background: #ffffff;
+            background: rgba(0,0,0,0.6); /* noir semi-transparent */
             text-align: center;
             border-radius: 8px;
             padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            color: white;
         }
+
+        /* Boutons */
         .btn {
             display: inline-block;
             margin-top: 15px;
@@ -73,12 +76,20 @@ h1, h2, h3 {
             border-radius: 5px;
             font-weight: bold;
         }
+
+        .btn:hover {
+            background: #074ab3;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 15px;
-            background: #e9ecef;
+            background: rgba(233,236,239,0.9);
             font-size: 14px;
+            border-top: 1px solid #ccc;
         }
+
     </style>
 </head>
 

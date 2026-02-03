@@ -2,130 +2,262 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>St Mars Informatique – Services et dépannage informatique à Saint‑Mars‑de‑Coutais et dans les communes environnantes</title>
+    <title>St Mars Informatique – Dépannage à Saint-Mars-de-Coutais</title>
+
     <meta name="description" content="Dépannage informatique à Saint Mars de Coutais. Réparation PC, suppression de virus, assistance à domicile et à distance.">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* FOND D'ÉCRAN PERSONNALISÉ */
+
+        /* ====== BASE ====== */
+
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
+
             background-image: url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: white; /* texte blanc pour lisibilité */
+
+            color: white;
+            line-height: 1.6;
         }
 
-        /* En-tête */
+
+        /* ====== HEADER ====== */
+
         header {
-            background: rgba(11, 94, 215, 0.85); /* bleu semi-transparent pour voir le fond derrière */
-            color: white;
-            padding: 30px 15px;
+            background: rgba(11, 94, 215, 0.9);
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        /* ====== SECTIONS ====== */
+
+        section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 35px 25px;
+
+            background: rgba(0,0,0,0.55);
+
+            border-radius: 12px;
+        }
+
+        section h2 {
+            font-size: 34px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
-        /* Sections */
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 15px;
-            background: rgba(0, 0, 0, 0.5); /* noir semi-transparent pour lisibilité */
-            border-radius: 10px;
-            margin-bottom: 20px;
+        section p {
+            font-size: 20px;
+            text-align: center;
         }
 
-        h1, h2, h3 {
-            color: white;
-        }
 
-        /* Services en grille */
+        /* ====== SERVICES ====== */
+
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1); /* blanc très transparent pour que le fond apparaisse */
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Section contact */
-        .contact {
-            background: rgba(0,0,0,0.6); /* noir semi-transparent */
-            text-align: center;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
             padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            color: white;
+            border-radius: 10px;
+
+            text-align: center;
+
+            font-size: 19px;
+            font-weight: bold;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Boutons */
+
+        /* ====== CONTACT ====== */
+
+        .contact {
+            background: rgba(0,0,0,0.65);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+        }
+
+        .contact p {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+
+        /* ====== BOUTON ====== */
+
         .btn {
             display: inline-block;
-            margin-top: 15px;
-            padding: 12px 20px;
+
+            margin-top: 20px;
+            padding: 15px 30px;
+
             background: #0b5ed7;
             color: white;
+
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
+
+            font-size: 20px;
             font-weight: bold;
+
+            transition: 0.3s;
         }
 
         .btn:hover {
             background: #074ab3;
+            transform: scale(1.05);
         }
 
-        /* Footer */
+
+        /* ====== FOOTER ====== */
+
         footer {
+            background: rgba(233,236,239,0.95);
+
+            color: #000;
+
             text-align: center;
-            padding: 15px;
-            background: rgba(233,236,239,0.9);
-            font-size: 14px;
-            border-top: 1px solid #ccc;
+
+            padding: 18px;
+
+            font-size: 15px;
+
+            margin-top: 40px;
+        }
+
+
+        /* ====== MOBILE ====== */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            section p {
+                font-size: 18px;
+            }
+
+            .card {
+                font-size: 17px;
+            }
+
         }
 
     </style>
 </head>
 
+
 <body>
 
+
 <header>
+
     <h1>St Mars Informatique</h1>
-    <p>Dépannage informatique à Saint-Mars-de-Coutais et dans les communes environnantes </p>
+
+    <p>
+        Dépannage informatique à Saint-Mars-de-Coutais
+        et dans les communes environnantes
+    </p>
+
 </header>
 
-<section>
-    <h2>🛠️ Mes services</h2>
-    <div class="services">
-        <div class="card">💻 Dépannage PC & ordinateurs portables</div>
-        <div class="card">🦠 Suppression de virus & malwares</div>
-        <div class="card">⚡ Ordinateur lent / optimisation</div>
-        <div class="card">💾 Installation Windows & logiciels</div>
-        <div class="card">📡 Assistance à distance</div>
-        <div class="card">🏠 Dépannage à domicile</div>
-    </div>
-</section>
+
 
 <section>
-    <h2>📍 Zone d’intervention</h2>
-    <p>Saint-Mars-de-Coutais et alentours.</p>
+
+    <h2>🛠️ Mes services</h2>
+
+    <div class="services">
+
+        <div class="card">💻 Dépannage PC & portables</div>
+
+        <div class="card">🦠 Suppression de virus</div>
+
+        <div class="card">⚡ Optimisation ordinateur lent</div>
+
+        <div class="card">💾 Installation Windows & logiciels</div>
+
+        <div class="card">📡 Assistance à distance</div>
+
+        <div class="card">🏠 Dépannage à domicile</div>
+
+    </div>
+
 </section>
+
+
+
+<section>
+
+    <h2>📍 Zone d’intervention</h2>
+
+    <p>
+        Saint-Mars-de-Coutais et communes alentours
+    </p>
+
+</section>
+
+
 
 <section class="contact">
-    <h2>📞 Contact ROPERS Fabrice </h2>
-    <p><strong>Téléphone :</strong> 07 60 33 05 02</p>
-    <a class="btn" href="tel:0760330502">Appeler maintenant</a>
+
+    <h2>📞 Contact</h2>
+
+    <p><strong>Fabrice Ropers</strong></p>
+
+    <p>📱 07 60 33 05 02</p>
+
+    <a class="btn" href="tel:0760330502">
+        Appeler maintenant
+    </a>
+
 </section>
 
+
+
 <footer>
-    © 2026 – St Mars Informatique | Dépannage informatique
+
+    © 2026 – St Mars Informatique  
+    | Dépannage informatique
+
 </footer>
+
+
 
 </body>
 </html>

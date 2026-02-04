@@ -77,19 +77,34 @@ background:rgba(0,0,0,0.55);
 border-radius:12px;
 }
 
-/* 🔧 ESPACE TITRE RÉDUIT */
+
+/* TITRE */
+
 section h2{
 font-size:34px;
 text-align:center;
 margin-bottom:10px;
 }
 
+
+/* PARAGRAPHES */
+
 section p{
 font-size:19px;
 text-align:justify;
+margin-top:0;   /* SUPPRESSION DÉCALAGE */
 }
 
-/* 🔧 AJUSTEMENT PRESENTATION */
+
+/* PREMIER TEXTE */
+
+.presentation-text p:first-child{
+margin-top:0;
+}
+
+
+/* AJUSTEMENT PRESENTATION */
+
 #presentation{
 padding-top:25px;
 }
@@ -101,10 +116,11 @@ padding-top:25px;
 display:flex;
 gap:30px;
 align-items:flex-start;
+margin-top:10px;
 }
 
 
-/* Photo */
+/* PHOTO */
 
 .photo-fabrice{
 width:220px;
@@ -115,91 +131,10 @@ border:3px solid white;
 }
 
 
-/* Texte */
+/* TEXTE */
 
 .presentation-text{
 flex:1;
-}
-
-
-/* ===== SERVICES ===== */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:10px;
-text-align:center;
-
-font-size:18px;
-font-weight:bold;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-
-/* ===== MAP ===== */
-
-.map{
-width:100%;
-height:350px;
-border:none;
-border-radius:10px;
-}
-
-
-/* ===== CONTACT ===== */
-
-.contact{
-background:rgba(0,0,0,0.65);
-text-align:center;
-}
-
-.contact p{
-font-size:21px;
-}
-
-
-/* ===== BOUTON ===== */
-
-.btn{
-display:inline-block;
-
-margin-top:20px;
-padding:15px 30px;
-
-background:#0b5ed7;
-color:white;
-
-text-decoration:none;
-border-radius:6px;
-
-font-size:20px;
-font-weight:bold;
-
-transition:0.3s;
-}
-
-.btn:hover{
-background:#074ab3;
-transform:scale(1.05);
-}
-
-
-/* ===== FOOTER ===== */
-
-footer{
-background:rgba(233,236,239,0.95);
-color:black;
-text-align:center;
-
-padding:18px;
-font-size:15px;
 }
 
 

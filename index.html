@@ -144,51 +144,6 @@ flex:1;
 }
 
 
-/* ===== SERVICES ===== */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:10px;
-text-align:center;
-font-size:18px;
-font-weight:bold;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.05);
-}
-
-
-/* ===== MAP ===== */
-
-.map{
-width:100%;
-height:350px;
-border:none;
-border-radius:10px;
-}
-
-
-/* ===== CONTACT ===== */
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-font-size:20px;
-}
-
-
 /* ===== BOUTONS ===== */
 
 .btn{
@@ -216,18 +171,9 @@ transform:scale(1.05);
 /* ===== ANIMATION ===== */
 
 @keyframes pulse {
-0% {
-transform: scale(1);
-box-shadow: 0 0 0 rgba(255,255,255,0.4);
-}
-50% {
-transform: scale(1.05);
-box-shadow: 0 0 15px rgba(255,255,255,0.6);
-}
-100% {
-transform: scale(1);
-box-shadow: 0 0 0 rgba(255,255,255,0.4);
-}
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
 }
 
 .pulse{
@@ -247,7 +193,6 @@ padding:15px 20px;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:2000;
 }
 
@@ -264,41 +209,22 @@ padding:15px 20px;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:2000;
 }
 
 
-/* ===== RESERVATION ===== */
+/* ===== RESERVATION (GAUCHE) ===== */
 
 .reservation{
 position:fixed;
-bottom:140px;
-right:20px;
+bottom:80px;
+left:20px;
 background:#ff9800;
 color:white;
 padding:15px 20px;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:2000;
-}
-
-
-/* ===== PAIEMENT ===== */
-
-.paiement{
-position:fixed;
-bottom:200px;
-right:20px;
-background:#4caf50;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:2000;
 }
 
@@ -337,7 +263,6 @@ Loire-Atlantique (44)
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
 <a href="#zone">Zone</a>
-<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -388,30 +313,29 @@ target="_blank">
 </footer>
 
 
-<!-- PAIEMENT -->
-
-<a class="paiement pulse" href="https://www.paypal.me/" target="_blank">
-💳 Paiement
-</a>
-
-
 <!-- RESERVATION -->
 
-<a class="reservation pulse" href="https://calendly.com/" target="_blank">
+<a class="reservation pulse"
+href="https://calendly.com/"
+target="_blank">
 📅 Réserver
 </a>
 
 
 <!-- DEVIS -->
 
-<a class="devis-fixe pulse" href="https://wa.me/33760330502" target="_blank">
+<a class="devis-fixe pulse"
+href="https://wa.me/33760330502"
+target="_blank">
 📄 Devis
 </a>
 
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp pulse" href="https://wa.me/33760330502" target="_blank">
+<a class="whatsapp pulse"
+href="https://wa.me/33760330502"
+target="_blank">
 💬 WhatsApp
 </a>
 

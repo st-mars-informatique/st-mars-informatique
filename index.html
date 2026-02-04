@@ -15,6 +15,7 @@
 
 <link rel="icon" href="favicon.png" type="image/png">
 
+
 <style>
 
 /* ===== BASE ===== */
@@ -22,10 +23,12 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
+
 color:white;
 line-height:1.7;
 }
@@ -93,11 +96,16 @@ section{
 max-width:1000px;
 margin:40px auto;
 padding:35px 25px;
+
 background:rgba(0,0,0,0.65);
 border-radius:12px;
+
 opacity:0;
 transform:translateY(40px);
 transition:1s;
+
+/* FIX SCROLL MENU */
+scroll-margin-top:90px;
 }
 
 section.visible{
@@ -188,12 +196,15 @@ font-size:20px;
 display:inline-block;
 margin-top:20px;
 padding:15px 30px;
+
 background:#0b5ed7;
 color:white;
 text-decoration:none;
 border-radius:6px;
+
 font-size:20px;
 font-weight:bold;
+
 transition:0.3s;
 }
 
@@ -224,13 +235,13 @@ background:#1ebe5d;
 }
 
 
-/* ===== RDV ===== */
+/* ===== DEVIS FIXE ===== */
 
-.rdv{
+.devis-fixe{
 position:fixed;
 bottom:80px;
 right:20px;
-background:#ff9800;
+background:#0b5ed7;
 color:white;
 padding:15px 20px;
 border-radius:50px;
@@ -240,31 +251,8 @@ box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:2000;
 }
 
-.rdv:hover{
-background:#fb8c00;
-}
-
-
-/* ===== DEVIS ===== */
-
-.devis{
-position:fixed;
-bottom:80px;
-left:20px;
-background:#e53935;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:2000;
-transition:0.3s;
-}
-
-.devis:hover{
-background:#c62828;
-transform:scale(1.05);
+.devis-fixe:hover{
+background:#074ab3;
 }
 
 
@@ -326,6 +314,7 @@ Loire-Atlantique (44)
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
 <a href="#zone">Zone</a>
+<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -343,35 +332,20 @@ Loire-Atlantique (44)
 <div class="presentation-text">
 
 <p>
-Je m’appelle <strong>Fabrice</strong> et j’accompagne particuliers et professionnels
+Je m’appelle Fabrice et j’accompagne particuliers et professionnels
 dans leurs besoins informatiques depuis de nombreuses années.
-Passionné par les nouvelles technologies, je mets mon savoir-faire
-au service de vos équipements pour vous garantir des solutions simples,
-efficaces et durables.
 </p>
 
 <p>
-Implanté en Loire-Atlantique (44), j’interviens directement chez vous
-ou sur votre lieu de travail dans un périmètre d’environ 25 km,
-couvrant plusieurs communes du secteur et leurs environs.
+Intervention rapide en Loire-Atlantique (44) dans un rayon de 25 km.
 </p>
 
 <p>
-Je vous propose des prestations complètes : dépannage, optimisation,
-installation de matériel, entretien de vos systèmes informatiques,
-mais aussi réparation de smartphones. J’assure également le remplacement
-de composants défectueux afin de prolonger la durée de vie de vos appareils.
+Dépannage, réparation, optimisation, smartphones, montage PC.
 </p>
 
 <p>
-Besoin d’un nouvel ordinateur ? Je vous conseille dans le choix
-et l’assemblage d’un ordinateur personnalisé, parfaitement adapté
-à votre utilisation et à votre budget.
-</p>
-
-<p>
-Disponible et réactif, je m’engage à vous offrir un service de proximité,
-basé sur la confiance, la transparence et la satisfaction client.
+Service de proximité basé sur la confiance et la satisfaction client.
 </p>
 
 </div>
@@ -389,13 +363,13 @@ basé sur la confiance, la transparence et la satisfaction client.
 <div class="services">
 
 <div class="card">💻 Dépannage PC</div>
-<div class="card">🦠 Virus</div>
+<div class="card">🦠 Suppression virus</div>
 <div class="card">⚡ Optimisation</div>
 <div class="card">💾 Installation</div>
 <div class="card">📡 Assistance</div>
 <div class="card">📱 Smartphones</div>
 <div class="card">🖥️ Montage PC</div>
-<div class="card">🏠 Domicile</div>
+<div class="card">🏠 À domicile</div>
 
 </div>
 
@@ -405,7 +379,7 @@ basé sur la confiance, la transparence et la satisfaction client.
 
 <section id="zone">
 
-<h2>📍 Zone</h2>
+<h2>📍 Zone d’intervention</h2>
 
 <p style="text-align:center;">
 2 rue des Millauds<br>
@@ -420,17 +394,39 @@ src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint+Mars+de+Coutai
 
 
 
+<section id="avis">
+
+<h2>⭐ Avis clients</h2>
+
+<p style="text-align:center;">
+Merci pour votre confiance 🙏
+</p>
+
+<div style="text-align:center;">
+
+<a class="btn"
+href="https://g.page/r/Cb5QJ3sY8YyDEAg/review"
+target="_blank">
+⭐ Laisser un avis Google
+</a>
+
+</div>
+
+</section>
+
+
+
 <section id="contact" class="contact">
 
-<h2>📞 Contact</h2>
+<h2>📞 Contact & Devis gratuit</h2>
 
 <p><strong>Fabrice Ropers</strong></p>
 
-<p>📍 2 rue des Millauds – 44680</p>
+<p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
 
 <p>📱 07 60 33 05 02</p>
 
-<a class="btn" href="tel:0760330502">Appeler</a>
+<a class="btn" href="tel:0760330502">Appeler maintenant</a>
 
 </section>
 
@@ -438,9 +434,10 @@ src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint+Mars+de+Coutai
 
 <footer>
 
-© 2026 – St Mars Informatique
+© 2026 – St Mars Informatique – Loire-Atlantique
 
 </footer>
+
 
 
 <!-- WhatsApp -->
@@ -452,16 +449,37 @@ target="_blank">
 </a>
 
 
-<!-- RDV -->
+<!-- DEVIS -->
 
-<a class="rdv"
-href="https://calendly.com/"
+<a class="devis-fixe"
+href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaiterais%20un%20devis%20pour%20un%20d%C3%A9pannage%20informatique."
 target="_blank">
-📅 RDV
+📄 Devis gratuit
 </a>
 
 
-<!-- Devis -->
 
-<a class="devis"
-href="https://wa.me/33760330502?text=Bonjour%20Fabrice%2C%20je%2
+
+<!-- Animation Scroll -->
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+
+sections.forEach(section => {
+observer.observe(section);
+});
+
+</script>
+
+
+</body>
+</html>

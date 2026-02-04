@@ -30,10 +30,37 @@ line-height:1.7;
 /* ===== HEADER ===== */
 
 header{
-background:rgba(11,94,215,0.9);
+background-image: url("affichage.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
 text-align:center;
-padding:50px 20px;
+padding:100px 20px;
+color:white;
+
+position: relative;
 }
+
+
+/* Filtre sombre */
+
+header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:0;
+}
+
+header *{
+position: relative;
+z-index: 1;
+}
+
 
 header h1{
 font-size:52px;

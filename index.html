@@ -3,78 +3,75 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Dépannage Informatique Saint-Mars-de-Coutais | St Mars Informatique</title>
+<title>St Mars Informatique | Dépannage informatique à Saint-Mars-de-Coutais</title>
 
-<meta name="description" content="Dépannage informatique à Saint-Mars-de-Coutais. PC, smartphones, assistance, montage PC. Intervention rapide à domicile.">
+<meta name="description" content="Dépannage informatique à Saint-Mars-de-Coutais. PC, smartphones, assistance, réparation, montage PC, intervention à domicile.">
 
-<meta name="keywords" content="dépannage informatique, réparateur PC, Saint-Mars-de-Coutais, assistance informatique, Loire-Atlantique">
+<meta name="keywords" content="dépannage informatique, Saint-Mars-de-Coutais, réparation PC, informaticien, montage PC, Loire-Atlantique">
 
 <meta name="author" content="Fabrice Ropers">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FAVICON -->
-<link rel="icon" type="image/png" href="favicon.png">
-
-<!-- SEO LOCAL -->
-<meta name="geo.region" content="FR-44">
-<meta name="geo.placename" content="Saint-Mars-de-Coutais">
-
-<!-- DONNÉES STRUCTURÉES GOOGLE -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"LocalBusiness",
-"name":"St Mars Informatique",
-"address":{
-"@type":"PostalAddress",
-"streetAddress":"2 rue des Millauds",
-"addressLocality":"Saint-Mars-de-Coutais",
-"postalCode":"44680",
-"addressCountry":"FR"
-},
-"telephone":"+33760330502",
-"url":"https://st-mars-informatique.github.io/st-mars-informatique/"
-}
-</script>
-
 <style>
 
-/* BASE */
+/* ===== BASE ===== */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#07182b;
+
+background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
 color:white;
 line-height:1.7;
 }
 
 
-/* HEADER */
+/* ===== HEADER AVEC IMAGE ===== */
 
 header{
-background:linear-gradient(135deg,#0b5ed7,#0d6efd);
+background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:70px 20px;
+padding:120px 20px;
+position:relative;
+}
+
+header::after{
+content:"";
+position:absolute;
+top:0; left:0;
+width:100%; height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+header *{
+position:relative;
+z-index:2;
 }
 
 header h1{
-font-size:48px;
-margin-bottom:10px;
+font-size:52px;
+margin-bottom:15px;
 }
 
 header p{
-font-size:20px;
+font-size:22px;
 }
 
 
-/* MENU */
+/* ===== MENU ===== */
 
 nav{
-background:#000;
+background:rgba(0,0,0,0.8);
 text-align:center;
 padding:12px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
@@ -86,32 +83,43 @@ font-weight:bold;
 }
 
 nav a:hover{
-color:#0d6efd;
+color:#0b5ed7;
 }
 
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 
 section{
 max-width:1000px;
 margin:40px auto;
 padding:35px 25px;
-background:rgba(0,0,0,0.6);
+
+background:rgba(0,0,0,0.65);
 border-radius:12px;
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 section h2{
-font-size:32px;
+font-size:34px;
 text-align:center;
 margin-bottom:20px;
 }
 
 section p{
-font-size:18px;
+font-size:19px;
+text-align:justify;
 }
 
 
-/* PRESENTATION */
+/* ===== PRESENTATION ===== */
 
 .presentation-box{
 display:flex;
@@ -123,7 +131,7 @@ align-items:flex-start;
 width:220px;
 border-radius:12px;
 border:3px solid white;
-box-shadow:0 4px 12px rgba(0,0,0,0.6);
+box-shadow:0 4px 12px rgba(0,0,0,0.5);
 }
 
 .presentation-text{
@@ -131,11 +139,11 @@ flex:1;
 }
 
 
-/* SERVICES */
+/* ===== SERVICES ===== */
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
@@ -146,51 +154,85 @@ border-radius:10px;
 text-align:center;
 font-size:18px;
 font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
 }
 
 
-/* CONTACT FORM */
+/* ===== MAP ===== */
 
-form{
-max-width:600px;
-margin:auto;
-}
-
-input, textarea{
+.map{
 width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:6px;
+height:350px;
 border:none;
-font-size:16px;
+border-radius:10px;
 }
 
-textarea{
-height:120px;
-resize:none;
+
+/* ===== CONTACT ===== */
+
+.contact{
+text-align:center;
 }
 
-button{
-background:#0d6efd;
+.contact p{
+font-size:20px;
+}
+
+
+/* ===== BOUTONS ===== */
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+
+background:#0b5ed7;
 color:white;
-border:none;
-padding:15px;
-width:100%;
-font-size:18px;
-font-weight:bold;
+text-decoration:none;
 border-radius:6px;
-cursor:pointer;
+
+font-size:20px;
+font-weight:bold;
+
+transition:0.3s;
 }
 
-button:hover{
-background:#084298;
+.btn:hover{
+background:#074ab3;
+transform:scale(1.05);
 }
 
 
-/* FOOTER */
+/* ===== WHATSAPP ===== */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+z-index:2000;
+}
+
+.whatsapp:hover{
+background:#1ebe5d;
+}
+
+
+/* ===== FOOTER ===== */
 
 footer{
-background:#e9ecef;
+background:rgba(233,236,239,0.95);
 color:black;
 text-align:center;
 padding:18px;
@@ -198,21 +240,25 @@ font-size:15px;
 }
 
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
 header h1{font-size:36px;}
 header p{font-size:18px;}
 
-nav a{
-display:block;
-margin:8px 0;
-}
-
 .presentation-box{
 flex-direction:column;
 text-align:center;
+}
+
+.photo-fabrice{
+margin:auto;
+}
+
+nav a{
+display:block;
+margin:6px 0;
 }
 
 }
@@ -230,7 +276,7 @@ text-align:center;
 
 <p>
 Dépannage informatique à Saint-Mars-de-Coutais<br>
-Intervention rapide à domicile
+et communes environnantes
 </p>
 
 </header>
@@ -240,13 +286,13 @@ Intervention rapide à domicile
 
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
+<a href="#zone">Zone</a>
+<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 
 </nav>
 
 
-
-<!-- PRESENTATION -->
 
 <section id="presentation">
 
@@ -254,22 +300,21 @@ Intervention rapide à domicile
 
 <div class="presentation-box">
 
-<img src="1719616946521.jpg"
-alt="Fabrice Ropers"
-class="photo-fabrice">
+<img src="1719616946521.jpg" class="photo-fabrice" alt="Fabrice Ropers">
 
 <div class="presentation-text">
 
 <p>
-Je suis <strong>Fabrice Ropers</strong>, technicien informatique indépendant à Saint-Mars-de-Coutais.
+Je suis <strong>Fabrice Ropers</strong>, technicien informatique indépendant.
+Spécialisé en dépannage, réparation et optimisation informatique.
 </p>
 
 <p>
-J’accompagne particuliers et professionnels dans la maintenance, le dépannage et l’optimisation.
+Intervention rapide à Saint-Mars-de-Coutais et alentours (25 km).
 </p>
 
 <p>
-Zone d’intervention : 25 km autour de Saint-Mars-de-Coutais.
+Service fiable, transparent et orienté satisfaction client.
 </p>
 
 </div>
@@ -280,8 +325,6 @@ Zone d’intervention : 25 km autour de Saint-Mars-de-Coutais.
 
 
 
-<!-- SERVICES -->
-
 <section id="services">
 
 <h2>🛠️ Mes services</h2>
@@ -290,9 +333,9 @@ Zone d’intervention : 25 km autour de Saint-Mars-de-Coutais.
 
 <div class="card">💻 Dépannage PC</div>
 <div class="card">🦠 Suppression virus</div>
-<div class="card">⚡ Optimisation système</div>
-<div class="card">💾 Installation logiciels</div>
-<div class="card">📡 Assistance distance</div>
+<div class="card">⚡ Optimisation</div>
+<div class="card">💾 Installation</div>
+<div class="card">📡 Assistance</div>
 <div class="card">📱 Smartphones</div>
 <div class="card">🖥️ Montage PC</div>
 <div class="card">🏠 À domicile</div>
@@ -303,31 +346,56 @@ Zone d’intervention : 25 km autour de Saint-Mars-de-Coutais.
 
 
 
-<!-- CONTACT -->
+<section id="zone">
 
-<section id="contact">
+<h2>📍 Zone d’intervention</h2>
+
+<p style="text-align:center;">
+2 rue des Millauds<br>
+44680 Saint-Mars-de-Coutais
+</p>
+
+<iframe class="map"
+src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint+Mars+de+Coutais&output=embed">
+</iframe>
+
+</section>
+
+
+
+<section id="avis">
+
+<h2>⭐ Avis clients</h2>
+
+<p style="text-align:center;">
+Merci pour votre confiance 🙏
+</p>
+
+<div style="text-align:center;">
+
+<a class="btn"
+href="https://g.page/r/Cb5QJ3sY8YyDEAg/review"
+target="_blank">
+⭐ Laisser un avis Google
+</a>
+
+</div>
+
+</section>
+
+
+
+<section id="contact" class="contact">
 
 <h2>📞 Contact</h2>
 
-<p style="text-align:center;">
-<strong>Fabrice Ropers</strong><br>
-2 rue des Millauds – 44680 Saint-Mars-de-Coutais<br>
-📱 07 60 33 05 02
-</p>
+<p><strong>Fabrice Ropers</strong></p>
 
-<br>
+<p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
 
-<form action="mailto:fabrice.roper@gmail.com" method="post" enctype="text/plain">
+<p>📱 07 60 33 05 02</p>
 
-<input type="text" name="Nom" placeholder="Votre nom" required>
-
-<input type="email" name="Email" placeholder="Votre email" required>
-
-<textarea name="Message" placeholder="Votre message" required></textarea>
-
-<button type="submit">Envoyer le message</button>
-
-</form>
+<a class="btn" href="tel:0760330502">Appeler maintenant</a>
 
 </section>
 
@@ -338,6 +406,38 @@ Zone d’intervention : 25 km autour de Saint-Mars-de-Coutais.
 © 2026 – St Mars Informatique – Loire-Atlantique
 
 </footer>
+
+
+
+<!-- WhatsApp -->
+
+<a class="whatsapp"
+href="https://wa.me/33760330502"
+target="_blank">
+💬 WhatsApp
+</a>
+
+
+
+<!-- Animation Scroll -->
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+
+sections.forEach(section => {
+observer.observe(section);
+});
+
+</script>
 
 
 </body>

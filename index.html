@@ -15,7 +15,6 @@
 
 <link rel="icon" href="favicon.png" type="image/png">
 
-
 <style>
 
 /* ===== BASE ===== */
@@ -23,12 +22,10 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-
 color:white;
 line-height:1.7;
 }
@@ -96,14 +93,11 @@ section{
 max-width:1000px;
 margin:40px auto;
 padding:35px 25px;
-
 background:rgba(0,0,0,0.65);
 border-radius:12px;
-
 opacity:0;
 transform:translateY(40px);
 transition:1s;
-
 scroll-margin-top:90px;
 }
 
@@ -144,21 +138,42 @@ flex:1;
 }
 
 
+/* ===== SERVICES ===== */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:10px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+
 /* ===== BOUTONS ===== */
 
 .btn{
 display:inline-block;
 margin-top:20px;
 padding:15px 30px;
-
 background:#0b5ed7;
 color:white;
 text-decoration:none;
 border-radius:6px;
-
 font-size:20px;
 font-weight:bold;
-
 transition:0.3s;
 }
 
@@ -213,11 +228,11 @@ z-index:2000;
 }
 
 
-/* ===== RESERVATION (GAUCHE) ===== */
+/* ===== RESERVATION GAUCHE ===== */
 
 .reservation{
 position:fixed;
-bottom:80px;
+bottom:20px;
 left:20px;
 background:#ff9800;
 color:white;
@@ -263,6 +278,7 @@ Loire-Atlantique (44)
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
 <a href="#zone">Zone</a>
+<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -313,10 +329,10 @@ target="_blank">
 </footer>
 
 
-<!-- RESERVATION -->
+<!-- RESERVATION GAUCHE -->
 
 <a class="reservation pulse"
-href="https://calendly.com/"
+href="https://wa.me/33760330502?text=Bonjour%20Fabrice%2C%20je%20souhaite%20prendre%20un%20rendez-vous."
 target="_blank">
 📅 Réserver
 </a>

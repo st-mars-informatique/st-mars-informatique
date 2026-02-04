@@ -89,6 +89,24 @@ text-align:justify;
 }
 
 
+/* ===== PHOTO PRESENTATION ===== */
+
+.presentation-box{
+display:flex;
+gap:30px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.photo-fabrice{
+width:220px;
+max-width:100%;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.5);
+border:3px solid white;
+}
+
+
 /* ===== SERVICES ===== */
 
 .services{
@@ -184,6 +202,11 @@ display:block;
 margin:8px 0;
 }
 
+.presentation-box{
+flex-direction:column;
+text-align:center;
+}
+
 }
 
 </style>
@@ -225,6 +248,14 @@ et communes environnantes
 
 <h2>👨‍💻 Présentation</h2>
 
+<div class="presentation-box">
+
+<img src="1719616946521.jpg"
+alt="Fabrice - St Mars Informatique"
+class="photo-fabrice">
+
+<div>
+
 <p>
 Je suis <strong>Fabrice</strong>, technicien informatique indépendant, et j’accompagne
 les particuliers comme les professionnels dans la maintenance,
@@ -249,6 +280,10 @@ Disponible, à l’écoute et rigoureux, je m’engage à vous offrir
 un service fiable, transparent et de qualité, avec pour priorité
 votre satisfaction.
 </p>
+
+</div>
+
+</div>
 
 </section>
 

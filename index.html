@@ -15,7 +15,6 @@
 
 <link rel="icon" href="favicon.png" type="image/png">
 
-
 <style>
 
 /* ===== BASE ===== */
@@ -103,9 +102,6 @@ border-radius:12px;
 opacity:0;
 transform:translateY(40px);
 transition:1s;
-
-/* FIX SCROLL MENU */
-scroll-margin-top:90px;
 }
 
 section.visible{
@@ -235,13 +231,13 @@ background:#1ebe5d;
 }
 
 
-/* ===== DEVIS FIXE ===== */
+/* ===== RDV ===== */
 
-.devis-fixe{
+.rdv{
 position:fixed;
 bottom:80px;
 right:20px;
-background:#0b5ed7;
+background:#ff9800;
 color:white;
 padding:15px 20px;
 border-radius:50px;
@@ -249,10 +245,12 @@ font-weight:bold;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:2000;
+transition:0.3s;
 }
 
-.devis-fixe:hover{
-background:#074ab3;
+.rdv:hover{
+background:#e68900;
+transform:scale(1.05);
 }
 
 
@@ -332,16 +330,16 @@ Loire-Atlantique (44)
 <div class="presentation-text">
 
 <p>
-Je m’appelle Fabrice et j’accompagne particuliers et professionnels
+Je m’appelle <strong>Fabrice</strong> et j’accompagne particuliers et professionnels
 dans leurs besoins informatiques depuis de nombreuses années.
 </p>
 
 <p>
-Intervention rapide en Loire-Atlantique (44) dans un rayon de 25 km.
+Intervention rapide à Saint-Mars-de-Coutais et alentours (25 km).
 </p>
 
 <p>
-Dépannage, réparation, optimisation, smartphones, montage PC.
+Dépannage, réparation, optimisation et montage PC personnalisé.
 </p>
 
 <p>
@@ -418,7 +416,7 @@ target="_blank">
 
 <section id="contact" class="contact">
 
-<h2>📞 Contact & Devis gratuit</h2>
+<h2>📞 Contact</h2>
 
 <p><strong>Fabrice Ropers</strong></p>
 
@@ -449,14 +447,13 @@ target="_blank">
 </a>
 
 
-<!-- DEVIS -->
+<!-- RDV -->
 
-<a class="devis-fixe"
-href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaiterais%20un%20devis%20pour%20un%20d%C3%A9pannage%20informatique."
+<a class="rdv"
+href="https://wa.me/33760330502?text=Bonjour%20Fabrice%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20une%20intervention."
 target="_blank">
-📄 Devis gratuit
+📅 Rendez-vous
 </a>
-
 
 
 

@@ -89,21 +89,25 @@ text-align:justify;
 }
 
 
-/* ===== PHOTO PRESENTATION ===== */
+/* ===== PRESENTATION PHOTO ===== */
 
 .presentation-box{
 display:flex;
 gap:30px;
-align-items:center;
-flex-wrap:wrap;
+align-items:flex-start;
 }
 
 .photo-fabrice{
 width:220px;
-max-width:100%;
+min-width:220px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.5);
 border:3px solid white;
+}
+
+/* Texte à droite */
+.presentation-text{
+flex:1;
 }
 
 
@@ -207,6 +211,10 @@ flex-direction:column;
 text-align:center;
 }
 
+.photo-fabrice{
+min-width:auto;
+}
+
 }
 
 </style>
@@ -254,7 +262,7 @@ et communes environnantes
 alt="Fabrice - St Mars Informatique"
 class="photo-fabrice">
 
-<div>
+<div class="presentation-text">
 
 <p>
 Je suis <strong>Fabrice</strong>, technicien informatique indépendant, et j’accompagne

@@ -2,24 +2,39 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+
 <title>St Mars Informatique | Dépannage informatique à Saint-Mars-de-Coutais</title>
+
 <meta name="description" content="Dépannage informatique à Saint-Mars-de-Coutais (44680). PC, smartphones, réparation, montage PC, assistance à domicile. Fabrice Ropers.">
+
 <meta name="keywords" content="dépannage informatique Saint-Mars-de-Coutais, réparateur PC 44680, informaticien Loire-Atlantique, montage PC, assistance informatique">
+
 <meta name="author" content="Fabrice Ropers">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" href="favicon.png" type="image/png">
 
+
 <style>
+
+/* ===== BASE ===== */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
+
 color:white;
 line-height:1.7;
 }
+
+
+/* ===== HEADER ===== */
 
 header{
 background:url('affichage.jpg') center/cover no-repeat;
@@ -41,8 +56,17 @@ position:relative;
 z-index:2;
 }
 
-header h1{font-size:52px; margin-bottom:15px;}
-header p{font-size:22px;}
+header h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:22px;
+}
+
+
+/* ===== MENU ===== */
 
 nav{
 background:rgba(0,0,0,0.85);
@@ -61,23 +85,66 @@ font-size:18px;
 font-weight:bold;
 }
 
-nav a:hover{color:#0b5ed7;}
+nav a:hover{
+color:#0b5ed7;
+}
+
+
+/* ===== SECTIONS ===== */
 
 section{
 max-width:1000px;
 margin:40px auto;
 padding:35px 25px;
+
 background:rgba(0,0,0,0.65);
 border-radius:12px;
+
 opacity:0;
 transform:translateY(40px);
 transition:1s;
+
 scroll-margin-top:90px;
 }
 
-section.visible{opacity:1; transform:translateY(0);}
-section h2{font-size:34px; text-align:center; margin-bottom:20px;}
-section p{font-size:19px;}
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+section h2{
+font-size:34px;
+text-align:center;
+margin-bottom:20px;
+}
+
+section p{
+font-size:19px;
+text-align:justify;
+}
+
+
+/* ===== PRESENTATION ===== */
+
+.presentation-box{
+display:flex;
+gap:30px;
+align-items:flex-start;
+}
+
+.photo-fabrice{
+width:220px;
+border-radius:12px;
+border:3px solid white;
+box-shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+
+.presentation-text{
+flex:1;
+}
+
+
+/* ===== SERVICES ===== */
 
 .services{
 display:grid;
@@ -96,39 +163,106 @@ box-shadow:0 4px 10px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
-.card:hover{transform:scale(1.05);}
-
-.tarifs h3{
-margin-top:30px;
-color:#4da3ff;
+.card:hover{
+transform:scale(1.05);
 }
 
-.tarifs ul{
-list-style:none;
-padding:0;
+
+/* ===== MAP ===== */
+
+.map{
+width:100%;
+height:350px;
+border:none;
+border-radius:10px;
 }
 
-.tarifs li{
-padding:6px 0;
-border-bottom:1px solid rgba(255,255,255,0.2);
-display:flex;
-justify-content:space-between;
+
+/* ===== CONTACT ===== */
+
+.contact{
+text-align:center;
 }
+
+.contact p{
+font-size:20px;
+}
+
+
+/* ===== BOUTONS ===== */
 
 .btn{
 display:inline-block;
 margin-top:20px;
 padding:15px 30px;
+
 background:#0b5ed7;
 color:white;
 text-decoration:none;
 border-radius:6px;
+
 font-size:20px;
 font-weight:bold;
+
 transition:0.3s;
 }
 
-.btn:hover{background:#074ab3; transform:scale(1.05);}
+.btn:hover{
+background:#074ab3;
+transform:scale(1.05);
+}
+
+
+/* ===== ANIMATION BOUTONS ===== */
+
+@keyframes pulse {
+0% {transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.4);} 
+50% {transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.6);} 
+100% {transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.4);} 
+}
+
+.pulse{animation:pulse 2s infinite;}
+
+
+/* ===== WHATSAPP ===== */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+z-index:2000;
+}
+
+.whatsapp:hover{background:#1ebe5d;}
+
+
+/* ===== DEVIS FIXE ===== */
+
+.devis-fixe{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#0b5ed7;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+z-index:2000;
+}
+
+.devis-fixe:hover{background:#074ab3;}
+
+
+/* ===== FOOTER ===== */
 
 footer{
 background:rgba(233,236,239,0.95);
@@ -138,11 +272,22 @@ padding:18px;
 font-size:15px;
 }
 
+
+/* ===== MOBILE ===== */
+
 @media(max-width:768px){
+
 header h1{font-size:36px;}
 header p{font-size:18px;}
+
+.presentation-box{flex-direction:column; text-align:center;}
+
+.photo-fabrice{margin:auto;}
+
 nav a{display:block; margin:6px 0;}
+
 }
+
 </style>
 </head>
 
@@ -153,10 +298,12 @@ nav a{display:block; margin:6px 0;}
 <p>Dépannage informatique à Saint-Mars-de-Coutais<br>Loire-Atlantique (44)</p>
 </header>
 
+<!-- MENU AVEC TARIFS AJOUTÉ -->
 <nav>
+<a href="index.html">Accueil</a>
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
-<a href="#tarifs">Tarifs</a>
+<a href="tarifs.html">Tarifs</a>
 <a href="#zone">Zone</a>
 <a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
@@ -164,81 +311,65 @@ nav a{display:block; margin:6px 0;}
 
 <section id="presentation">
 <h2>👨‍💻 Présentation</h2>
-<p>Je m’appelle Fabrice et j’accompagne particuliers et professionnels dans leurs besoins informatiques.</p>
+<div class="presentation-box">
+<img src="1719616946521.jpg" class="photo-fabrice" alt="Fabrice Ropers">
+<div class="presentation-text">
+<p>Je m’appelle Fabrice et j’accompagne particuliers et professionnels dans leurs besoins informatiques depuis de nombreuses années.</p>
+<p>Implanté en Loire-Atlantique (44), j’interviens dans un périmètre d’environ 25 km.</p>
+<p>Je vous propose des prestations complètes : dépannage, optimisation, installation, réparation smartphones.</p>
+<p>Besoin d’un nouvel ordinateur ? Je vous conseille dans le choix et l’assemblage.</p>
+<p>Disponible et réactif, je m’engage à vous offrir un service de proximité.</p>
+</div>
+</div>
+
+<div style="text-align:center; margin-top:25px;">
+<a class="btn pulse"
+href="https://wa.me/33760330502?text=Bonjour%20Fabrice%2C%20je%20souhaite%20un%20devis%20gratuit."
+target="_blank">💰 Demander un devis</a>
+</div>
 </section>
 
 <section id="services">
 <h2>🛠️ Mes services</h2>
 <div class="services">
 <div class="card">💻 Dépannage PC</div>
-<div class="card">🦠 Virus</div>
+<div class="card">🦠 Suppression virus</div>
 <div class="card">⚡ Optimisation</div>
 <div class="card">💾 Installation</div>
 <div class="card">📡 Assistance</div>
 <div class="card">📱 Smartphones</div>
-</div>
-</section>
-
-<section id="tarifs" class="tarifs">
-<h2>💰 Tarifs</h2>
-
-<h3>💻 Installations Windows & Mac</h3>
-<ul>
-<li><span>Windows + logiciels</span><span>70 €</span></li>
-<li><span>macOS + logiciels</span><span>80 €</span></li>
-<li><span>Windows + MAJ + pilotes</span><span>60 €</span></li>
-<li><span>macOS + MAJ + pilotes</span><span>70 €</span></li>
-<li><span>Windows simple</span><span>50 €</span></li>
-<li><span>macOS simple</span><span>60 €</span></li>
-</ul>
-
-<h3>🔑 Licences Windows</h3>
-<ul>
-<li><span>Windows 10</span><span>3 €</span></li>
-<li><span>Windows 11</span><span>5 €</span></li>
-</ul>
-
-<h3>📦 Microsoft Office</h3>
-<ul>
-<li><span>Office 2024</span><span>50 €</span></li>
-<li><span>Office 2021</span><span>40 €</span></li>
-<li><span>Office 2019</span><span>30 €</span></li>
-<li><span>Office 2016</span><span>20 €</span></li>
-</ul>
-
-<h3>🧪 Diagnostic</h3>
-<ul>
-<li><span>Diagnostic complet</span><span>30 €</span></li>
-</ul>
-
-<h3>🔐 Sécurité</h3>
-<ul>
-<li><span>Suppression virus</span><span>60 €</span></li>
-<li><span>Suppression malware</span><span>30 €</span></li>
-</ul>
-
-<div style="text-align:center">
-<a class="btn" href="https://wa.me/33760330502" target="_blank">Demander un devis</a>
+<div class="card">🖥️ Montage PC</div>
+<div class="card">🏠 À domicile</div>
 </div>
 </section>
 
 <section id="zone">
 <h2>📍 Zone d’intervention</h2>
-<p style="text-align:center;">2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
+<p style="text-align:center;">2 rue des Millauds<br>44680 Saint-Mars-de-Coutais</p>
+<iframe class="map" src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint+Mars+de+Coutais&output=embed"></iframe>
 </section>
 
 <section id="avis">
 <h2>⭐ Avis clients</h2>
 <p style="text-align:center;">Merci pour votre confiance 🙏</p>
+<div style="text-align:center;">
+<a class="btn" href="https://g.page/r/Cb5QJ3sY8YyDEAg/review" target="_blank">⭐ Laisser un avis Google</a>
+</div>
 </section>
 
-<section id="contact">
-<h2>📞 Contact</h2>
+<section id="contact" class="contact">
+<h2>📞 Contact & Devis gratuit</h2>
+<p><strong>Fabrice Ropers</strong></p>
+<p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
 <p>📱 07 60 33 05 02</p>
-<a class="btn" href="tel:0760330502">Appeler</a>
+<a class="btn" href="tel:0760330502">Appeler maintenant</a>
 </section>
 
-<footer>© 2026 – St Mars Informatique</footer>
+<footer>© 2026 – St Mars Informatique – Loire-Atlantique</footer>
+
+<a class="whatsapp pulse" href="https://wa.me/33760330502" target="_blank">💬 WhatsApp</a>
+
+<a class="devis-fixe pulse" href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis." target="_blank">📄 Devis gratuit</a>
 
 <script>
 const sections = document.querySelectorAll("section");

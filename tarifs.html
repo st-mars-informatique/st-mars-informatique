@@ -4,33 +4,39 @@
 <meta charset="UTF-8">
 <title>Tarifs | St Mars Informatique</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="favicon.png" type="image/png">
+
+<link rel="icon" href="favicon.png">
 
 <style>
+
+/* BASE */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
+background-attachment:fixed;
+
 color:white;
-line-height:1.7;
 }
+
+/* HEADER */
 
 header{
 background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:100px 20px;
+padding:120px 20px;
 position:relative;
 }
 
 header::after{
 content:"";
 position:absolute;
-top:0; left:0;
-width:100%; height:100%;
-background:rgba(0,0,0,0.5);
+inset:0;
+background:rgba(0,0,0,0.6);
 }
 
 header *{
@@ -38,12 +44,17 @@ position:relative;
 z-index:2;
 }
 
-header h1{font-size:48px;}
+header h1{
+font-size:48px;
+margin:0;
+}
+
+/* MENU */
 
 nav{
-background:rgba(0,0,0,0.85);
+background:#000;
 text-align:center;
-padding:12px;
+padding:15px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -52,30 +63,37 @@ z-index:1000;
 nav a{
 color:white;
 text-decoration:none;
-margin:0 15px;
+margin:0 20px;
 font-size:18px;
 font-weight:bold;
 }
 
-nav a:hover{color:#0b5ed7;}
+nav a:hover{
+color:#4da3ff;
+}
+
+/* SECTIONS */
 
 section{
-max-width:1000px;
-margin:40px auto;
-padding:35px 25px;
-background:rgba(0,0,0,0.65);
-border-radius:12px;
+max-width:1100px;
+margin:60px auto;
+padding:40px;
+
+background:rgba(0,0,0,0.7);
+border-radius:15px;
 }
 
 section h2{
 text-align:center;
 font-size:34px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
+/* TARIFS */
+
 .tarifs h3{
-margin-top:35px;
 color:#4da3ff;
+margin-top:40px;
 }
 
 .tarifs ul{
@@ -87,39 +105,54 @@ margin:0;
 .tarifs li{
 display:flex;
 justify-content:space-between;
-padding:8px 0;
+align-items:center;
+
+padding:10px 0;
 border-bottom:1px solid rgba(255,255,255,0.2);
+
 font-size:18px;
 }
 
+/* BUTTON */
+
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 30px;
+margin-top:30px;
+padding:15px 35px;
+
 background:#0b5ed7;
 color:white;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
+
 font-size:20px;
 font-weight:bold;
-transition:0.3s;
 }
 
-.btn:hover{background:#074ab3; transform:scale(1.05);}
+.btn:hover{
+background:#0849a8;
+}
+
+/* FOOTER */
 
 footer{
-background:rgba(233,236,239,0.95);
+background:#eee;
 color:black;
 text-align:center;
-padding:18px;
-font-size:15px;
+padding:20px;
+margin-top:60px;
 }
 
-@media(max-width:768px){
+/* MOBILE */
+
+@media(max-width:800px){
+
 header h1{font-size:34px;}
-nav a{display:block; margin:6px 0;}
+nav a{display:block;margin:10px;}
 .tarifs li{font-size:16px;}
+
 }
+
 </style>
 </head>
 
@@ -138,13 +171,16 @@ nav a{display:block; margin:6px 0;}
 </nav>
 
 <section class="tarifs">
+
 <h2>📋 Grille Tarifaire</h2>
 
-<h3>💻 Installations Windows </h3>
+
+<h3>💻 Installations Windows</h3>
 <ul>
-<li><span>Windows ,pilotes ,logiciels bureautiques</span><span>80 €</span></li>
-<li><span>Installation Windows </span><span>60 €</span></li>
+<li><span>Windows + pilotes + logiciels</span><span>80 €</span></li>
+<li><span>Installation Windows simple</span><span>60 €</span></li>
 </ul>
+
 
 <h3>🔑 Licences Windows</h3>
 <ul>
@@ -152,57 +188,72 @@ nav a{display:block; margin:6px 0;}
 <li><span>Licence Windows 10</span><span>5 €</span></li>
 </ul>
 
+
 <h3>📦 Microsoft Office</h3>
 <ul>
 <li><span>Installation Office 2024</span><span>60 €</span></li>
+</ul>
+
 
 <h3>🔄 Mises à jour & Réparations</h3>
 <ul>
-<li><span>Mise à jour Windows </span><span>15 €</span></li>
-<li><span>Windows et pilotes</span><span>20 €</span></li>
-<li><span>Windows et logiciels</span><span>25 €</span></li>
-<li><span>Windows ,logiciels et pilotes</span><span>45 €</span></li>
-<li><span>Paramétrage du BIOS</span><span>20 €</span></li>
+<li><span>Mise à jour Windows</span><span>15 €</span></li>
+<li><span>Windows + pilotes</span><span>20 €</span></li>
+<li><span>Windows + logiciels</span><span>25 €</span></li>
+<li><span>Windows + logiciels + pilotes</span><span>45 €</span></li>
+<li><span>Paramétrage BIOS</span><span>20 €</span></li>
 <li><span>Réparation Windows</span><span>25 €</span></li>
 </ul>
 
+
 <h3>🧪 Diagnostic</h3>
 <ul>
-<li><span>Diagnostic technique complet</span><span>35 €</span></li>
+<li><span>Diagnostic complet</span><span>35 €</span></li>
 </ul>
 
-<h3>💾 Sauvegarde de Données</h3>
+
+<h3>💾 Sauvegarde & Données</h3>
 <ul>
-<li><span>Récupération données 15 € a 80€ en fonction du stokage sur votre disque dur </span><span>10 €</span></li>
+<li><span>Récupération données (selon volume)</span><span>10 € → 80 €</span></li>
 </ul>
 
-<h3>🔌 Programmes et Périphériques</h3>
+
+<h3>🔌 Programmes & Périphériques</h3>
 <ul>
-<li><span>Installation programme /<span>15 €</span></li>
-<li><span>Installation périphérique interne </span><span>15€</span></li>
-<li><span>Installation Périphérique réseau</span><span>25 €</span></li>
+<li><span>Installation programme / jeu</span><span>15 €</span></li>
+<li><span>Périphérique interne</span><span>15 €</span></li>
+<li><span>Périphérique réseau</span><span>25 €</span></li>
 </ul>
+
 
 <h3>🛠️ Matériel</h3>
 <ul>
-<li><span>Test Disque dur ,RAM, et autres péripheriques )</span><span>30 €</span></li>
-<li><span>Remplacement pièce</span><span>30€ à 50€ selon la pièce€</span></li>
-<li><span>Remplacement d'un écran de Pc portable</span><span>55 €</span></li>
+<li><span>Test RAM / Disque / Carte</span><span>30 €</span></li>
+<li><span>Remplacement pièce</span><span>30 € → 50 €</span></li>
+<li><span>Remplacement écran portable</span><span>55 €</span></li>
 </ul>
 
-<h3>🔐 Sécurité et Virus</h3>
+
+<h3>🔐 Sécurité & Virus</h3>
 <ul>
 <li><span>Suppression virus</span><span>70 €</span></li>
 <li><span>Suppression malware</span><span>35 €</span></li>
 </ul>
 
+
 <div style="text-align:center">
-<a class="btn" href="https://wa.me/33760330502" target="_blank">📄 Demander un devis</a>
+
+<a class="btn" href="https://wa.me/33760330502" target="_blank">
+📄 Demander un devis
+</a>
+
 </div>
 
 </section>
 
-<footer>© 2026 – St Mars Informatique – Loire-Atlantique</footer>
+<footer>
+© 2026 – St Mars Informatique
+</footer>
 
 </body>
 </html>

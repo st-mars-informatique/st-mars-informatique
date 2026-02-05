@@ -2,23 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-
-<title>St Mars Informatique | Dépannage informatique à Saint-Mars-de-Coutais</title>
-
-<meta name="description" content="Dépannage informatique à Saint-Mars-de-Coutais (44680). PC, smartphones, réparation, montage PC, assistance à domicile. Fabrice Ropers.">
-
-<meta name="keywords" content="dépannage informatique Saint-Mars-de-Coutais, réparateur PC 44680, informaticien Loire-Atlantique, montage PC, assistance informatique">
-
-<meta name="author" content="Fabrice Ropers">
-
+<title>St Mars Informatique | Dépannage informatique</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" href="favicon.png" type="image/png">
-
+<link rel="icon" href="favicon.png">
 
 <style>
 
-/* ===== BASE ===== */
+/* BASE */
 
 body{
 margin:0;
@@ -27,28 +18,25 @@ font-family:Arial, Helvetica, sans-serif;
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
+background-attachment:fixed;
 
 color:white;
-line-height:1.7;
 }
 
-
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
 background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:120px 20px;
+padding:130px 20px;
 position:relative;
 }
 
 header::after{
 content:"";
 position:absolute;
-top:0; left:0;
-width:100%; height:100%;
-background:rgba(0,0,0,0.5);
+inset:0;
+background:rgba(0,0,0,0.6);
 }
 
 header *{
@@ -58,20 +46,20 @@ z-index:2;
 
 header h1{
 font-size:52px;
-margin-bottom:15px;
+margin:0;
 }
 
 header p{
 font-size:22px;
+margin-top:15px;
 }
 
-
-/* ===== MENU ===== */
+/* MENU */
 
 nav{
-background:rgba(0,0,0,0.85);
+background:#000;
 text-align:center;
-padding:12px;
+padding:15px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -80,211 +68,113 @@ z-index:1000;
 nav a{
 color:white;
 text-decoration:none;
-margin:0 15px;
+margin:0 20px;
 font-size:18px;
 font-weight:bold;
 }
 
 nav a:hover{
-color:#0b5ed7;
+color:#4da3ff;
 }
 
-
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 
 section{
-max-width:1000px;
-margin:40px auto;
-padding:35px 25px;
+max-width:1100px;
+margin:60px auto;
+padding:40px;
 
-background:rgba(0,0,0,0.65);
-border-radius:12px;
-
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-
-scroll-margin-top:90px;
-}
-
-section.visible{
-opacity:1;
-transform:translateY(0);
+background:rgba(0,0,0,0.7);
+border-radius:15px;
 }
 
 section h2{
-font-size:34px;
 text-align:center;
-margin-bottom:20px;
+font-size:34px;
+margin-bottom:25px;
 }
 
-section p{
-font-size:19px;
-text-align:justify;
-}
+/* PRESENTATION */
 
-
-/* ===== PRESENTATION ===== */
-
-.presentation-box{
+.presentation{
 display:flex;
-gap:30px;
-align-items:flex-start;
+gap:40px;
+align-items:center;
 }
 
-.photo-fabrice{
-width:220px;
-border-radius:12px;
+.presentation img{
+width:230px;
+border-radius:15px;
 border:3px solid white;
-box-shadow:0 4px 12px rgba(0,0,0,0.5);
 }
 
-.presentation-text{
+.presentation div{
 flex:1;
+font-size:18px;
+line-height:1.6;
 }
 
-
-/* ===== SERVICES ===== */
+/* SERVICES */
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
 }
 
-.card{
-background:rgba(255,255,255,0.15);
+.service{
+background:rgba(255,255,255,0.12);
 padding:25px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 font-size:18px;
 font-weight:bold;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-transition:0.3s;
 }
 
-.card:hover{
-transform:scale(1.05);
-}
-
-
-/* ===== MAP ===== */
-
-.map{
-width:100%;
-height:350px;
-border:none;
-border-radius:10px;
-}
-
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 
 .contact{
 text-align:center;
-}
-
-.contact p{
 font-size:20px;
 }
 
-
-/* ===== BOUTONS ===== */
+/* BUTTON */
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+margin-top:25px;
+padding:15px 35px;
 
 background:#0b5ed7;
 color:white;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
 
 font-size:20px;
 font-weight:bold;
-
-transition:0.3s;
 }
 
 .btn:hover{
-background:#074ab3;
-transform:scale(1.05);
+background:#0849a8;
 }
 
-
-/* ===== ANIMATION BOUTONS ===== */
-
-@keyframes pulse {
-0% {transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.4);} 
-50% {transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.6);} 
-100% {transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.4);} 
-}
-
-.pulse{animation:pulse 2s infinite;}
-
-
-/* ===== WHATSAPP ===== */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:2000;
-}
-
-.whatsapp:hover{background:#1ebe5d;}
-
-
-/* ===== DEVIS FIXE ===== */
-
-.devis-fixe{
-position:fixed;
-bottom:80px;
-right:20px;
-background:#0b5ed7;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:2000;
-}
-
-.devis-fixe:hover{background:#074ab3;}
-
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
-background:rgba(233,236,239,0.95);
+background:#eee;
 color:black;
 text-align:center;
-padding:18px;
-font-size:15px;
+padding:20px;
+margin-top:60px;
 }
 
+/* MOBILE */
 
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
+@media(max-width:800px){
 
 header h1{font-size:36px;}
-header p{font-size:18px;}
-
-.presentation-box{flex-direction:column; text-align:center;}
-
-.photo-fabrice{margin:auto;}
-
-nav a{display:block; margin:6px 0;}
+.presentation{flex-direction:column;}
+nav a{display:block;margin:10px;}
 
 }
 
@@ -295,89 +185,81 @@ nav a{display:block; margin:6px 0;}
 
 <header>
 <h1>St Mars Informatique</h1>
-<p>Dépannage informatique à Saint-Mars-de-Coutais<br>Loire-Atlantique (44)</p>
+<p>Dépannage informatique & assistance à domicile<br>Loire-Atlantique (44)</p>
 </header>
 
-<!-- MENU AVEC TARIFS AJOUTÉ -->
 <nav>
 <a href="index.html">Accueil</a>
 <a href="#presentation">Présentation</a>
 <a href="#services">Services</a>
 <a href="tarifs.html">Tarifs</a>
-<a href="#zone">Zone</a>
-<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <section id="presentation">
+
 <h2>👨‍💻 Présentation</h2>
-<div class="presentation-box">
-<img src="1719616946521.jpg" class="photo-fabrice" alt="Fabrice Ropers">
-<div class="presentation-text">
-<p>Je m’appelle Fabrice et j’accompagne particuliers et professionnels dans leurs besoins informatiques depuis de nombreuses années.</p>
-<p>Implanté en Loire-Atlantique (44), j’interviens dans un périmètre d’environ 25 km.</p>
-<p>Je vous propose des prestations complètes : dépannage, optimisation, installation, réparation smartphones.</p>
-<p>Besoin d’un nouvel ordinateur ? Je vous conseille dans le choix et l’assemblage.</p>
-<p>Disponible et réactif, je m’engage à vous offrir un service de proximité.</p>
-</div>
+
+<div class="presentation">
+
+<img src="1719616946521.jpg" alt="Fabrice Ropers">
+
+<div>
+
+<p>Je suis Fabrice, technicien informatique indépendant à Saint-Mars-de-Coutais.</p>
+
+<p>J’accompagne particuliers et professionnels pour tous leurs besoins informatiques : dépannage, réparation, installation, optimisation.</p>
+
+<p>Intervention rapide à domicile dans un rayon de 25 km.</p>
+
+<p>Service sérieux, transparent et de proximité.</p>
+
 </div>
 
-<div style="text-align:center; margin-top:25px;">
-<a class="btn pulse"
-href="https://wa.me/33760330502?text=Bonjour%20Fabrice%2C%20je%20souhaite%20un%20devis%20gratuit."
-target="_blank">💰 Demander un devis</a>
 </div>
+
 </section>
 
 <section id="services">
-<h2>🛠️ Mes services</h2>
+
+<h2>🛠️ Services</h2>
+
 <div class="services">
-<div class="card">💻 Dépannage PC</div>
-<div class="card">🦠 Suppression virus</div>
-<div class="card">⚡ Optimisation</div>
-<div class="card">💾 Installation</div>
-<div class="card">📡 Assistance</div>
-<div class="card">📱 Smartphones</div>
-<div class="card">🖥️ Montage PC</div>
-<div class="card">🏠 À domicile</div>
+
+<div class="service">💻 Dépannage PC & Mac</div>
+<div class="service">🦠 Suppression virus</div>
+<div class="service">⚡ Optimisation système</div>
+<div class="service">💾 Installation logiciels</div>
+<div class="service">📱 Smartphones</div>
+<div class="service">🖥️ Montage PC</div>
+<div class="service">🏠 Assistance à domicile</div>
+<div class="service">🔧 Maintenance</div>
+
 </div>
+
 </section>
 
-<section id="zone">
-<h2>📍 Zone d’intervention</h2>
-<p style="text-align:center;">2 rue des Millauds<br>44680 Saint-Mars-de-Coutais</p>
-<iframe class="map" src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint+Mars+de+Coutais&output=embed"></iframe>
-</section>
+<section id="contact">
 
-<section id="avis">
-<h2>⭐ Avis clients</h2>
-<p style="text-align:center;">Merci pour votre confiance 🙏</p>
-<div style="text-align:center;">
-<a class="btn" href="https://g.page/r/Cb5QJ3sY8YyDEAg/review" target="_blank">⭐ Laisser un avis Google</a>
-</div>
-</section>
+<h2>📞 Contact</h2>
 
-<section id="contact" class="contact">
-<h2>📞 Contact & Devis gratuit</h2>
+<div class="contact">
+
 <p><strong>Fabrice Ropers</strong></p>
 <p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
 <p>📱 07 60 33 05 02</p>
-<a class="btn" href="tel:0760330502">Appeler maintenant</a>
+
+<a class="btn" href="tel:0760330502">Appeler maintenant</a><br>
+
+<a class="btn" href="https://wa.me/33760330502" target="_blank">WhatsApp</a>
+
+</div>
+
 </section>
 
-<footer>© 2026 – St Mars Informatique – Loire-Atlantique</footer>
-
-<a class="whatsapp pulse" href="https://wa.me/33760330502" target="_blank">💬 WhatsApp</a>
-
-<a class="devis-fixe pulse" href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis." target="_blank">📄 Devis gratuit</a>
-
-<script>
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add("visible"); }});
-});
-sections.forEach(section => { observer.observe(section); });
-</script>
+<footer>
+© 2026 – St Mars Informatique
+</footer>
 
 </body>
 </html>

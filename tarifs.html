@@ -177,34 +177,50 @@ section h2{
 font-size:26px;
 }
 
-.pricing{
-grid-template-columns:1fr;
+/* 1. Grille uniforme */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  align-items: stretch;
 }
 
-.card{
-font-size:16px;
-padding:20px;
+/* 2. Cartes carrées régulières */
+.pricing .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 300px; /* toutes les cartes ont la même hauteur */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.price{
-font-size:24px;
+/* 3. Effet au survol */
+.pricing .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.btn{
-width:100%;
-max-width:300px;
-display:block;
-margin:20px auto;
-font-size:18px;
-padding:14px;
+/* 4. Styles internes */
+.pricing .card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.pricing .card .price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #4ea3ff;
+  margin: 10px 0;
+}
+.pricing .card p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-nav a{
-font-size:16px;
-padding:8px 0;
-}
-
-}
 
 </style>
 </head>

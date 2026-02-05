@@ -4,39 +4,33 @@
 <meta charset="UTF-8">
 <title>Tarifs | St Mars Informatique</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="icon" href="favicon.png">
+<link rel="icon" href="favicon.png" type="image/png">
 
 <style>
-
-/* BASE */
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
-
+background-repeat:no-repeat;
 color:white;
+line-height:1.7;
 }
-
-/* HEADER */
 
 header{
 background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:120px 20px;
+padding:100px 20px;
 position:relative;
 }
 
 header::after{
 content:"";
 position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
+top:0; left:0;
+width:100%; height:100%;
+background:rgba(0,0,0,0.5);
 }
 
 header *{
@@ -44,17 +38,12 @@ position:relative;
 z-index:2;
 }
 
-header h1{
-font-size:48px;
-margin:0;
-}
-
-/* MENU */
+header h1{font-size:48px;}
 
 nav{
-background:#000;
+background:rgba(0,0,0,0.85);
 text-align:center;
-padding:15px;
+padding:12px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -63,37 +52,30 @@ z-index:1000;
 nav a{
 color:white;
 text-decoration:none;
-margin:0 20px;
+margin:0 15px;
 font-size:18px;
 font-weight:bold;
 }
 
-nav a:hover{
-color:#4da3ff;
-}
-
-/* SECTIONS */
+nav a:hover{color:#0b5ed7;}
 
 section{
-max-width:1100px;
-margin:60px auto;
-padding:40px;
-
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+max-width:1000px;
+margin:40px auto;
+padding:35px 25px;
+background:rgba(0,0,0,0.65);
+border-radius:12px;
 }
 
 section h2{
 text-align:center;
 font-size:34px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
-/* TARIFS */
-
 .tarifs h3{
+margin-top:35px;
 color:#4da3ff;
-margin-top:40px;
 }
 
 .tarifs ul{
@@ -105,55 +87,55 @@ margin:0;
 .tarifs li{
 display:flex;
 justify-content:space-between;
-align-items:center;
-
-padding:10px 0;
+padding:8px 0;
 border-bottom:1px solid rgba(255,255,255,0.2);
-
 font-size:18px;
 }
 
-/* BUTTON */
-
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-
+margin-top:25px;
+padding:15px 30px;
 background:#0b5ed7;
 color:white;
 text-decoration:none;
-border-radius:8px;
-
+border-radius:6px;
 font-size:20px;
 font-weight:bold;
+transition:0.3s;
 }
 
-.btn:hover{
-background:#0849a8;
-}
-
-/* FOOTER */
+.btn:hover{background:#074ab3; transform:scale(1.05);}
 
 footer{
-background:#eee;
+background:rgba(233,236,239,0.95);
 color:black;
 text-align:center;
-padding:20px;
-margin-top:60px;
+padding:18px;
+font-size:15px;
 }
 
-/* MOBILE */
-
-@media(max-width:800px){
-
+@media(max-width:768px){
 header h1{font-size:34px;}
-nav a{display:block;margin:10px;}
+nav a{display:block; margin:6px 0;}
 .tarifs li{font-size:16px;}
-
 }
-
 </style>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "LocalBusiness",
+"name": "St Mars Informatique",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "2 rue des Millauds",
+"addressLocality": "Saint-Mars-de-Coutais",
+"postalCode": "44680",
+"addressCountry": "FR"
+},
+"telephone": "+33760330502"
+}
+</script>
 </head>
 
 <body>
@@ -171,89 +153,118 @@ nav a{display:block;margin:10px;}
 </nav>
 
 <section class="tarifs">
-
 <h2>📋 Grille Tarifaire</h2>
 
-
-<h3>💻 Installations Windows</h3>
+<h3>💻 Installations Windows & macOS</h3>
 <ul>
-<li><span>Windows + pilotes + logiciels</span><span>80 €</span></li>
-<li><span>Installation Windows simple</span><span>60 €</span></li>
+<li><span>Windows + logiciels bureautiques</span><span>70 €</span></li>
+<li><span>macOS + logiciels bureautiques</span><span>80 €</span></li>
+<li><span>Windows + mises à jour + pilotes</span><span>60 €</span></li>
+<li><span>macOS + mises à jour + pilotes</span><span>70 €</span></li>
+<li><span>Installation Windows simple</span><span>50 €</span></li>
+<li><span>Installation macOS simple</span><span>60 €</span></li>
 </ul>
-
 
 <h3>🔑 Licences Windows</h3>
 <ul>
-<li><span>Licence Windows 11</span><span>7 €</span></li>
-<li><span>Licence Windows 10</span><span>5 €</span></li>
+<li><span>Licence Windows 10</span><span>3 €</span></li>
+<li><span>Licence Windows 11</span><span>5 €</span></li>
 </ul>
 
-
-<h3>📦 Microsoft Office</h3>
+<h3>📦 Packs Microsoft Office</h3>
 <ul>
-<li><span>Installation Office 2024</span><span>60 €</span></li>
+<li><span>Office 2024</span><span>50 €</span></li>
+<li><span>Office 2021</span><span>40 €</span></li>
+<li><span>Office 2019</span><span>30 €</span></li>
+<li><span>Office 2016</span><span>20 €</span></li>
 </ul>
 
+<h3>🔧 Forfaits Révision</h3>
+<ul>
+<li><span>Forfait 6 points Windows</span><span>60 €</span></li>
+<li><span>Forfait 6 points macOS</span><span>70 €</span></li>
+<li><span>Forfait 5 points Windows</span><span>50 €</span></li>
+<li><span>Forfait 5 points macOS</span><span>60 €</span></li>
+<li><span>Forfait 4 points Windows</span><span>40 €</span></li>
+<li><span>Forfait 4 points macOS</span><span>50 €</span></li>
+</ul>
 
 <h3>🔄 Mises à jour & Réparations</h3>
 <ul>
-<li><span>Mise à jour Windows</span><span>15 €</span></li>
-<li><span>Windows + pilotes</span><span>20 €</span></li>
+<li><span>Mise à jour Windows / macOS</span><span>15 €</span></li>
+<li><span>Migration macOS</span><span>15 €</span></li>
+<li><span>Mise à jour jeux</span><span>15 €</span></li>
+<li><span>Windows + pilotes</span><span>15 €</span></li>
+<li><span>macOS + pilotes</span><span>25 €</span></li>
 <li><span>Windows + logiciels</span><span>25 €</span></li>
-<li><span>Windows + logiciels + pilotes</span><span>45 €</span></li>
-<li><span>Paramétrage BIOS</span><span>20 €</span></li>
-<li><span>Réparation Windows</span><span>25 €</span></li>
+<li><span>macOS + logiciels</span><span>25 €</span></li>
+<li><span>Windows + logiciels + pilotes</span><span>35 €</span></li>
+<li><span>macOS + logiciels + pilotes</span><span>35 €</span></li>
+<li><span>Paramétrage BIOS</span><span>15 €</span></li>
+<li><span>Réparation Windows / macOS</span><span>15 €</span></li>
 </ul>
-
 
 <h3>🧪 Diagnostic</h3>
 <ul>
-<li><span>Diagnostic complet</span><span>35 €</span></li>
+<li><span>Diagnostic technique complet</span><span>30 €</span></li>
 </ul>
 
-
-<h3>💾 Sauvegarde & Données</h3>
+<h3>💾 Données & Sauvegarde</h3>
 <ul>
-<li><span>Récupération données (selon volume)</span><span>10 € → 80 €</span></li>
+<li><span>Copie données (50 Go)</span><span>10 €</span></li>
+<li><span>Copie données (100 Go)</span><span>15 €</span></li>
+<li><span>Copie données (250 Go)</span><span>25 €</span></li>
+<li><span>Clonage HDD → SSD</span><span>à partir de 10 €</span></li>
+<li><span>Récupération données (250 Go)</span><span>40 €</span></li>
+<li><span>Récupération données (1 To)</span><span>60 €</span></li>
 </ul>
-
 
 <h3>🔌 Programmes & Périphériques</h3>
 <ul>
 <li><span>Installation programme / jeu</span><span>15 €</span></li>
-<li><span>Périphérique interne</span><span>15 €</span></li>
-<li><span>Périphérique réseau</span><span>25 €</span></li>
+<li><span>Installation périphérique</span><span>20 €</span></li>
+<li><span>Périphérique réseau</span><span>20 €</span></li>
+<li><span>Recherche pilote</span><span>15 €</span></li>
 </ul>
-
 
 <h3>🛠️ Matériel</h3>
 <ul>
-<li><span>Test RAM / Disque / Carte</span><span>30 €</span></li>
-<li><span>Remplacement pièce</span><span>30 € → 50 €</span></li>
-<li><span>Remplacement écran portable</span><span>55 €</span></li>
+<li><span>Test pièce (RAM, disque…)</span><span>20 €</span></li>
+<li><span>Remplacement pièce</span><span>30 €</span></li>
+<li><span>Remplacement écran portable</span><span>45 €</span></li>
 </ul>
-
 
 <h3>🔐 Sécurité & Virus</h3>
 <ul>
-<li><span>Suppression virus</span><span>70 €</span></li>
-<li><span>Suppression malware</span><span>35 €</span></li>
+<li><span>Suppression mot de passe Windows</span><span>10 €</span></li>
+<li><span>Suppression virus</span><span>60 €</span></li>
+<li><span>Suppression malware</span><span>30 €</span></li>
 </ul>
 
-
 <div style="text-align:center">
-
-<a class="btn" href="https://wa.me/33760330502" target="_blank">
-📄 Demander un devis
-</a>
-
+<a class="btn" href="https://wa.me/33760330502" target="_blank">📄 Demander un devis</a>
 </div>
 
 </section>
 
-<footer>
-© 2026 – St Mars Informatique
-</footer>
+<section id="contact-form">
+<h2>📝 Formulaire de contact</h2>
+<form action="https://formsubmit.co/your@email.com" method="POST" style="max-width:600px;margin:auto;text-align:center;">
+<input type="text" name="name" placeholder="Votre nom" required style="width:100%;padding:12px;margin:8px 0;border-radius:6px;border:none;">
+<input type="email" name="email" placeholder="Votre email" required style="width:100%;padding:12px;margin:8px 0;border-radius:6px;border:none;">
+<textarea name="message" placeholder="Votre message" required style="width:100%;padding:12px;margin:8px 0;border-radius:6px;border:none;height:120px;"></textarea>
+<button type="submit" class="btn">Envoyer</button>
+</form>
+</section>
+
+<section id="seo">
+<h2>📈 Référencement & Sécurité</h2>
+<p style="text-align:center;">
+Site optimisé pour Google (SEO) et hébergé via GitHub Pages avec HTTPS sécurisé.
+</p>
+</section>
+
+<footer>© 2026 – St Mars Informatique – Loire-Atlantique</footer>
 
 </body>
 </html>

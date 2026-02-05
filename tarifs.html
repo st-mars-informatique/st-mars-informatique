@@ -2,77 +2,56 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Tarifs | St Mars Informatique – Dépannage Informatique</title>
-
-<meta name="description" content="Tarifs dépannage informatique à Saint-Mars-de-Coutais. Devis gratuit, réparation PC, suppression virus, installation Windows. Technicien local.">
-<meta name="google-site-verification" content="2hlXlzbUQAcPhMLspXWijJFDX0BZCknqc7pXkCgObHU" />
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="keywords" content="tarifs dépannage informatique, réparateur PC, devis gratuit informatique, Saint-Mars-de-Coutais, Loire-Atlantique">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" href="favicon.png">
+<title>St Mars Informatique | Tarifs</title>
 
-<!-- Données structurées Google -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "LocalBusiness",
-"name": "St Mars Informatique",
-"address": {
-"@type": "PostalAddress",
-"streetAddress": "2 rue des Millauds",
-"addressLocality": "Saint-Mars-de-Coutais",
-"postalCode": "44680",
-"addressCountry": "FR"
-},
-"telephone": "+33760330502",
-"priceRange": "€€",
-"areaServed": "Loire-Atlantique"
-}
-</script>
+<link rel="icon" href="favicon.png" type="image/png">
 
 <style>
-
-/* BASE */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
-color:white;
-}
+background-repeat:no-repeat;
 
-/* HEADER */
+color:white;
+line-height:1.7;
+}
 
 header{
 background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:120px 20px;
+padding:100px 20px;
 position:relative;
 }
 
 header::after{
 content:"";
 position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
+top:0; left:0;
+width:100%; height:100%;
+background:rgba(0,0,0,0.5);
 }
 
-header *{position:relative;z-index:2;}
+header *{
+position:relative;
+z-index:2;
+}
 
-header h1{font-size:48px;margin:0;}
-header p{font-size:22px;margin-top:15px;}
-
-/* MENU */
+header h1{
+font-size:46px;
+margin-bottom:10px;
+}
 
 nav{
-background:#000;
+background:rgba(0,0,0,0.85);
 text-align:center;
-padding:15px;
+padding:12px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -86,76 +65,145 @@ font-size:18px;
 font-weight:bold;
 }
 
-nav a:hover{color:#4da3ff;}
-
-/* SECTION */
+nav a:hover{
+color:#0b5ed7;
+}
 
 section{
 max-width:1000px;
-margin:50px auto;
-padding:40px 25px;
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+margin:40px auto;
+padding:35px 25px;
+
+background:rgba(0,0,0,0.65);
+border-radius:12px;
 }
 
-section h2{text-align:center;font-size:34px;margin-bottom:25px;}
-
-h3{color:#4da3ff;margin-top:40px;}
-
-ul{list-style:none;padding:0;margin:0;}
-
-li{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,0.2);
-font-size:18px;
-}
-
-/* BADGE */
-
-.badge-box{
+section h2{
+font-size:34px;
 text-align:center;
-background:rgba(255,255,255,0.1);
-padding:25px;
-border-radius:15px;
-margin-bottom:35px;
+margin-bottom:20px;
 }
 
-.badge-box p{margin:8px 0;}
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
 
-/* BOUTON */
+.card{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:10px;
+text-align:center;
+font-size:18px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.price{
+font-size:28px;
+font-weight:bold;
+margin:15px 0;
+color:#4ea3ff;
+}
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:15px 35px;
+margin-top:20px;
+padding:15px 30px;
+
 background:#0b5ed7;
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:6px;
+
 font-size:20px;
 font-weight:bold;
+
+transition:0.3s;
 }
 
-.btn:hover{background:#0849a8;}
-
-/* FOOTER */
+.btn:hover{
+background:#074ab3;
+transform:scale(1.05);
+}
 
 footer{
-background:#eee;
+background:rgba(233,236,239,0.95);
 color:black;
 text-align:center;
-padding:20px;
-margin-top:60px;
+padding:18px;
+font-size:15px;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
-header h1{font-size:34px;}
-nav a{display:block;margin:8px;}
-li{font-size:16px;}
+
+header h1{font-size:32px;}
+
+nav a{
+display:block;
+margin:6px 0;
+}
+
+}
+
+
+
+/* MOBILE EXTRA OPTIMISATION */
+@media(max-width:480px){
+
+body{
+font-size:16px;
+}
+
+header{
+padding:70px 15px;
+}
+
+header h1{
+font-size:26px;
+}
+
+section{
+padding:25px 15px;
+margin:25px 10px;
+}
+
+section h2{
+font-size:26px;
+}
+
+.pricing{
+grid-template-columns:1fr;
+}
+
+.card{
+font-size:16px;
+padding:20px;
+}
+
+.price{
+font-size:24px;
+}
+
+.btn{
+width:100%;
+max-width:300px;
+display:block;
+margin:20px auto;
+font-size:18px;
+padding:14px;
+}
+
+nav a{
+font-size:16px;
+padding:8px 0;
+}
+
 }
 
 </style>
@@ -164,115 +212,77 @@ li{font-size:16px;}
 <body>
 
 <header>
-<h1>💰 Tarifs & Prestations</h1>
-<p>St Mars Informatique – Dépannage & Assistance</p>
+<h1>Nos Tarifs</h1>
+<p>Dépannage informatique – Saint-Mars-de-Coutais</p>
 </header>
 
 <nav>
 <a href="index.html">Accueil</a>
-<a href="index.html#presentation">Présentation</a>
-<a href="index.html#services">Services</a>
 <a href="tarifs.html">Tarifs</a>
-<a href="index.html#why">Pourquoi moi</a>
-<a href="index.html#avis">Avis</a>
 <a href="index.html#contact">Contact</a>
 </nav>
 
-
-
 <section>
 
-<h2>📋 Grille Tarifaire</h2>
+<h2>💶 Grille tarifaire</h2>
 
-<div class="badge-box">
-<p style="font-size:22px;font-weight:bold;color:#4da3ff;">
-✅ Devis gratuit avant intervention – Sans engagement
+<p style="text-align:center; max-width:700px; margin:auto;">
+Tarifs indicatifs. Devis gratuit avant toute intervention.
 </p>
 
-<p>🔒 Transparence • 💼 Professionnel local • ⚡ Intervention rapide</p>
+<br>
 
-<p style="color:#ddd;">
-Aucune intervention sans votre accord préalable
-</p>
+<div class="pricing">
+
+<div class="card">
+<h3>🔧 Dépannage simple</h3>
+<p class="price">À partir de 39€</p>
+<p>Diagnostic, nettoyage, réglages rapides</p>
 </div>
 
+<div class="card">
+<h3>💻 Intervention complète</h3>
+<p class="price">À partir de 69€</p>
+<p>Virus, lenteur, réparation système</p>
+</div>
 
-<h3>💻 Installation & Configuration Windows</h3>
+<div class="card">
+<h3>🖥️ Montage PC</h3>
+<p class="price">À partir de 89€</p>
+<p>Assemblage + configuration</p>
+</div>
 
-<ul>
-<li><span>Installation Windows + pilotes</span><span>60 € – 90 €</span></li>
-<li><span>Installation Windows + logiciels</span><span>70 € – 110 €</span></li>
-<li><span>Réinstallation complète + sauvegarde</span><span>80 € – 130 €</span></li>
-</ul>
+<div class="card">
+<h3>📱 Smartphone</h3>
+<p class="price">Sur devis</p>
+<p>Écran, batterie, réparations</p>
+</div>
 
+<div class="card">
+<h3>🏠 Déplacement</h3>
+<p class="price">Inclus (25 km)</p>
+<p>Zone Saint-Mars-de-Coutais</p>
+</div>
 
-<h3>🦠 Sécurité & Virus</h3>
+<div class="card">
+<h3>⚡ Urgence</h3>
+<p class="price">+20€</p>
+<p>Intervention prioritaire</p>
+</div>
 
-<ul>
-<li><span>Suppression virus / malware</span><span>50 € – 90 €</span></li>
-<li><span>Nettoyage système complet</span><span>60 € – 100 €</span></li>
-</ul>
+</div>
 
+<div style="text-align:center; margin-top:30px;">
 
-<h3>🔄 Dépannage & Réparation Logicielle</h3>
-
-<ul>
-<li><span>Réparation Windows (lenteurs, erreurs)</span><span>40 € – 80 €</span></li>
-<li><span>Mises à jour système</span><span>30 € – 60 €</span></li>
-<li><span>Paramétrage BIOS</span><span>30 € – 50 €</span></li>
-</ul>
-
-
-<h3>🧪 Diagnostic</h3>
-
-<ul>
-<li><span>Diagnostic complet PC</span><span>30 € – 40 €</span></li>
-</ul>
-
-
-<h3>💾 Données & Sauvegarde</h3>
-
-<ul>
-<li><span>Transfert / sauvegarde données</span><span>20 € – 60 €</span></li>
-<li><span>Récupération données</span><span>40 € – 100 €</span></li>
-</ul>
-
-
-<h3>🔌 Installation Matériel & Logiciel</h3>
-
-<ul>
-<li><span>Installation programme/</span><span>15 € – 30 €</span></li>
-<li><span>Installation périphérique</span><span>20 € – 40 €</span></li>
-<li><span>Recherche pilote</span><span>20 € – 35 €</span></li>
-</ul>
-
-
-<h3>🛠️ Matériel</h3>
-
-<ul>
-<li><span>Test composants</span><span>25 € – 40 €</span></li>
-<li><span>Remplacement pièce</span><span>30 € – 60 €</span></li>
-<li><span>Remplacement écran portable</span><span>50 € – 80 €</span></li>
-</ul>
-
-
-<div style="text-align:center;margin-top:40px;">
 <a class="btn"
-href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis."
+href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20intervention."
 target="_blank">
-
-📄 Demander un devis gratuit
-
+📄 Demander un devis
 </a>
+
 </div>
-
-
-<p style="text-align:center;margin-top:25px;color:#ddd;">
-💡 Tarifs indicatifs • Diagnostic honnête • Aucune mauvaise surprise
-</p>
 
 </section>
-
 
 <footer>
 © 2026 – St Mars Informatique – Loire-Atlantique

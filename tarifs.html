@@ -2,12 +2,33 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Tarifs | St Mars Informatique</title>
-<meta name="description" content="Tarifs dépannage informatique à Saint-Mars-de-Coutais. Installation Windows, suppression virus, réparation PC. Devis gratuit.">
+<title>Tarifs | St Mars Informatique – Dépannage Informatique</title>
+<meta name="description" content="Tarifs dépannage informatique à Saint-Mars-de-Coutais. Devis gratuit, réparation PC, suppression virus, installation Windows. Technicien local.">
+<meta name="keywords" content="tarifs dépannage informatique, réparateur PC, devis gratuit informatique, Saint-Mars-de-Coutais, Loire-Atlantique">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="favicon.png">
 
+<!-- Données structurées Google -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "LocalBusiness",
+"name": "St Mars Informatique",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "2 rue des Millauds",
+"addressLocality": "Saint-Mars-de-Coutais",
+"postalCode": "44680",
+"addressCountry": "FR"
+},
+"telephone": "+33760330502",
+"priceRange": "€€",
+"areaServed": "Loire-Atlantique"
+}
+</script>
+
 <style>
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -34,7 +55,8 @@ background:rgba(0,0,0,0.6);
 
 header *{position:relative;z-index:2;}
 
-header h1{font-size:48px;}
+header h1{font-size:48px;margin:0;}
+header p{font-size:22px;margin-top:15px;}
 
 nav{
 background:#000;
@@ -63,7 +85,7 @@ background:rgba(0,0,0,0.7);
 border-radius:15px;
 }
 
-section h2{text-align:center;font-size:34px;margin-bottom:30px;}
+section h2{text-align:center;font-size:34px;margin-bottom:25px;}
 
 h3{color:#4da3ff;margin-top:40px;}
 
@@ -77,12 +99,15 @@ border-bottom:1px solid rgba(255,255,255,0.2);
 font-size:18px;
 }
 
-.note{
+.badge-box{
 text-align:center;
-margin-top:30px;
-font-style:italic;
-color:#ddd;
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:15px;
+margin-bottom:35px;
 }
+
+.badge-box p{margin:8px 0;}
 
 .btn{
 display:inline-block;
@@ -98,6 +123,20 @@ font-weight:bold;
 
 .btn:hover{background:#0849a8;}
 
+.why{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.why div{
+background:rgba(255,255,255,0.12);
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
 footer{
 background:#eee;
 color:black;
@@ -111,14 +150,15 @@ header h1{font-size:34px;}
 nav a{display:block;margin:8px;}
 li{font-size:16px;}
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>💰 Tarifs des prestations</h1>
-<p>St Mars Informatique</p>
+<h1>💰 Tarifs & Prestations</h1>
+<p>St Mars Informatique – Dépannage & Assistance</p>
 </header>
 
 <nav>
@@ -131,44 +171,30 @@ li{font-size:16px;}
 <section>
 <h2>📋 Grille Tarifaire</h2>
 
-<div style="text-align:center; background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; margin-bottom:35px;">
-
-<p style="font-size:20px; font-weight:bold; color:#4da3ff;">
-✅ Devis gratuit avant intervention – Sans engagement
-</p>
-
-<p style="font-size:17px; margin:10px 0;">
-🔒 Transparence totale • 💼 Professionnel local • ⚡ Intervention rapide
-</p>
-
-<p style="font-size:16px; color:#ddd;">
-Aucun travail n’est effectué sans votre accord préalable.
-Tarifs expliqués clairement avant toute réparation.
-</p>
-
+<div class="badge-box">
+<p style="font-size:22px;font-weight:bold;color:#4da3ff;">✅ Devis gratuit avant intervention – Sans engagement</p>
+<p>🔒 Transparence • 💼 Professionnel local • ⚡ Intervention rapide</p>
+<p style="color:#ddd;">Aucune intervention sans votre accord préalable</p>
 </div>
-
-
-
 
 <h3>💻 Installation & Configuration Windows</h3>
 <ul>
 <li><span>Installation Windows + pilotes</span><span>60 € – 90 €</span></li>
-<li><span>Installation Windows + logiciels bureautiques</span><span>70 € – 110 €</span></li>
+<li><span>Installation Windows + logiciels</span><span>70 € – 110 €</span></li>
 <li><span>Réinstallation complète + sauvegarde</span><span>80 € – 130 €</span></li>
 </ul>
 
 <h3>🦠 Sécurité & Virus</h3>
 <ul>
 <li><span>Suppression virus / malware</span><span>50 € – 90 €</span></li>
-<li><span>Nettoyage complet système</span><span>60 € – 100 €</span></li>
+<li><span>Nettoyage système complet</span><span>60 € – 100 €</span></li>
 </ul>
 
 <h3>🔄 Dépannage & Réparation Logicielle</h3>
 <ul>
-<li><span>Réparation Windows (erreurs, lenteurs)</span><span>40 € – 80 €</span></li>
-<li><span>Mise à jour système & logiciels</span><span>30 € – 60 €</span></li>
-<li><span>Paramétrage BIOS / démarrage</span><span>30 € – 50 €</span></li>
+<li><span>Réparation Windows (lenteurs, erreurs)</span><span>40 € – 80 €</span></li>
+<li><span>Mises à jour système</span><span>30 € – 60 €</span></li>
+<li><span>Paramétrage BIOS</span><span>30 € – 50 €</span></li>
 </ul>
 
 <h3>🧪 Diagnostic</h3>
@@ -179,28 +205,40 @@ Tarifs expliqués clairement avant toute réparation.
 <h3>💾 Données & Sauvegarde</h3>
 <ul>
 <li><span>Transfert / sauvegarde données</span><span>20 € – 60 €</span></li>
-<li><span>Récupération données (selon état)</span><span>40 € – 100 €</span></li>
+<li><span>Récupération données</span><span>40 € – 100 €</span></li>
 </ul>
 
 <h3>🔌 Installation Matériel & Logiciel</h3>
 <ul>
 <li><span>Installation programme / jeu</span><span>15 € – 30 €</span></li>
 <li><span>Installation périphérique</span><span>20 € – 40 €</span></li>
-<li><span>Recherche & installation pilote</span><span>20 € – 35 €</span></li>
+<li><span>Recherche pilote</span><span>20 € – 35 €</span></li>
 </ul>
 
 <h3>🛠️ Matériel</h3>
 <ul>
-<li><span>Test composants (RAM, disque…)</span><span>25 € – 40 €</span></li>
+<li><span>Test composants</span><span>25 € – 40 €</span></li>
 <li><span>Remplacement pièce</span><span>30 € – 60 €</span></li>
 <li><span>Remplacement écran portable</span><span>50 € – 80 €</span></li>
 </ul>
 
-<p class="note">💡 Tous les tarifs sont indicatifs. Un devis gratuit est proposé avant toute intervention.</p>
-
-<div style="text-align:center;">
-<a class="btn" href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis." target="_blank">📄 Demander un devis</a>
+<h3>⭐ Pourquoi me choisir ?</h3>
+<div class="why">
+<div>✅ Artisan local</div>
+<div>⏱️ Intervention rapide</div>
+<div>💬 Explications claires</div>
+<div>📍 Proximité client</div>
+<div>🔐 Données respectées</div>
+<div>👍 Satisfaction garantie</div>
 </div>
+
+<div style="text-align:center;margin-top:40px;">
+<a class="btn" href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis." target="_blank">📄 Demander un devis gratuit</a>
+</div>
+
+<p style="text-align:center;margin-top:25px;color:#ddd;">
+💡 Tarifs indicatifs • Diagnostic honnête • Aucune mauvaise surprise
+</p>
 
 </section>
 

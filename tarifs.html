@@ -6,96 +6,173 @@
 
 <title>Tarifs – St Mars Informatique</title>
 
+<link rel="icon" href="favicon.png">
+
 <style>
+
+/* ===== GLOBAL ===== */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0a1a24;
+background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 color:white;
 }
+
+/* ===== HEADER ===== */
 
 header{
 background:rgba(0,0,0,0.6);
 text-align:center;
-padding:60px 20px;
+padding:90px 20px;
+}
+
+/* ===== NAV ===== */
+
+nav{
+background:rgba(0,0,0,0.9);
+padding:12px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 /* Burger */
 #burger{
 display:none;
-font-size:30px;
+font-size:28px;
 cursor:pointer;
 color:white;
-position:absolute;
-top:20px;
-right:20px;
-z-index:2000;
+text-align:right;
+padding:10px 20px;
 }
 
 /* Menu */
 #menu{
-background:rgba(0,0,0,0.95);
-text-align:center;
-padding:15px;
+display:flex;
+justify-content:center;
+gap:25px;
 }
 
 #menu a{
 color:white;
-display:inline-block;
-margin:10px 15px;
 text-decoration:none;
 font-weight:bold;
+font-size:17px;
 }
 
-#menu a:hover{color:#4ea3ff;}
-
-/* Mobile */
-@media(max-width:768px){
-  #burger{display:block;}
-
-  #menu{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    gap:20px;
-  }
-
-  #menu.active{display:flex;}
-
-  #menu a{font-size:22px;}
+#menu a:hover{
+color:#4ea3ff;
 }
+
+/* ===== MOBILE MENU ===== */
+
+@media(max-width:800px){
+
+#burger{
+display:block;
+}
+
+#menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.97);
+
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:20px;
+
+z-index:9999;
+}
+
+#menu.active{
+display:flex;
+}
+
+#menu a{
+font-size:22px;
+}
+
+body.menu-open{
+overflow:hidden;
+}
+
+}
+
+/* ===== SECTION ===== */
 
 section{
-max-width:1000px;
+max-width:1100px;
 margin:40px auto;
-padding:25px;
-background:rgba(0,0,0,0.6);
+padding:35px 25px;
+background:rgba(0,0,0,0.7);
 border-radius:15px;
 }
 
-.card{
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:12px;
-margin:15px 0;
+h2{
 text-align:center;
+font-size:32px;
+margin-bottom:20px;
 }
 
-.price{color:#4ea3ff;font-size:24px;font-weight:bold;}
+/* ===== PRICING GRID ===== */
 
-.badge{
-background:#ffc107;
-color:black;
-padding:5px 15px;
-border-radius:20px;
-display:inline-block;
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+border-radius:14px;
+padding:22px;
+text-align:center;
+position:relative;
+min-height:260px;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.card h3{
+font-size:20px;
 margin-bottom:10px;
 }
+
+.price{
+font-size:26px;
+font-weight:bold;
+margin:10px 0;
+color:#4ea3ff;
+}
+
+.card p{
+font-size:15px;
+}
+
+/* Badge */
+
+.badge{
+position:absolute;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+background:#ffc107;
+color:#000;
+padding:6px 20px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
 </style>
 </head>
 
@@ -106,64 +183,120 @@ margin-bottom:10px;
 <p>Dépannage informatique à Saint-Mars-de-Coutais</p>
 </header>
 
-<!-- Burger -->
+<nav>
+
 <div id="burger">☰</div>
 
-<!-- Menu -->
-<nav id="menu">
-  <a href="index.html">Accueil</a>
-  <a href="index.html#presentation">Présentation</a>
-  <a href="index.html#services">Services</a>
-  <a href="tarifs.html">Tarifs</a>
-  <a href="index.html#why">Pourquoi moi</a>
-  <a href="index.html#avis">Avis</a>
-  <a href="index.html#contact">Contact</a>
+<div id="menu">
+
+<a href="index.html">Accueil</a>
+<a href="index.html#presentation">Présentation</a>
+<a href="index.html#services">Services</a>
+<a href="tarifs.html">Tarifs</a>
+<a href="index.html#why">Pourquoi moi</a>
+<a href="index.html#avis">Avis</a>
+<a href="index.html#contact">Contact</a>
+
+</div>
+
 </nav>
 
 <section>
 
-<h2 style="text-align:center">💶 Grille tarifaire</h2>
+<h2>💶 Grille tarifaire</h2>
+
+<div class="pricing">
 
 <div class="card">
-<h3>Diagnostic</h3>
+<h3>🔍 Diagnostic</h3>
 <p class="price">25€</p>
-<p>Analyse complète</p>
+<p>Analyse complète du problème</p>
 </div>
 
 <div class="card">
 <div class="badge">Populaire</div>
-<h3>Dépannage simple</h3>
+<h3>🔧 Dépannage simple</h3>
 <p class="price">À partir de 39€</p>
-<p>Nettoyage, réglages</p>
+<p>Nettoyage, réglages rapides</p>
 </div>
 
 <div class="card">
 <div class="badge">Le + demandé</div>
-<h3>Intervention complète</h3>
+<h3>💻 Intervention complète</h3>
 <p class="price">À partir de 69€</p>
-<p>Virus, lenteur, système</p>
+<p>Virus, lenteur, réparation système</p>
+</div>
+
+<div class="card">
+<h3>🧹 Nettoyage PC</h3>
+<p class="price">45€</p>
+<p>Optimisation système</p>
+</div>
+
+<div class="card">
+<h3>📀 Installation Windows</h3>
+<p class="price">80€</p>
+<p>Réinstallation + pilotes</p>
+</div>
+
+<div class="card">
+<h3>💾 Sauvegarde données</h3>
+<p class="price">40€</p>
+<p>Copie sécurisée</p>
+</div>
+
+<div class="card">
+<h3>🖥️ Montage PC</h3>
+<p class="price">À partir de 89€</p>
+<p>Assemblage + configuration</p>
+</div>
+
+<div class="card">
+<h3>📱 Smartphone</h3>
+<p class="price">Sur devis</p>
+<p>Écran, batterie, réparations</p>
+</div>
+
+<div class="card">
+<h3>📘 Formation</h3>
+<p class="price">30€/h</p>
+<p>Initiation personnalisée</p>
+</div>
+
+<div class="card">
+<h3>🏠 Déplacement</h3>
+<p class="price">Inclus ≤ 25 km</p>
+<p>Zone locale</p>
+</div>
+
+<div class="card">
+<h3>⚡ Urgence</h3>
+<p class="price">+20€</p>
+<p>Intervention prioritaire</p>
+</div>
+
 </div>
 
 </section>
 
 <script>
+
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 const links = menu.querySelectorAll("a");
 
-if(burger && menu){
-  burger.addEventListener("click", ()=>{
-    menu.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
+burger.addEventListener("click", ()=>{
+  menu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
 
-  links.forEach(link=>{
-    link.addEventListener("click", ()=>{
-      menu.classList.remove("active");
-      document.body.classList.remove("menu-open");
-    });
+links.forEach(link=>{
+  link.addEventListener("click", ()=>{
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
   });
-}
+});
+
 </script>
 
 </body>

@@ -4,223 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tarifs – St Mars Informatique | Dépannage Informatique</title>
-<meta name="description" content="Tarifs de dépannage informatique à Saint-Mars-de-Coutais. Diagnostic, réparation PC, smartphone, sauvegarde, formation. Devis gratuit.">
-<meta name="keywords" content="dépannage informatique, réparation PC, tarifs informatique, Saint-Mars-de-Coutais, assistance ordinateur">
-<meta name="author" content="St Mars Informatique">
-
-<link rel="icon" href="favicon.png" type="image/png">
-
-<!-- SEO Local -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "St Mars Informatique",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2 rue des Millauds",
-    "addressLocality": "Saint-Mars-de-Coutais",
-    "postalCode": "44680",
-    "addressCountry": "FR"
-  },
-  "telephone": "+33760330502",
-  "areaServed": "Loire-Atlantique"
-}
-</script>
+<title>Tarifs – St Mars Informatique</title>
 
 <style>
-/* ================= GLOBAL ================= */
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+background:#0a1a24;
 color:white;
-line-height:1.6;
 }
 
-h1,h2,h3{margin:0;}
-
-/* ================= HEADER ================= */
 header{
 background:rgba(0,0,0,0.6);
 text-align:center;
-padding:90px 20px;
+padding:60px 20px;
 }
 
-header h1{
-font-size:44px;
-margin-bottom:10px;
-}
-
-/* ================= NAV ================= */
-nav{
-background:rgba(0,0,0,0.9);
-text-align:center;
-padding:12px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-nav a{
+/* Burger */
+#burger{
+display:none;
+font-size:30px;
+cursor:pointer;
 color:white;
+position:absolute;
+top:20px;
+right:20px;
+z-index:2000;
+}
+
+/* Menu */
+#menu{
+background:rgba(0,0,0,0.95);
+text-align:center;
+padding:15px;
+}
+
+#menu a{
+color:white;
+display:inline-block;
+margin:10px 15px;
 text-decoration:none;
-margin:0 15px;
-font-size:17px;
 font-weight:bold;
 }
 
-nav a:hover{color:#4ea3ff;}
+#menu a:hover{color:#4ea3ff;}
 
-/* ================= SECTION ================= */
+/* Mobile */
+@media(max-width:768px){
+  #burger{display:block;}
+
+  #menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:20px;
+  }
+
+  #menu.active{display:flex;}
+
+  #menu a{font-size:22px;}
+}
+
 section{
-max-width:1100px;
+max-width:1000px;
 margin:40px auto;
-padding:35px 25px;
-background:rgba(0,0,0,0.7);
+padding:25px;
+background:rgba(0,0,0,0.6);
 border-radius:15px;
 }
 
-section h2{
-font-size:32px;
-text-align:center;
-margin-bottom:15px;
-}
-
-.subtitle{
-text-align:center;
-max-width:700px;
-margin:auto;
-color:#ddd;
-}
-
-/* ================= TARIFS GRID ================= */
-.pricing{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
-margin-top:30px;
-}
-
 .card{
-background:rgba(255,255,255,0.15);
-border-radius:14px;
-padding:22px;
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:12px;
+margin:15px 0;
 text-align:center;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-min-height:260px;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
-transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-6px) scale(1.03);
-box-shadow:0 8px 20px rgba(0,0,0,0.5);
-}
-
-.card h3{
-font-size:20px;
-margin-bottom:10px;
-}
-
-.price{
-font-size:26px;
-font-weight:bold;
-margin:10px 0;
-color:#4ea3ff;
-}
-
-.card p{font-size:15px;}
-
-/* ================= FORM ================= */
-.form-section{
-margin-top:50px;
-}
-
-form{
-max-width:600px;
-margin:30px auto 0;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:6px;
-border:none;
-font-size:15px;
-}
-
-textarea{resize:vertical; min-height:120px;}
-
-button{
-padding:14px;
-border:none;
-border-radius:6px;
-background:#0b5ed7;
-color:white;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#0849aa;
-transform:scale(1.04);
-}
-
-/* ================= FOOTER ================= */
-footer{
-background:rgba(233,236,239,0.95);
-color:black;
-text-align:center;
-padding:18px;
-font-size:14px;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-header h1{font-size:30px;}
-nav a{display:block;margin:6px 0;}
-}
-
-@media(max-width:480px){
-section{padding:25px 15px;margin:25px 10px;}
-.card{min-height:240px;}
-}
-
-/* ===== BADGES POPULAIRE / LE + DEMANDÉ ===== */
-
-.card{
-  position: relative;
-  padding-top: 60px; /* espace propre pour le badge */
-}
+.price{color:#4ea3ff;font-size:24px;font-weight:bold;}
 
 .badge{
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffc107;
-  color: #000;
-  padding: 7px 22px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  z-index: 5;
-  white-space: nowrap;
+background:#ffc107;
+color:black;
+padding:5px 15px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:10px;
 }
-
-
 </style>
 </head>
 
@@ -231,144 +106,65 @@ section{padding:25px 15px;margin:25px 10px;}
 <p>Dépannage informatique à Saint-Mars-de-Coutais</p>
 </header>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- Burger -->
+<div id="burger">☰</div>
 
-  const burger = document.getElementById("burger");
-  const menu = document.getElementById("menu");
-  const links = menu.querySelectorAll("a");
-
-  if (burger && menu) {
-
-    burger.addEventListener("click", function () {
-      menu.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-    });
-
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      });
-    });
-
-  }
-
-});
-</script>
-
+<!-- Menu -->
+<nav id="menu">
+  <a href="index.html">Accueil</a>
+  <a href="index.html#presentation">Présentation</a>
+  <a href="index.html#services">Services</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="index.html#why">Pourquoi moi</a>
+  <a href="index.html#avis">Avis</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
 
 <section>
 
-<h2>💶 Grille tarifaire</h2>
-<p class="subtitle">Tarifs indicatifs – Devis gratuit avant toute intervention</p>
-
-<div class="pricing">
+<h2 style="text-align:center">💶 Grille tarifaire</h2>
 
 <div class="card">
-<h3>🔍 Diagnostic</h3>
+<h3>Diagnostic</h3>
 <p class="price">25€</p>
-<p>Analyse complète du problème</p>
+<p>Analyse complète</p>
 </div>
 
 <div class="card">
 <div class="badge">Populaire</div>
-<h3>🔧 Dépannage simple</h3>
+<h3>Dépannage simple</h3>
 <p class="price">À partir de 39€</p>
-<p>Nettoyage, réglages rapides</p>
+<p>Nettoyage, réglages</p>
 </div>
 
 <div class="card">
 <div class="badge">Le + demandé</div>
-<h3>💻 Intervention complète</h3>
+<h3>Intervention complète</h3>
 <p class="price">À partir de 69€</p>
-<p>Virus, lenteur, réparation système</p>
-</div>
-
-<div class="card">
-<h3>🧹 Nettoyage PC</h3>
-<p class="price">45€</p>
-<p>Optimisation système</p>
-</div>
-
-<div class="card">
-<h3>📀 Installation Windows</h3>
-<p class="price">80€</p>
-<p>Réinstallation + pilotes</p>
-</div>
-
-<div class="card">
-<h3>💾 Sauvegarde données</h3>
-<p class="price">40€</p>
-<p>Copie sécurisée</p>
-</div>
-
-<div class="card">
-<h3>🖥️ Montage PC</h3>
-<p class="price">À partir de 89€</p>
-<p>Assemblage + configuration</p>
-</div>
-
-<div class="card">
-<h3>📱 Smartphone</h3>
-<p class="price">Sur devis</p>
-<p>Écran, batterie, réparations</p>
-</div>
-
-<div class="card">
-<h3>📘 Formation</h3>
-<p class="price">30€/h</p>
-<p>Initiation personnalisée</p>
-</div>
-
-<div class="card">
-<h3>🏠 Déplacement</h3>
-<p class="price">Inclus ≤ 25 km</p>
-<p>Zone locale</p>
-</div>
-
-<div class="card">
-<h3>🚫 Hors zone</h3>
-<p class="price">Non proposé</p>
-<p>Limite 25 km</p>
-</div>
-
-<div class="card">
-<h3>⚡ Urgence</h3>
-<p class="price">+20€</p>
-<p>Intervention prioritaire</p>
-</div>
-
-</div>
-
-<!-- ================= FORMULAIRE ================= -->
-<div class="form-section">
-
-<h2>📄 Demande de devis</h2>
-<p class="subtitle">Réponse rapide par SMS ou WhatsApp</p>
-
-<form action="https://formsubmit.co/fabrice@st-mars-informatique.fr" method="POST">
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="Demande de devis – Site Web">
-
-<input type="text" name="nom" placeholder="Votre nom" required>
-<input type="email" name="email" placeholder="Votre email" required>
-<input type="tel" name="telephone" placeholder="Téléphone" required>
-
-<textarea name="message" placeholder="Décrivez votre problème" required></textarea>
-
-<button type="submit">Envoyer la demande</button>
-
-</form>
-
+<p>Virus, lenteur, système</p>
 </div>
 
 </section>
 
-<footer>
-© 2026 – St Mars Informatique – Loire-Atlantique
-</footer>
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const links = menu.querySelectorAll("a");
+
+if(burger && menu){
+  burger.addEventListener("click", ()=>{
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  links.forEach(link=>{
+    link.addEventListener("click", ()=>{
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
+</script>
 
 </body>
 </html>

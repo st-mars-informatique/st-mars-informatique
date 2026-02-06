@@ -270,6 +270,49 @@ nav .menu {
 
 
 }
+/* ===== FIX MENU MOBILE TARIFS ===== */
+
+@media (max-width:800px){
+
+  nav .menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0,0,0,0.95);
+
+    overflow-y: auto;
+
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+
+    z-index: 9999;
+  }
+
+  nav .menu.active {
+    transform: translateY(0);
+  }
+
+}
+
+/* CACHE BURGER SUR PC */
+
+@media (min-width:801px){
+
+  .burger {
+    display: none;
+  }
+
+  nav .menu {
+    display: block !important;
+    position: static;
+    height: auto;
+    background: none;
+    transform: none;
+  }
+
+}
 
 </style>
 </head>

@@ -196,6 +196,26 @@ nav a{display:block;margin:6px 0;}
 section{padding:25px 15px;margin:25px 10px;}
 .card{min-height:240px;}
 }
+
+/* Badge populaire / demandé */
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffc107;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.card {
+  position: relative;
+}
+
 </style>
 </head>
 
@@ -230,12 +250,14 @@ section{padding:25px 15px;margin:25px 10px;}
 </div>
 
 <div class="card">
+<div class="badge">Populaire</div>
 <h3>🔧 Dépannage simple</h3>
 <p class="price">À partir de 39€</p>
 <p>Nettoyage, réglages rapides</p>
 </div>
 
 <div class="card">
+<div class="badge">Le + demandé</div>
 <h3>💻 Intervention complète</h3>
 <p class="price">À partir de 69€</p>
 <p>Virus, lenteur, réparation système</p>

@@ -549,13 +549,21 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.toggle("menu-open");
     });
 
-    // Ferme le menu quand on clique sur un lien
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      });
-    });
+   links.forEach(link => {
+  link.addEventListener("click", () => {
+
+    // Ferme le menu
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+    // Force fermeture avant changement de page
+    setTimeout(() => {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }, 50);
+
+  });
+});
 
   }
 // Force fermeture du menu quand on change de page (Tarifs)

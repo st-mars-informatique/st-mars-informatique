@@ -197,7 +197,12 @@ section{padding:25px 15px;margin:25px 10px;}
 .card{min-height:240px;}
 }
 
-/* Badge populaire / demandé */
+/* Badges Populaire / Le + demandé - intégrés dans la carte */
+.card {
+  position: relative;
+  padding-top: 45px; /* espace pour le badge */
+}
+
 .badge {
   position: absolute;
   top: 15px;
@@ -205,12 +210,13 @@ section{padding:25px 15px;margin:25px 10px;}
   transform: translateX(-50%);
   background: #ffc107;
   color: #000;
-  padding: 6px 16px;
-  border-radius: 20px;
+  padding: 6px 18px;
+  border-radius: 25px;
   font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
+
 
 .card {
   position: relative;

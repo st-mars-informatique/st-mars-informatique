@@ -190,6 +190,37 @@ width:100%;
 max-width:320px;
 }
 }
+/* ===== MENU BURGER ===== */
+
+.burger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* Mobile menu */
+@media(max-width:800px){
+
+  nav {
+    position: relative;
+  }
+
+  .burger {
+    display: block;
+    text-align: right;
+  }
+
+  nav .menu {
+    display: none;
+  }
+
+  nav .menu.active {
+    display: block;
+  }
+
+}
 
 </style>
 </head>

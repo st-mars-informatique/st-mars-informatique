@@ -313,6 +313,58 @@ nav .menu {
   }
 
 }
+/* ===== CORRECTION MENU MOBILE ===== */
+
+@media (max-width: 800px) {
+
+  /* Burger visible seulement sur mobile */
+  .burger {
+    display: block;
+  }
+
+  /* Cache menu normal */
+  nav .menu {
+    display: none;
+  }
+
+  /* Menu ouvert en plein écran */
+  nav .menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.97);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+  }
+
+  nav .menu a {
+    font-size: 22px;
+    margin: 15px 0;
+  }
+
+}
+
+/* Cache le burger sur PC */
+@media (min-width: 801px) {
+
+  .burger {
+    display: none;
+  }
+
+  nav .menu {
+    display: block;
+  }
+
+}
 
 </style>
 </head>

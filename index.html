@@ -530,6 +530,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   }
+// Force fermeture du menu quand on change de page (Tarifs)
+window.addEventListener("pageshow", () => {
+  menu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+});
 
 });
 </script>

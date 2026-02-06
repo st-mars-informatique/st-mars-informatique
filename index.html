@@ -345,6 +345,34 @@ nav .menu {
     overflow: hidden;
   }
 }
+/* FIX MENU MOBILE TARIFS */
+@media (max-width: 800px) {
+
+  nav .menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    background: rgba(0,0,0,0.95);
+
+    overflow-y: auto;
+
+    z-index: 9999;
+
+    display: none;
+  }
+
+  nav .menu.active {
+    display: block;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+}
 
 </style>
 </head>

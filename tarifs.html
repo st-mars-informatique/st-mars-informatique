@@ -2,115 +2,119 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Tarifs – St Mars Informatique</title>
-
-<meta name="description" content="Tarifs de dépannage informatique à Saint-Mars-de-Coutais. Diagnostic, réparation PC, smartphone, formation.">
-<meta name="keywords" content="tarifs informatique, dépannage PC, réparateur Saint-Mars-de-Coutais">
-<meta name="author" content="Fabrice Ropers">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" href="favicon.png">
+<title>Tarifs – St Mars Informatique | Dépannage Informatique</title>
+<meta name="description" content="Tarifs de dépannage informatique à Saint-Mars-de-Coutais. Diagnostic, réparation PC, smartphone, sauvegarde, formation. Devis gratuit.">
+<meta name="keywords" content="dépannage informatique, réparation PC, tarifs informatique, Saint-Mars-de-Coutais, assistance ordinateur">
+<meta name="author" content="St Mars Informatique">
+
+<link rel="icon" href="favicon.png" type="image/png">
+
+<!-- SEO Local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "St Mars Informatique",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2 rue des Millauds",
+    "addressLocality": "Saint-Mars-de-Coutais",
+    "postalCode": "44680",
+    "addressCountry": "FR"
+  },
+  "telephone": "+33760330502",
+  "areaServed": "Loire-Atlantique"
+}
+</script>
 
 <style>
-
-/* ===== BASE ===== */
-
+/* ================= GLOBAL ================= */
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
+background-repeat:no-repeat;
 color:white;
+line-height:1.6;
 }
 
-/* ===== HEADER ===== */
+h1,h2,h3{margin:0;}
 
+/* ================= HEADER ================= */
 header{
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.6);
 text-align:center;
-padding:100px 20px;
+padding:90px 20px;
 }
 
-header h1{font-size:44px;margin:0;}
-header p{font-size:20px;margin-top:10px;}
+header h1{
+font-size:44px;
+margin-bottom:10px;
+}
 
-/* ===== MENU ===== */
-
+/* ================= NAV ================= */
 nav{
-background:#000;
+background:rgba(0,0,0,0.9);
+text-align:center;
+padding:12px;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
-.menu-toggle{
-display:none;
-font-size:26px;
-padding:12px;
-cursor:pointer;
-text-align:center;
-font-weight:bold;
-}
-
-.menu{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.menu a{
+nav a{
 color:white;
 text-decoration:none;
-margin:12px 20px;
-font-size:18px;
+margin:0 15px;
+font-size:17px;
 font-weight:bold;
 }
 
-.menu a:hover{color:#4da3ff;}
+nav a:hover{color:#4ea3ff;}
 
-/* ===== SECTION ===== */
-
+/* ================= SECTION ================= */
 section{
 max-width:1100px;
-margin:50px auto;
-padding:35px;
+margin:40px auto;
+padding:35px 25px;
 background:rgba(0,0,0,0.7);
 border-radius:15px;
 }
 
-h2{text-align:center;font-size:32px;margin-bottom:15px;}
+section h2{
+font-size:32px;
+text-align:center;
+margin-bottom:15px;
+}
 
 .subtitle{
 text-align:center;
+max-width:700px;
+margin:auto;
 color:#ddd;
-margin-bottom:30px;
 }
 
-/* ===== TARIFS GRID ===== */
-
+/* ================= TARIFS GRID ================= */
 .pricing{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:25px;
+margin-top:30px;
 }
-
-/* ===== CARD ===== */
 
 .card{
 background:rgba(255,255,255,0.15);
 border-radius:14px;
-padding:25px 20px 20px;
+padding:22px;
 text-align:center;
-min-height:270px;
-
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-
-position:relative;
-
+min-height:260px;
 box-shadow:0 4px 12px rgba(0,0,0,0.3);
 transition:0.3s;
 }
@@ -120,74 +124,102 @@ transform:translateY(-6px) scale(1.03);
 box-shadow:0 8px 20px rgba(0,0,0,0.5);
 }
 
-.card h3{font-size:20px;}
+.card h3{
+font-size:20px;
+margin-bottom:10px;
+}
 
 .price{
 font-size:26px;
 font-weight:bold;
 margin:10px 0;
-color:#4da3ff;
+color:#4ea3ff;
 }
 
-/* ===== BADGE ===== */
+.card p{font-size:15px;}
 
-.badge{
-position:absolute;
-top:-14px;
-left:50%;
-transform:translateX(-50%);
-
-background:#ffc107;
-color:black;
-
-padding:6px 18px;
-border-radius:25px;
-
-font-size:13px;
-font-weight:bold;
-
-box-shadow:0 4px 8px rgba(0,0,0,0.4);
-}
-
-/* ===== FOOTER ===== */
-
-footer{
-background:#eee;
-color:black;
-text-align:center;
-padding:20px;
+/* ================= FORM ================= */
+.form-section{
 margin-top:50px;
 }
 
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-.menu-toggle{display:block;}
-
-.menu{
-display:none;
+form{
+max-width:600px;
+margin:30px auto 0;
+display:flex;
 flex-direction:column;
-text-align:center;
+gap:15px;
 }
 
-nav.active .menu{display:flex;}
+input, textarea{
+padding:12px;
+border-radius:6px;
+border:none;
+font-size:15px;
+}
 
-.menu a{
-margin:0;
+textarea{resize:vertical; min-height:120px;}
+
+button{
 padding:14px;
-border-top:1px solid rgba(255,255,255,0.15);
+border:none;
+border-radius:6px;
+background:#0b5ed7;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
+button:hover{
+background:#0849aa;
+transform:scale(1.04);
+}
+
+/* ================= FOOTER ================= */
+footer{
+background:rgba(233,236,239,0.95);
+color:black;
+text-align:center;
+padding:18px;
+font-size:14px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
 header h1{font-size:30px;}
-
-section{
-margin:25px 10px;
-padding:25px 15px;
+nav a{display:block;margin:6px 0;}
 }
 
+@media(max-width:480px){
+section{padding:25px 15px;margin:25px 10px;}
 .card{min-height:240px;}
 }
+
+/* ===== BADGES POPULAIRE / LE + DEMANDÉ ===== */
+
+.card{
+  position: relative;
+  padding-top: 60px; /* espace propre pour le badge */
+}
+
+.badge{
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffc107;
+  color: #000;
+  padding: 7px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  z-index: 5;
+  white-space: nowrap;
+}
+
 
 </style>
 </head>
@@ -199,102 +231,119 @@ padding:25px 15px;
 <p>Dépannage informatique à Saint-Mars-de-Coutais</p>
 </header>
 
-<!-- MENU -->
-
-<nav id="nav">
-<div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
-
-<div class="menu">
+<nav>
 <a href="index.html">Accueil</a>
 <a href="index.html#presentation">Présentation</a>
 <a href="index.html#services">Services</a>
 <a href="tarifs.html">Tarifs</a>
+<a href="index.html#why">Pourquoi moi</a>
+<a href="index.html#avis">Avis</a>
 <a href="index.html#contact">Contact</a>
-</div>
 </nav>
-
-<!-- TARIFS -->
 
 <section>
 
 <h2>💶 Grille tarifaire</h2>
-<p class="subtitle">Devis gratuit avant intervention</p>
+<p class="subtitle">Tarifs indicatifs – Devis gratuit avant toute intervention</p>
 
 <div class="pricing">
 
 <div class="card">
 <h3>🔍 Diagnostic</h3>
 <p class="price">25€</p>
-<p>Analyse complète</p>
+<p>Analyse complète du problème</p>
 </div>
 
 <div class="card">
 <div class="badge">Populaire</div>
 <h3>🔧 Dépannage simple</h3>
 <p class="price">À partir de 39€</p>
-<p>Nettoyage, réglages</p>
+<p>Nettoyage, réglages rapides</p>
 </div>
 
 <div class="card">
 <div class="badge">Le + demandé</div>
 <h3>💻 Intervention complète</h3>
 <p class="price">À partir de 69€</p>
-<p>Virus, lenteur</p>
+<p>Virus, lenteur, réparation système</p>
 </div>
 
 <div class="card">
 <h3>🧹 Nettoyage PC</h3>
 <p class="price">45€</p>
-<p>Optimisation</p>
+<p>Optimisation système</p>
 </div>
 
 <div class="card">
-<h3>📀 Windows</h3>
+<h3>📀 Installation Windows</h3>
 <p class="price">80€</p>
-<p>Installation complète</p>
+<p>Réinstallation + pilotes</p>
 </div>
 
 <div class="card">
-<h3>💾 Sauvegarde</h3>
+<h3>💾 Sauvegarde données</h3>
 <p class="price">40€</p>
-<p>Données sécurisées</p>
+<p>Copie sécurisée</p>
 </div>
 
 <div class="card">
 <h3>🖥️ Montage PC</h3>
-<p class="price">89€+</p>
-<p>Assemblage</p>
+<p class="price">À partir de 89€</p>
+<p>Assemblage + configuration</p>
 </div>
 
 <div class="card">
 <h3>📱 Smartphone</h3>
-<p class="price">Devis</p>
-<p>Écran, batterie</p>
+<p class="price">Sur devis</p>
+<p>Écran, batterie, réparations</p>
 </div>
 
 <div class="card">
 <h3>📘 Formation</h3>
 <p class="price">30€/h</p>
-<p>Initiation</p>
+<p>Initiation personnalisée</p>
 </div>
 
 <div class="card">
 <h3>🏠 Déplacement</h3>
-<p class="price">Inclus</p>
-<p>≤ 25 km</p>
+<p class="price">Inclus ≤ 25 km</p>
+<p>Zone locale</p>
+</div>
+
+<div class="card">
+<h3>🚫 Hors zone</h3>
+<p class="price">Non proposé</p>
+<p>Limite 25 km</p>
 </div>
 
 <div class="card">
 <h3>⚡ Urgence</h3>
 <p class="price">+20€</p>
-<p>Prioritaire</p>
+<p>Intervention prioritaire</p>
 </div>
 
-<div class="card">
-<h3>🚫 Hors zone</h3>
-<p class="price">Non</p>
-<p>Au-delà 25 km</p>
 </div>
+
+<!-- ================= FORMULAIRE ================= -->
+<div class="form-section">
+
+<h2>📄 Demande de devis</h2>
+<p class="subtitle">Réponse rapide par SMS ou WhatsApp</p>
+
+<form action="https://formsubmit.co/fabrice@st-mars-informatique.fr" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Demande de devis – Site Web">
+
+<input type="text" name="nom" placeholder="Votre nom" required>
+<input type="email" name="email" placeholder="Votre email" required>
+<input type="tel" name="telephone" placeholder="Téléphone" required>
+
+<textarea name="message" placeholder="Décrivez votre problème" required></textarea>
+
+<button type="submit">Envoyer la demande</button>
+
+</form>
 
 </div>
 
@@ -303,12 +352,6 @@ padding:25px 15px;
 <footer>
 © 2026 – St Mars Informatique – Loire-Atlantique
 </footer>
-
-<script>
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("active");
-}
-</script>
 
 </body>
 </html>

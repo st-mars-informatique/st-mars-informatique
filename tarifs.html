@@ -231,15 +231,32 @@ section{padding:25px 15px;margin:25px 10px;}
 <p>Dépannage informatique à Saint-Mars-de-Coutais</p>
 </header>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="index.html#presentation">Présentation</a>
-<a href="index.html#services">Services</a>
-<a href="tarifs.html">Tarifs</a>
-<a href="index.html#why">Pourquoi moi</a>
-<a href="index.html#avis">Avis</a>
-<a href="index.html#contact">Contact</a>
-</nav>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+  const links = menu.querySelectorAll("a");
+
+  if (burger && menu) {
+
+    burger.addEventListener("click", function () {
+      menu.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+  }
+
+});
+</script>
+
 
 <section>
 

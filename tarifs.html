@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>St Mars Informatique | Tarifs</title>
+<meta name="description" content="Tarifs dépannage informatique à Saint-Mars-de-Coutais. PC, smartphone, formation, assistance à domicile dans un rayon de 25km.">
 
 <link rel="icon" href="favicon.png" type="image/png">
 
@@ -26,7 +27,7 @@ line-height:1.7;
 header{
 background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
-padding:100px 20px;
+padding:90px 20px;
 position:relative;
 }
 
@@ -35,7 +36,7 @@ content:"";
 position:absolute;
 top:0; left:0;
 width:100%; height:100%;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.55);
 }
 
 header *{
@@ -44,12 +45,12 @@ z-index:2;
 }
 
 header h1{
-font-size:46px;
+font-size:42px;
 margin-bottom:10px;
 }
 
 nav{
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,0.9);
 text-align:center;
 padding:12px;
 position:sticky;
@@ -61,65 +62,88 @@ nav a{
 color:white;
 text-decoration:none;
 margin:0 15px;
-font-size:18px;
+font-size:17px;
 font-weight:bold;
 }
 
 nav a:hover{
-color:#0b5ed7;
+color:#4ea3ff;
 }
 
 section{
-max-width:1000px;
+max-width:1200px;
 margin:40px auto;
 padding:35px 25px;
 
 background:rgba(0,0,0,0.65);
-border-radius:12px;
+border-radius:15px;
 }
 
 section h2{
 font-size:34px;
 text-align:center;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .pricing{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+align-items:stretch;
 }
 
 .card{
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
 background:rgba(255,255,255,0.15);
-padding:25px;
-border-radius:10px;
+padding:22px;
+border-radius:14px;
 text-align:center;
-font-size:18px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+min-height:280px;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-6px) scale(1.03);
+box-shadow:0 8px 20px rgba(0,0,0,0.45);
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
 .price{
-font-size:28px;
+font-size:26px;
 font-weight:bold;
-margin:15px 0;
+margin:12px 0;
 color:#4ea3ff;
+}
+
+.badge{
+display:inline-block;
+background:#ffc107;
+color:black;
+font-size:12px;
+padding:4px 8px;
+border-radius:20px;
+margin-bottom:6px;
+font-weight:bold;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+margin-top:30px;
+padding:14px 30px;
 
 background:#0b5ed7;
 color:white;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
 
 font-size:20px;
 font-weight:bold;
@@ -132,6 +156,13 @@ background:#074ab3;
 transform:scale(1.05);
 }
 
+.map{
+margin-top:40px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
 footer{
 background:rgba(233,236,239,0.95);
 color:black;
@@ -142,7 +173,7 @@ font-size:15px;
 
 @media(max-width:768px){
 
-header h1{font-size:32px;}
+header h1{font-size:30px;}
 
 nav a{
 display:block;
@@ -151,25 +182,10 @@ margin:6px 0;
 
 }
 
-
-
-/* MOBILE EXTRA OPTIMISATION */
 @media(max-width:480px){
 
-body{
-font-size:16px;
-}
-
-header{
-padding:70px 15px;
-}
-
-header h1{
-font-size:26px;
-}
-
 section{
-padding:25px 15px;
+padding:22px 15px;
 margin:25px 10px;
 }
 
@@ -177,50 +193,20 @@ section h2{
 font-size:26px;
 }
 
-/* 1. Grille uniforme */
-.pricing {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  align-items: stretch;
+.pricing{
+gap:18px;
 }
 
-/* 2. Cartes carrées régulières */
-.pricing .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  min-height: 300px; /* toutes les cartes ont la même hauteur */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: transform 0.3s, box-shadow 0.3s;
+.card{
+min-height:260px;
+padding:18px;
 }
 
-/* 3. Effet au survol */
-.pricing .card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+.price{
+font-size:23px;
 }
 
-/* 4. Styles internes */
-.pricing .card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
 }
-.pricing .card .price {
-  font-size: 26px;
-  font-weight: bold;
-  color: #4ea3ff;
-  margin: 10px 0;
-}
-.pricing .card p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 
 </style>
 </head>
@@ -229,7 +215,7 @@ font-size:26px;
 
 <header>
 <h1>Nos Tarifs</h1>
-<p>Dépannage informatique – Saint-Mars-de-Coutais</p>
+<p>Dépannage informatique – Saint-Mars-de-Coutais (25 km)</p>
 </header>
 
 <nav>
@@ -246,93 +232,50 @@ font-size:26px;
 
 <h2>💶 Grille tarifaire</h2>
 
-<p style="text-align:center; max-width:700px; margin:auto;">
-Tarifs indicatifs. Devis gratuit avant toute intervention.
+<p style="text-align:center; max-width:750px; margin:auto;">
+Tarifs indicatifs – Devis gratuit – Intervention locale dans un rayon de 25 km
 </p>
 
 <br>
 
 <div class="pricing">
 
-  <div class="card">
-    <h3>🔍 Diagnostic</h3>
-    <p class="price">25€</p>
-    <p>Analyse complète du problème</p>
-  </div>
-
-  <div class="card">
-    <h3>🔧 Dépannage simple</h3>
-    <p class="price">À partir de 39€</p>
-    <p>Nettoyage, réglages rapides</p>
-  </div>
-
-  <div class="card">
-    <h3>💻 Intervention complète</h3>
-    <p class="price">À partir de 69€</p>
-    <p>Virus, lenteur, réparation système</p>
-  </div>
-
-  <div class="card">
-    <h3>🧹 Nettoyage PC</h3>
-    <p class="price">45€</p>
-    <p>Optimisation + suppression fichiers inutiles</p>
-  </div>
-
-  <div class="card">
-    <h3>📀 Installation Windows</h3>
-    <p class="price">80€</p>
-    <p>Réinstallation + pilotes</p>
-  </div>
-
-  <div class="card">
-    <h3>💾 Sauvegarde données</h3>
-    <p class="price">40€</p>
-    <p>Copie sécurisée de vos fichiers</p>
-  </div>
-
-  <div class="card">
-    <h3>🖥️ Montage PC</h3>
-    <p class="price">À partir de 89€</p>
-    <p>Assemblage + configuration</p>
-  </div>
-
-  <div class="card">
-    <h3>📱 Smartphone</h3>
-    <p class="price">Sur devis</p>
-    <p>Écran, batterie, réparations</p>
-  </div>
-
-  <div class="card">
-    <h3>📘 Formation</h3>
-    <p class="price">30€/h</p>
-    <p>Initiation informatique personnalisée</p>
-  </div>
-
-  <div class="card">
-    <h3>🏠 Déplacement</h3>
-    <p class="price">Inclus ≤ 25 km</p>
-    <p>Autour de Saint-Mars-de-Coutais</p>
-  </div>
-
-  <div class="card">
-    <h3>🚫 Hors zone</h3>
-    <p class="price">Non proposé</p>
-    <p>Intervention limitée à 25 km</p>
-  </div>
-
-  <div class="card">
-    <h3>⚡ Urgence</h3>
-    <p class="price">+20€</p>
-    <p>Intervention prioritaire</p>
-  </div>
-
+<div class="card">
+<span class="badge">Populaire</span>
+<h3>🔧 Dépannage simple</h3>
+<p class="price">À partir de 39€</p>
+<p>Nettoyage, réglages rapides</p>
 </div>
 
-
 <div class="card">
+<span class="badge">Le + demandé</span>
 <h3>💻 Intervention complète</h3>
 <p class="price">À partir de 69€</p>
 <p>Virus, lenteur, réparation système</p>
+</div>
+
+<div class="card">
+<h3>🔍 Diagnostic</h3>
+<p class="price">25€</p>
+<p>Analyse complète du problème</p>
+</div>
+
+<div class="card">
+<h3>🧹 Nettoyage PC</h3>
+<p class="price">45€</p>
+<p>Optimisation système</p>
+</div>
+
+<div class="card">
+<h3>📀 Installation Windows</h3>
+<p class="price">80€</p>
+<p>Réinstallation + pilotes</p>
+</div>
+
+<div class="card">
+<h3>💾 Sauvegarde données</h3>
+<p class="price">40€</p>
+<p>Sécurisation fichiers</p>
 </div>
 
 <div class="card">
@@ -348,9 +291,21 @@ Tarifs indicatifs. Devis gratuit avant toute intervention.
 </div>
 
 <div class="card">
+<h3>📘 Formation</h3>
+<p class="price">30€/h</p>
+<p>Initiation personnalisée</p>
+</div>
+
+<div class="card">
 <h3>🏠 Déplacement</h3>
-<p class="price">Inclus (25 km)</p>
-<p>Zone Saint-Mars-de-Coutais</p>
+<p class="price">Inclus ≤ 25 km</p>
+<p>Saint-Mars-de-Coutais</p>
+</div>
+
+<div class="card">
+<h3>🚫 Hors zone</h3>
+<p class="price">Non proposé</p>
+<p>Limité à 25 km</p>
 </div>
 
 <div class="card">
@@ -361,20 +316,20 @@ Tarifs indicatifs. Devis gratuit avant toute intervention.
 
 </div>
 
-<div style="text-align:center; margin-top:30px;">
-
-<a class="btn"
-href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20intervention."
-target="_blank">
+<div style="text-align:center;">
+<a class="btn" href="https://wa.me/33760330502?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20intervention." target="_blank">
 📄 Demander un devis
 </a>
+</div>
 
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Saint-Mars-de-Coutais&output=embed" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
 </div>
 
 </section>
 
 <footer>
-© 2026 – St Mars Informatique – Loire-Atlantique
+© 2026 – St Mars Informatique – Dépannage informatique local
 </footer>
 
 </body>

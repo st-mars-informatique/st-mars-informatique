@@ -40,6 +40,27 @@
 </script>
 
 <style>
+/* Texte "Menu" sous burger (mobile seulement) */
+.burger-text {
+  display: none;
+  font-size: 12px;
+}
+
+/* Visible sur mobile/tablette */
+@media (max-width: 800px) {
+
+  .burger-text {
+    display: block;
+    margin-top: 3px;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
 
 body{
 margin:0;
@@ -656,9 +677,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 // Force fermeture du menu quand on change de page (Tarifs)
 window.addEventListener("pageshow", () => {
-  menu.classList.remove("active");
-  document.body.classList.remove("menu-open");
+  const menu = document.getElementById("menu");
+  if(menu){
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
 });
+
 
 
   /* ===== GESTION COOKIES RGPD ===== */

@@ -372,6 +372,47 @@ nav .menu {
   }
 
 }
+/* ===== BANNIERE COOKIES ===== */
+
+#cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#000;
+  color:white;
+  padding:15px 20px;
+  display:none;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+  z-index:999999;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+#cookie-banner span{
+  max-width:70%;
+}
+
+#cookie-banner a{
+  color:#4da3ff;
+  text-decoration:underline;
+}
+
+#cookie-banner button{
+  background:#0b5ed7;
+  border:none;
+  color:white;
+  padding:8px 15px;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#cookie-banner .refuse{
+  background:#555;
+}
 
 </style>
 </head>
@@ -570,6 +611,35 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove("active");
       document.body.classList.remove("menu-open");
     }, 50);
+  /* ===== GESTION COOKIES RGPD ===== */
+
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("accept-cookies");
+  const refuse = document.getElementById("refuse-cookies");
+
+  const choice = localStorage.getItem("cookieConsent");
+
+  if(!choice && banner){
+    banner.style.display = "flex";
+  }
+
+  if(accept){
+    accept.addEventListener("click", function(){
+
+      localStorage.setItem("cookieConsent", "accepted");
+      banner.style.display = "none";
+
+    });
+  }
+
+  if(refuse){
+    refuse.addEventListener("click", function(){
+
+      localStorage.setItem("cookieConsent", "refused");
+      banner.style.display = "none";
+
+    });
+  }
 
   });
 });
@@ -587,6 +657,22 @@ window.addEventListener("pageshow", () => {
 
 
 
+<!-- ===== BANNIERE COOKIES ===== -->
+
+<div id="cookie-banner">
+
+  <span>
+    Ce site utilise des cookies techniques nécessaires à son bon fonctionnement.
+    Vous pouvez accepter ou refuser leur utilisation.
+    <a href="legal.html">En savoir plus</a>
+  </span>
+
+  <div>
+    <button id="accept-cookies">Accepter</button>
+    <button id="refuse-cookies" class="refuse">Refuser</button>
+  </div>
+
+</div>
 
 </body>
 </html>

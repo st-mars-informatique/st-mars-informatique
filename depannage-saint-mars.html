@@ -137,6 +137,70 @@ footer{
     }
 
 }
+/* ===== MENU BURGER ===== */
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu normal */
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+
+  .burger {
+    display: block;
+  }
+
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: black;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+
+  #nav-links li {
+    margin: 15px 0;
+  }
+}
 
 </style>
 
@@ -148,23 +212,30 @@ footer{
 
 <body class="page-local">
 <nav>
+  <div class="nav-container">
 
-<div class="burger" id="burger">☰</div>
+    <div class="logo">
+      St Mars Informatique
+    </div>
 
-<div class="menu" id="menu">
+    <div class="burger" id="burger">
+      ☰
+    </div>
 
-<a href="index.html">Accueil</a>
-<a href="index.html#presentation">Présentation</a>
-<a href="index.html#services">Services</a>
-<a href="tarifs.html">Tarifs</a>
-<a href="depannage-saint-mars.html">Dépannage Saint-Mars</a>
-<a href="index.html#why">Pourquoi moi</a>
-<a href="index.html#avis">Avis</a>
-<a href="index.html#contact">Contact</a>
+    <ul id="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="index.html#presentation">Présentation</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="depannage-saint-mars.html">Dépannage Saint-Mars</a></li>
+      <li><a href="index.html#why">Pourquoi moi</a></li>
+      <li><a href="index.html#avis">Avis</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
 
-</div>
-
+  </div>
 </nav>
+
 
 
 <header class="hero">
@@ -319,6 +390,14 @@ font-size:16px;">
 <footer style="text-align:center;padding:20px;background:#eee;color:black;">
 © 2026 – St Mars Informatique
 </footer>
+<script>
+const burger = document.getElementById("burger");
+const navLinks = document.getElementById("nav-links");
+
+burger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>

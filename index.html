@@ -521,6 +521,8 @@ loading="lazy">
 <p>📱 07 60 33 05 02</p>
 <a href="tel:0760330502" class="btn">Appeler</a>
 <a class="btn" href="https://wa.me/33760330502" target="_blank">WhatsApp</a>
+<button class="btn share-btn" onclick="shareSite()">📤 Partager</button>
+
 </div>
 
 <h2>📝 Formulaire de contact</h2>
@@ -682,6 +684,20 @@ window.addEventListener("pageshow", () => {
   }
 
 });
+/* PARTAGE DU SITE */
+function shareSite() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'St Mars Informatique',
+      text: 'Dépannage informatique à Saint-Mars-de-Coutais',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Lien du site copié 👍 Vous pouvez le partager !");
+  }
+}
+  
 </script>
 
 

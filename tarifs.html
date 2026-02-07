@@ -352,29 +352,27 @@ links.forEach(link=>{
 
 <form action="https://formsubmit.co/faropers@gmail.com" method="POST">
 
+  <!-- Désactive le captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Page après envoi -->
   <input type="hidden" name="_next"
-  value="https://st-mars-informatique.github.io/st-mars-informatique/merci.html">
+    value="https://st-mars-informatique.github.io/st-mars-informatique/merci.html">
 
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message"></textarea>
+  <input type="text" name="name" placeholder="Votre nom" required>
 
-  <button type="submit">Envoyer</button>
-</form>
+  <input type="email" name="email" placeholder="Votre email" required>
 
-<input type="hidden" name="_captcha" value="false">
+  <input type="tel" name="telephone" placeholder="Téléphone" required>
 
-<input type="text" name="name" placeholder="Votre nom" required>
+  <textarea name="message" placeholder="Décrivez votre problème" required></textarea>
 
-<input type="email" name="email" placeholder="Votre email" required>
-
-<input type="tel" name="telephone" placeholder="Téléphone" required>
-
-<textarea name="message" placeholder="Décrivez votre problème" required></textarea>
-
-<button type="submit" class="btn">Envoyer la demande</button>
+  <button type="submit" class="btn">
+    Envoyer la demande
+  </button>
 
 </form>
+
 
 </section>
 

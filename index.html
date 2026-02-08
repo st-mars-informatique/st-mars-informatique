@@ -236,40 +236,42 @@ nav .menu {
     flex-direction: column;
     align-items: center;
   }
-  /* Texte "Menu" visible uniquement sur mobile */
-  .burger-text {
-    display: block;
-    font-size: 12px;
-    margin-top: 3px;
+
+  nav.menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0,0,0,0.97);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: flex-start;
+    padding-top: 20px;
+    gap: 10px;
+
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 9999;
   }
 
-  /* Menu mobile caché par défaut */
-nav.menu {
-  position: fixed;
-  top: 70px;
-  left: -100%;
-  width: 100%;
-  height: calc(100vh - 70px);
-  background: rgba(0,0,0,0.97);
+  nav.menu.open {
+    left: 0;
+  }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  nav.menu a {
+    font-size: 18px;
+    padding: 6px 0;
+  }
 
-  justify-content: flex-start; /* ✅ FIX DÉFINITIF */
-  padding-top: 20px;           /* ✅ Accueil visible */
-  gap: 12px;
-
-  overflow-y: auto;            /* scroll OK */
-
-  transition: left 0.3s ease;
-  z-index: 9999;
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
-nav.menu a {
-  font-size: 20px;
-  padding: 6px 0; /* ⬅️ réduit */
-}
 
   /* Menu ouvert */
   nav .menu.open {
@@ -281,27 +283,6 @@ nav.menu a {
     color: white;
   }
 
-  nav .menu {
-    display: none;
-  }
-
-  nav .menu.active {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.97);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 99999;
-  }
-
-  nav .menu a {
-    font-size: 22px;
-    margin: 15px 0;
-  }
 
   body.menu-open {
     overflow: hidden;

@@ -700,31 +700,34 @@ window.addEventListener("pageshow", () => {
 
   /* ===== GESTION COOKIES RGPD ===== */
 
+document.addEventListener("DOMContentLoaded", function () {
+
   const banner = document.getElementById("cookie-banner");
   const accept = document.getElementById("accept-cookies");
   const refuse = document.getElementById("refuse-cookies");
 
+  if (!banner || !accept || !refuse) return;
+
   const choice = localStorage.getItem("cookieConsent");
 
-  if (!choice && banner) {
+  if (choice === null) {
     banner.style.display = "flex";
+  } else {
+    banner.style.display = "none";
   }
 
-  if (accept) {
-    accept.addEventListener("click", function () {
-      localStorage.setItem("cookieConsent", "accepted");
-      banner.style.display = "none";
-    });
-  }
+  accept.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.style.display = "none";
+  });
 
-  if (refuse) {
-    refuse.addEventListener("click", function () {
-      localStorage.setItem("cookieConsent", "refused");
-      banner.style.display = "none";
-    });
-  }
+  refuse.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "refused");
+    banner.style.display = "none";
+  });
 
 });
+
 /* PARTAGE DU SITE */
 function shareSite() {
   if (navigator.share) {
@@ -747,7 +750,6 @@ function shareSite() {
 <!-- ===== BANNIERE COOKIES ===== -->
 
 <div id="cookie-banner">
-
   <span>
     Ce site utilise des cookies techniques nécessaires à son bon fonctionnement.
     Vous pouvez accepter ou refuser leur utilisation.
@@ -758,8 +760,8 @@ function shareSite() {
     <button id="accept-cookies">Accepter</button>
     <button id="refuse-cookies" class="refuse">Refuser</button>
   </div>
-
 </div>
+
 
 </body>
 </html>

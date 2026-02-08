@@ -509,7 +509,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
 
+  if (!burger || !menu) return;
+
+  const links = menu.querySelectorAll("a");
+
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  window.addEventListener("pageshow", () => {
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});
 
 /* PARTAGE DU SITE */
 function shareSite() {
@@ -524,8 +549,8 @@ function shareSite() {
     alert("Lien du site copié 👍 Vous pouvez le partager !");
   }
 }
-  
 </script>
 
+  
 </body>
 </html>

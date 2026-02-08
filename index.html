@@ -246,7 +246,7 @@ nav .menu {
   /* Menu mobile caché par défaut */
 nav.menu {
   position: fixed;
-  top: 70px; /* un peu moins bas */
+  top: 70px;
   left: -100%;
   width: 100%;
   height: calc(100vh - 70px);
@@ -254,13 +254,14 @@ nav.menu {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* ✅ CENTRÉ */
   align-items: center;
 
-  gap: 12px; /* ✅ espacement maîtrisé */
+  justify-content: flex-start; /* ✅ FIX DÉFINITIF */
+  padding-top: 20px;           /* ✅ Accueil visible */
+  gap: 12px;
 
-  overflow-y: auto; /* ✅ scroll mobile */
-  
+  overflow-y: auto;            /* scroll OK */
+
   transition: left 0.3s ease;
   z-index: 9999;
 }

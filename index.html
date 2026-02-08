@@ -458,44 +458,38 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
 <p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
 <p><a href="legal.html">Informations légales</a></p>
 </footer>
+  
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const burger = document.getElementById("burger");
   const menu = document.getElementById("menu");
+
+  if (!burger || !menu) return;
+
   const links = menu.querySelectorAll("a");
 
-  if (burger && menu) {
+  // Ouverture / fermeture du menu
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
 
-    burger.addEventListener("click", function () {
-      menu.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-    });
-
-   links.forEach(link => {
-  link.addEventListener("click", () => {
-
-    // Ferme le menu
-    menu.classList.remove("active");
-    document.body.classList.remove("menu-open");
-
-    // Force fermeture avant changement de page
-    setTimeout(() => {
+  // Fermeture au clic sur un lien
+  links.forEach(link => {
+    link.addEventListener("click", () => {
       menu.classList.remove("active");
       document.body.classList.remove("menu-open");
-    }, 50);
+    });
   });
-});
 
-  }
-// Force fermeture du menu quand on change de page (Tarifs)
-window.addEventListener("pageshow", () => {
-  const menu = document.getElementById("menu");
-  if(menu){
+  // Sécurité retour arrière iOS
+  window.addEventListener("pageshow", () => {
     menu.classList.remove("active");
     document.body.classList.remove("menu-open");
-  }
+  });
 });
+</script>
+
 
 /* PARTAGE DU SITE */
 function shareSite() {

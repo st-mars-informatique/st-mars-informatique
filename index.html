@@ -249,7 +249,10 @@ nav.menu {
   top: 90px; /* ✅ corrige Safari iOS */
   left: -100%;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+
   background: rgba(0,0,0,0.97);
 
   display: flex;

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
   font-family: Arial, Helvetica, sans-serif;
   background:#f4f4f4;
@@ -16,6 +16,7 @@ body{
 }
 
 /* MENU */
+
 nav{
   background:#000;
   padding:15px;
@@ -23,126 +24,443 @@ nav{
   top:0;
   z-index:1000;
 }
+
 nav .menu{
   display:flex;
   justify-content:center;
   gap:20px;
-  flex-wrap:wrap;
+  flex-wrap:wrap; /* autorise retour à la ligne */
+  max-width:1200px;
+  margin:0 auto;
 }
+
+
 nav a{
-  color:#fff;
+  color:white;
   text-decoration:none;
   font-weight:bold;
+  font-size:18px;
 }
-nav a:hover{color:#4da3ff;}
+
+.burger{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+  text-align:right;
+  padding-right:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .burger{
+    display:block;
+  }
+
+  nav .menu{
+    display:none;
+  }
+
+  nav .menu.active{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.97);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+  }
+
+  nav .menu a{
+    font-size:22px;
+    margin:15px 0;
+  }
+
+  body.menu-open{
+    overflow:hidden;
+  }
+
+}
 
 /* CONTENU */
-section{
-  max-width:1100px;
-  margin:60px auto;
-  padding:40px;
-  background:#fff;
-  border-radius:15px;
-}
-section h1, section h2{color:#1e5eff;}
 
-/* BANNIÈRE COOKIES */
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  padding:30px 40px;
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+h1,h2{
+  color:#0b5ed7;
+  text-align:center;
+}
+
+h1{margin-bottom:40px;}
+h2{margin-top:40px;}
+
+p,li{
+  line-height:1.7;
+  font-size:16px;
+}
+
+ul{margin-left:20px;}
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+  color:#666;
+}
+/* ===== BANNIERE COOKIES ===== */
+
 #cookie-banner{
   position:fixed;
   bottom:0;
   left:0;
-  right:0;
+  width:100%;
   background:#000;
-  color:#fff;
+  color:white;
   padding:15px 20px;
-  display:none;
-  justify-content:space-between;
+
+  display:flex;
+  justify-content:center;
+  text-align:center;
   align-items:center;
+
+  font-size:14px;
+  z-index:999999;
+
+  flex-wrap:wrap;
   gap:15px;
-  z-index:2000;
 }
-#cookie-banner a{color:#4da3ff;}
+
+#cookie-banner span{
+  max-width:65%;
+}
+
+#cookie-banner a{
+  color:#4da3ff;
+  text-decoration:underline;
+}
+
 #cookie-banner button{
   background:#0b5ed7;
   border:none;
-  color:#fff;
+  color:white;
   padding:8px 15px;
   border-radius:5px;
   cursor:pointer;
   font-weight:bold;
 }
-#cookie-banner .refuse{background:#555;}
-</style>
 
+#cookie-banner .refuse{
+  background:#555;
+}
+
+#cookie-banner div{
+  display:flex;
+  gap:10px;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- MENU -->
+
 <nav>
-  <div class="menu">
+
+  <div class="burger" id="burger">☰</div>
+
+  <div class="menu" id="menu">
+
     <a href="index.html">Accueil</a>
     <a href="tarifs.html">Tarifs</a>
-    <a href="depannage.html">Dépannage</a>
-    <a href="contact.html">Contact</a>
+    <a href="depannage-saint-mars.html">Dépannage</a>
+    <a href="index.html#contact">Contact</a>
     <a href="legal.html">Informations légales</a>
+
   </div>
+
 </nav>
 
-<section>
-  <h1>Informations légales</h1>
+<!-- CONTENU -->
 
-  <h2>Politique de confidentialité</h2>
-  <p>La présente politique de confidentialité a pour but d’informer les utilisateurs du site St Mars Informatique sur la collecte et le traitement de leurs données personnelles.</p>
+<div class="container">
 
-  <h2>Responsable du traitement</h2>
-  <p>
-    St Mars Informatique<br>
-    Responsable : Fabrice Ropers<br>
-    Adresse : 2 rue des Millauds – 44680 Saint‑Mars‑de‑Coutais<br>
-    Email : faropers@gmail.com<br>
-    Téléphone : 07 60 33 05 02
-  </p>
-</section>
+<h1>Informations légales</h1>
 
-<!-- BANNIÈRE COOKIES -->
+<h2>🔐 Politique de confidentialité</h2>
 
-<div id="cookie-banner">
-  <span>
-    Ce site utilise des cookies techniques nécessaires à son bon fonctionnement.
-    <a href="legal.html">En savoir plus</a>
-  </span>
-  <div>
-    <button id="accept-cookies">Accepter</button>
-    <button id="refuse-cookies" class="refuse">Refuser</button>
-  </div>
+<p>
+La présente politique de confidentialité a pour but d’informer les utilisateurs du site St Mars Informatique sur la collecte et le traitement de leurs données personnelles.
+</p>
+
+<h2>1. Responsable du traitement</h2>
+
+<p>
+Le responsable du traitement des données est :
+</p>
+
+<p>
+St Mars Informatique<br>
+Responsable : Fabrice Ropers<br>
+Adresse : 2 rue des Millauds – 44680 Saint-Mars-de-Coutais<br>
+Email : faropers@gmail.com<br><br>
+Téléphone : 07 60 33 05 02
+</p>
+
+<h2>2. Données collectées</h2>
+
+<p>Les données susceptibles d’être collectées sont :</p>
+
+<ul>
+<li>Nom et prénom</li>
+<li>Adresse email</li>
+<li>Numéro de téléphone</li>
+<li>Message via le formulaire de contact</li>
+</ul>
+
+<p>
+Ces données sont collectées uniquement lorsque l’utilisateur les transmet volontairement.
+</p>
+
+<h2>3. Utilisation des données</h2>
+
+<p>Les données sont utilisées exclusivement pour :</p>
+
+<ul>
+<li>Répondre aux demandes des utilisateurs</li>
+<li>Fournir les services demandés</li>
+<li>Assurer le suivi client</li>
+</ul>
+
+<p>
+Aucune donnée n’est vendue, louée ou transmise à des tiers.
+</p>
+
+<h2>4. Durée de conservation</h2>
+
+<p>
+Les données sont conservées pendant une durée maximale de 3 ans après le dernier contact.
+</p>
+
+<h2>5. Droits des utilisateurs</h2>
+
+<p>
+Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :
+</p>
+
+<ul>
+<li>Droit d’accès</li>
+<li>Droit de rectification</li>
+<li>Droit de suppression</li>
+<li>Droit d’opposition</li>
+</ul>
+
+<p>
+Vous pouvez exercer ces droits en contactant :<br>
+📧 faropers@gmail.com
+</p>
+
+<h2>6. Sécurité</h2>
+
+<p>
+St Mars Informatique met en œuvre toutes les mesures techniques et organisationnelles nécessaires afin de garantir la sécurité et la confidentialité des données.
+</p>
+
+<h2>7. Cookies</h2>
+
+<p>
+Le site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement.
+</p>
+
+<p>
+Aucun cookie publicitaire ou de suivi marketing n’est utilisé.
+</p>
+
+<h2>📄 CONDITIONS GÉNÉRALES DE VENTE (CGV)</h2>
+
+<h3>Article 1 – Objet</h3>
+
+<p>
+Les présentes Conditions Générales de Vente régissent les prestations de services proposées par St Mars Informatique.
+</p>
+
+<h3>Article 2 – Services</h3>
+
+<p>St Mars Informatique propose notamment :</p>
+
+<ul>
+<li>Dépannage informatique</li>
+<li>Maintenance</li>
+<li>Installation de matériel et logiciels</li>
+<li>Conseil</li>
+<li>Assistance informatique</li>
+</ul>
+
+<h3>Article 3 – Commande</h3>
+
+<p>
+Toute prestation fait l’objet d’un accord préalable entre les parties, matérialisé par un devis ou un accord verbal.
+</p>
+
+<h3>Article 4 – Tarifs</h3>
+
+<p>
+Les prix sont exprimés en euros TTC.
+</p>
+
+<p>
+Les tarifs sont communiqués avant toute intervention.
+</p>
+
+<h3>Article 5 – Paiement</h3>
+
+<p>
+Le paiement est exigible à la fin de la prestation.
+</p>
+
+<p>Modes de paiement acceptés :</p>
+
+<ul>
+<li>Espèces</li>
+<li>Virement</li>
+<li>Chèque non accepté</li>
+<li>Carte bancaire (selon disponibilité)</li>
+</ul>
+
+<h3>Article 6 – Délais</h3>
+
+<p>
+Les délais d’intervention sont donnés à titre indicatif.
+</p>
+
+<p>
+Un retard ne peut donner lieu à indemnisation.
+</p>
+
+<h3>Article 7 – Responsabilité</h3>
+
+<p>
+St Mars Informatique ne saurait être tenu responsable des pertes de données en l’absence de sauvegarde préalable.
+</p>
+
+<p>
+Il appartient au client d’effectuer une sauvegarde de ses données avant toute intervention.
+</p>
+
+<h3>Article 8 – Droit de rétractation</h3>
+
+<p>
+Conformément à la législation en vigueur, le client dispose d’un délai de rétractation de 14 jours, sauf intervention immédiate demandée expressément.
+</p>
+
+<h3>Article 9 – Litiges</h3>
+
+<p>
+En cas de litige, une solution amiable sera recherchée en priorité.
+</p>
+
+<p>
+À défaut, les tribunaux compétents seront saisis.
+</p>
+
+<div class="footer">
+
+<p>© 2026 – St Mars Informatique</p>
+
+<p><a href="index.html">Retour à l’accueil</a></p>
+
 </div>
 
+</div>
+
+<!-- SCRIPT MENU -->
+
 <script>
-/* ===== GESTION COOKIES RGPD (CORRIGÉE) ===== */
-document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+
+  burger.addEventListener("click", function(){
+
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+
+  });
+
+  document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+
+    });
+
+  });
+
+});
+
+  /* ===== GESTION COOKIES RGPD ===== */
+
   const banner = document.getElementById("cookie-banner");
   const accept = document.getElementById("accept-cookies");
   const refuse = document.getElementById("refuse-cookies");
 
-  if (!banner || !accept || !refuse) return;
-
   const choice = localStorage.getItem("cookieConsent");
 
-  if (choice === null) {
+  if (!choice && banner) {
     banner.style.display = "flex";
   }
 
-  accept.addEventListener("click", function () {
-    localStorage.setItem("cookieConsent", "accepted");
-    banner.style.display = "none";
-  });
+  if (accept) {
+    accept.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "accepted");
+      banner.style.display = "none";
+    });
+  }
 
-  refuse.addEventListener("click", function () {
-    localStorage.setItem("cookieConsent", "refused");
-    banner.style.display = "none";
-  });
+  if (refuse) {
+    refuse.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "refused");
+      banner.style.display = "none";
+    });
+  }
+
 });
 </script>
+<!-- ===== BANNIERE COOKIES ===== -->
+
+<div id="cookie-banner">
+
+  <span>
+    Ce site utilise des cookies techniques nécessaires à son bon fonctionnement.
+    Vous pouvez accepter ou refuser leur utilisation.
+    <a href="legal.html">En savoir plus</a>
+  </span>
+
+  <div>
+    <button id="accept-cookies">Accepter</button>
+    <button id="refuse-cookies" class="refuse">Refuser</button>
+  </div>
+
+</div>
 
 </body>
 </html>

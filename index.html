@@ -211,101 +211,6 @@ max-width:320px;
 }
 }
 
-/* ===== FIX MENU MOBILE TARIFS ===== */
-
-@media (max-width:800px){
-
-  nav .menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: rgba(0,0,0,0.95);
-
-    overflow-y: auto;
-
-    transform: translateY(-120%);
-    transition: transform 0.3s ease;
-
-    z-index: 9999;
-  }
-
-  nav .menu.active {
-    transform: translateY(0);
-  }
-
-}
-
-/* CACHE BURGER SUR PC */
-
-@media (min-width:801px){
-
-  .burger {
-    display: none;
-  }
-
-  nav .menu {
-    display: block !important;
-    position: static;
-    height: auto;
-    background: none;
-    transform: none;
-  }
-
-}
-/* ===== CORRECTION MENU MOBILE ===== */
-
-@media (max-width: 800px) {
-
-  /* Burger visible seulement sur mobile */
-  .burger {
-    display: block;
-  }
-
-  /* Cache menu normal */
-  nav .menu {
-    display: none;
-  }
-
-  /* Menu ouvert en plein écran */
-  nav .menu.active {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(0,0,0,0.97);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 99999;
-  }
-
-  nav .menu a {
-    font-size: 22px;
-    margin: 15px 0;
-  }
-
-}
-
-/* Cache le burger sur PC */
-@media (min-width: 801px) {
-
-  .burger {
-    display: none;
-  }
-
-  nav .menu {
-    display: block;
-  }
-
-}
 /* ===== MENU BURGER FINAL PROPRE ===== */
 
 /* PC */
@@ -322,29 +227,25 @@ nav .menu {
   cursor: pointer;
   padding: 10px 20px;
 }
+/* ===== MENU BURGER MOBILE (MANQUANT) ===== */
 
-/* MOBILE */
 @media (max-width: 800px) {
 
-  /* Affiche burger */
+  /* afficher le burger */
   .burger {
     display: block;
-    text-align: right;
+    text-align: center;
   }
 
-  /* Cache menu */
+  /* cacher le menu par défaut */
   nav .menu {
     display: none;
   }
 
-  /* Menu ouvert */
+  /* menu ouvert */
   nav .menu.active {
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
+    inset: 0;
 
     background: rgba(0,0,0,0.97);
 
@@ -353,7 +254,7 @@ nav .menu {
     justify-content: center;
     align-items: center;
 
-    z-index: 99999;
+    z-index: 9999;
   }
 
   nav .menu a {
@@ -364,34 +265,6 @@ nav .menu {
   body.menu-open {
     overflow: hidden;
   }
-}
-/* FIX MENU MOBILE TARIFS */
-@media (max-width: 800px) {
-
-  nav .menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-
-    background: rgba(0,0,0,0.95);
-
-    overflow-y: auto;
-
-    z-index: 9999;
-
-    display: none;
-  }
-
-  nav .menu.active {
-    display: block;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
 }
 
 </style>

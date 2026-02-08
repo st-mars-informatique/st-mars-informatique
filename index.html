@@ -229,39 +229,50 @@ nav .menu {
 }
 
 /* MOBILE */
+  
 @media (max-width: 800px) {
 
+  /* 🔒 Cache le menu desktop */
+  nav.menu {
+    display: none;
+  }
+
+  /* 🍔 Burger visible */
   .burger {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
+  /* 📱 Menu mobile */
   nav.menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.97);
+    position: fixed;
+    top: 70px;            /* garde 70px si tu as un header */
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0,0,0,0.97);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-  padding-top: 90px;
-  gap: 10px;
+    padding-top: 20px;
+    gap: 10px;
 
-  overflow-y: auto;
-  transition: left 0.3s ease;
-  z-index: 9999;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 9999;
+  }
+
+  /* ✅ OUVERTURE */
+  nav.menu.open {
+    display: flex;
+    left: 0;
+  }
 }
 
 
-  nav.menu.open {
-    left: 0;
-  }
 
   nav.menu a {
     font-size: 18px;

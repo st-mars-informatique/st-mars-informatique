@@ -38,21 +38,25 @@
 "openingHours": "Mo-Fr 09:00-19:00"
 }
 </script>
-
 <style>
-/* Texte "Menu" sous burger (mobile seulement) */
+
+/* ===== MENU BURGER (PC / MOBILE) ===== */
+
+/* Burger caché par défaut (PC) */
+.burger {
+  display: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+/* Texte "Menu" sous le burger */
 .burger-text {
   display: none;
   font-size: 12px;
 }
 
-/* Visible sur mobile/tablette */
-@media (max-width: 800px) {
-
-  .burger-text {
-    display: block;
-    margin-top: 3px;
-  }
+/* Mobile / tablette uniquement */
+@media (max-width: 900px) {
 
   .burger {
     display: flex;
@@ -60,7 +64,21 @@
     align-items: center;
   }
 
+  .burger-text {
+    display: block;
+    margin-top: 3px;
+  }
+
 }
+
+/* 👇 ENSUITE ton CSS EXISTANT */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  ...
+}
+</style>
+
 
 body{
 margin:0;

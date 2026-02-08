@@ -131,21 +131,23 @@ ul{margin-left:20px;}
 <body>
 
 <!-- MENU -->
-<header>
+<nav>
+
   <div class="burger" id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
+    ☰
+    <span class="burger-text">Menu</span>
   </div>
 
-  <nav class="menu" id="menu">
+  <div class="menu" id="menu">
     <a href="index.html">Accueil</a>
     <a href="tarifs.html">Tarifs</a>
     <a href="depannage-saint-mars.html">Dépannage</a>
     <a href="index.html#contact">Contact</a>
     <a href="legal.html">Informations légales</a>
-  </nav>
-</header>
+  </div>
+
+</nav>
+
 
 <!-- CONTENU -->
 
@@ -334,30 +336,32 @@ Tous droits réservés</p>
 <!-- SCRIPT MENU -->
 
 <script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
+document.addEventListener("DOMContentLoaded", function () {
   const burger = document.getElementById("burger");
   const menu = document.getElementById("menu");
 
-  burger.addEventListener("click", function(){
+  if (!burger || !menu) return;
 
+  const links = menu.querySelectorAll("a");
+
+  burger.addEventListener("click", () => {
     menu.classList.toggle("active");
     document.body.classList.toggle("menu-open");
-
   });
 
-  document.querySelectorAll(".menu a").forEach(link => {
-
+  links.forEach(link => {
     link.addEventListener("click", () => {
-
       menu.classList.remove("active");
       document.body.classList.remove("menu-open");
-
     });
-
   });
 
-</script> 
+  window.addEventListener("pageshow", () => {
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});
+</script>
+
 </body>
 </html>

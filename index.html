@@ -211,102 +211,7 @@ max-width:320px;
 }
 }
 
-/* ===== FIX MENU MOBILE TARIFS ===== */
-
-@media (max-width:800px){
-
-  nav .menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: rgba(0,0,0,0.95);
-
-    overflow-y: auto;
-
-    transform: translateY(-120%);
-    transition: transform 0.3s ease;
-
-    z-index: 9999;
-  }
-
-  nav .menu.active {
-    transform: translateY(0);
-  }
-
-}
-
-/* CACHE BURGER SUR PC */
-
-@media (min-width:801px){
-
-  .burger {
-    display: none;
-  }
-
-  nav .menu {
-    display: block !important;
-    position: static;
-    height: auto;
-    background: none;
-    transform: none;
-  }
-
-}
-/* ===== CORRECTION MENU MOBILE ===== */
-
-@media (max-width: 800px) {
-
-  /* Burger visible seulement sur mobile */
-  .burger {
-    display: block;
-  }
-
-  /* Cache menu normal */
-  nav .menu {
-    display: none;
-  }
-
-  /* Menu ouvert en plein écran */
-  nav .menu.active {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(0,0,0,0.97);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 99999;
-  }
-
-  nav .menu a {
-    font-size: 22px;
-    margin: 15px 0;
-  }
-
-}
-
-/* Cache le burger sur PC */
-@media (min-width: 801px) {
-
-  .burger {
-    display: none;
-  }
-
-  nav .menu {
-    display: block;
-  }
-
-}
-/* ===== MENU BURGER FINAL PROPRE ===== */
+/* ===== MENU BURGER PRO FINAL ===== */
 
 /* PC */
 nav .menu {
@@ -326,26 +231,52 @@ nav .menu {
 /* MOBILE */
 @media (max-width: 800px) {
 
-  /* Affiche burger */
   .burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Texte "Menu" visible uniquement sur mobile */
+  .burger-text {
     display: block;
-    text-align: right;
+    font-size: 12px;
+    margin-top: 3px;
   }
 
-  /* Cache menu */
+  /* Menu mobile caché par défaut */
+  nav .menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: left 0.3s ease;
+    z-index: 9999;
+  }
+
+  /* Menu ouvert */
+  nav .menu.open {
+    left: 0;
+  }
+
+  nav .menu a {
+    font-size: 22px;
+    color: white;
+  }
+
   nav .menu {
     display: none;
   }
 
-  /* Menu ouvert */
   nav .menu.active {
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
+    inset: 0;
     background: rgba(0,0,0,0.97);
 
     display: flex;
@@ -365,34 +296,7 @@ nav .menu {
     overflow: hidden;
   }
 }
-/* FIX MENU MOBILE TARIFS */
-@media (max-width: 800px) {
 
-  nav .menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-
-    background: rgba(0,0,0,0.95);
-
-    overflow-y: auto;
-
-    z-index: 9999;
-
-    display: none;
-  }
-
-  nav .menu.active {
-    display: block;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
-}
 /* ===== BANNIERE COOKIES ===== */
 
 #cookie-banner{
@@ -748,6 +652,45 @@ function shareSite() {
   </div>
 
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+
+  if (!burger || !menu) return;
+
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("open");
+    burger.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("open");
+      burger.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !burger.contains(e.target)) {
+      menu.classList.remove("open");
+      burger.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) {
+      menu.classList.remove("open");
+      burger.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+});
+</script>
 
 </body>
 </html>

@@ -231,29 +231,23 @@ nav .menu {
 
 @media (max-width: 800px) {
 
-  /* afficher le burger */
   .burger {
     display: block;
     text-align: center;
   }
 
-  /* cacher le menu par défaut */
   nav .menu {
     display: none;
   }
 
-  /* menu ouvert */
   nav .menu.active {
     position: fixed;
     inset: 0;
-
     background: rgba(0,0,0,0.97);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     z-index: 9999;
   }
 
@@ -265,7 +259,13 @@ nav .menu {
   body.menu-open {
     overflow: hidden;
   }
+
+  /* 👇 AJOUT EXACT ICI */
+  nav.menu-open {
+    position: static;
+  }
 }
+
 
 </style>
 </head>

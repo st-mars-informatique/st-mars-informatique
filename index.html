@@ -38,45 +38,21 @@
 "openingHours": "Mo-Fr 09:00-19:00"
 }
 </script>
+
 <style>
-
-/* ===== MENU BURGER (PC / MOBILE) ===== */
-
-/* Burger caché par défaut (PC) */
-.burger {
-  display: none;
-  cursor: pointer;
-  text-align: right;
-}
-
-/* Texte "Menu" sous le burger */
-.burger-text {
-  display: none;
-  font-size: 12px;
-}
+/* Texte "Menu" sous burger (mobile seulement) */
 .burger-text {
   display: none;
   font-size: 12px;
 }
 
-/* ===== MENU DESKTOP (PC) ===== */
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+/* Visible sur mobile/tablette */
+@media (max-width: 800px) {
 
-.menu a {
-  color: #4d3af7;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Mobile / tablette uniquement */
-@media (max-width: 900px) {
-
-/* Mobile / tablette uniquement */
-@media (max-width: 900px) {
+  .burger-text {
+    display: block;
+    margin-top: 3px;
+  }
 
   .burger {
     display: flex;
@@ -84,21 +60,7 @@
     align-items: center;
   }
 
-  .burger-text {
-    display: block;
-    margin-top: 3px;
-  }
-
 }
-
-/* 👇 ENSUITE ton CSS EXISTANT */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  ...
-}
-</style>
-
 
 body{
 margin:0;
@@ -764,45 +726,6 @@ function shareSite() {
     alert("Lien du site copié 👍 Vous pouvez le partager !");
   }
 }
-function shareSite() {
-  if (navigator.share) {
-    navigator.share({
-      title: 'St Mars Informatique',
-      text: 'Dépannage informatique à Saint-Mars-de-Coutais',
-      url: window.location.href
-    });
-  } else {
-    navigator.clipboard.writeText(window.location.href);
-    alert("Lien du site copié 👍 Vous pouvez le partager !");
-  }
-}
-
-/* ===== MENU BURGER MOBILE ===== */
-document.addEventListener("DOMContentLoaded", function () {
-  const burger = document.getElementById("burger");
-  const menu = document.getElementById("menu");
-
-  if (!burger || !menu) return;
-
-  burger.addEventListener("click", function () {
-    menu.classList.toggle("open");
-    burger.classList.toggle("active");
-  });
-
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-      burger.classList.remove("active");
-    });
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!menu.contains(e.target) && !burger.contains(e.target)) {
-      menu.classList.remove("open");
-      burger.classList.remove("active");
-    }
-  });
-});
   
 </script>
 

@@ -366,33 +366,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-  /* ===== GESTION COOKIES RGPD ===== */
-
-  const banner = document.getElementById("cookie-banner");
-  const accept = document.getElementById("accept-cookies");
-  const refuse = document.getElementById("refuse-cookies");
-
-  const choice = localStorage.getItem("cookieConsent");
-
-  if (!choice && banner) {
-    banner.style.display = "flex";
-  }
-
-  if (accept) {
-    accept.addEventListener("click", function () {
-      localStorage.setItem("cookieConsent", "accepted");
-      banner.style.display = "none";
-    });
-  }
-
-  if (refuse) {
-    refuse.addEventListener("click", function () {
-      localStorage.setItem("cookieConsent", "refused");
-      banner.style.display = "none";
-    });
-  }
-
-});
+ 
 </script>
 <!-- ===== BANNIERE COOKIES ===== -->
 

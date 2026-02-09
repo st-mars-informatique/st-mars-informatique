@@ -243,122 +243,166 @@
     }
 
     </style>
-
+</head>
 
 <body>
 
-    <h1>💻 Dépannage informatique à distance</h1>
+<!-- NAVIGATION -->
+<nav>
 
-    <h2>💻 Dépannage informatique à distance</h2>
-    <p><strong>Une solution rapide, efficace et sans déplacement</strong></p>
+  <div class="burger" id="burger">
+    ☰
+    <span class="burger-text">Menu</span>
+  </div>
 
-    <p>
-        Le dépannage informatique à distance permet de résoudre de nombreux problèmes sans avoir besoin de vous déplacer.<br>
-        Grâce à une connexion sécurisée, j’interviens directement sur votre ordinateur avec votre accord, pendant que vous restez devant l’écran.
-    </p>
+  <div class="menu" id="menu">
+    <a href="index.html">Accueil</a>
+    <a href="#presentation">Présentation</a>
+    <a href="#services">Services</a>
+    <a href="depannage-a-distance.html">💻 Dépannage à distance</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="depannage-saint-mars.html">Dépannage Saint-Mars</a>
+    <a href="#why">Pourquoi moi</a>
+    <a href="#avis">Avis</a>
+    <a href="#contact">Contact</a>
+    <a href="legal.html">Informations légales</a>
+  </div>
 
-    <p>
-        C’est la solution idéale pour un dépannage rapide, économique et efficace.
-    </p>
+</nav>
 
-    <h2>🔧 Ce que je peux faire à distance</h2>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
 
-    <p>Le dépannage à distance permet notamment de :</p>
+  if (!burger || !menu) return;
 
-    <ul>
-        <li>Ordinateur lent ou bloqué</li>
-        <li>Suppression de virus, malwares et publicités</li>
-        <li>Problèmes Windows / logiciels</li>
-        <li>Installation et configuration de logiciels</li>
-        <li>Paramétrage e-mail</li>
-        <li>Problèmes d’imprimante ou de périphériques</li>
-        <li>Mises à jour système</li>
-        <li>Assistance et conseils personnalisés</li>
-    </ul>
+  const links = menu.querySelectorAll("a");
 
-    <p>
-        👉 Si le problème ne peut pas être résolu à distance, une intervention en atelier ou à domicile sera proposée.
-    </p>
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
 
-    <h2>🛠️ Comment se déroule le dépannage à distance</h2>
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  });
 
-    <h3>1️⃣ Prise de contact</h3>
-    <p>
-        Vous me contactez par téléphone ou via le formulaire du site pour expliquer votre problème.
-    </p>
+  window.addEventListener("pageshow", () => {
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});
+</script>
 
-    <h3>2️⃣ Validation</h3>
-    <p>
-        Je vous confirme si le dépannage est possible à distance et vous indique le tarif avant l’intervention.
-    </p>
+<!-- CONTENU DE LA PAGE -->
+<section id="depannage-distance">
+<h1>💻 Dépannage informatique à distance</h1>
 
-    <h3>3️⃣ Connexion sécurisée</h3>
-    <p>
-        Je vous fournis un lien pour installer un logiciel de prise en main à distance (ex. AnyDesk ou équivalent).
-    </p>
+<h2>💻 Dépannage informatique à distance</h2>
+<p><strong>Une solution rapide, efficace et sans déplacement</strong></p>
 
-    <h3>4️⃣ Intervention</h3>
-    <p>
-        Avec votre autorisation, je prends la main sur votre ordinateur et effectue le dépannage en direct.
-    </p>
+<p>
+Le dépannage informatique à distance permet de résoudre de nombreux problèmes sans avoir besoin de vous déplacer.<br>
+Grâce à une connexion sécurisée, j’interviens directement sur votre ordinateur avec votre accord, pendant que vous restez devant l’écran.
+</p>
 
-    <h3>5️⃣ Fin de session</h3>
-    <p>
-        Une fois l’intervention terminée, la connexion est fermée automatiquement.
-    </p>
+<p>
+C’est la solution idéale pour un dépannage rapide, économique et efficace.
+</p>
 
-    <h2>🔐 Sécurité et confidentialité</h2>
+<h2>🔧 Ce que je peux faire à distance</h2>
 
-    <ul>
-        <li>Accès uniquement avec votre accord</li>
-        <li>Connexion temporaire et sécurisée</li>
-        <li>Vous pouvez interrompre la session à tout moment</li>
-        <li>Aucune donnée personnelle n’est conservée sans votre consentement</li>
-    </ul>
+<p>Le dépannage à distance permet notamment de :</p>
 
-    <h2>💶 Tarifs du dépannage à distance</h2>
+<ul>
+    <li>Ordinateur lent ou bloqué</li>
+    <li>Suppression de virus, malwares et publicités</li>
+    <li>Problèmes Windows / logiciels</li>
+    <li>Installation et configuration de logiciels</li>
+    <li>Paramétrage e-mail</li>
+    <li>Problèmes d’imprimante ou de périphériques</li>
+    <li>Mises à jour système</li>
+    <li>Assistance et conseils personnalisés</li>
+</ul>
 
-    <p>(à adapter selon ta grille)</p>
+<p>
+👉 Si le problème ne peut pas être résolu à distance, une intervention en atelier ou à domicile sera proposée.
+</p>
 
-    <ul>
-        <li>Forfait dépannage simple (30 min) : XX €</li>
-        <li>Dépannage à distance (1 heure) : XX €</li>
-        <li>Temps supplémentaire : facturation au prorata</li>
-    </ul>
+<h2>🛠️ Comment se déroule le dépannage à distance</h2>
 
-    <p>
-        👉 Le tarif est toujours annoncé avant l’intervention.
-    </p>
+<h3>1️⃣ Prise de contact</h3>
+<p>Vous me contactez par téléphone ou via le formulaire du site pour expliquer votre problème.</p>
 
-    <h2>⚠️ Conditions nécessaires</h2>
+<h3>2️⃣ Validation</h3>
+<p>Je vous confirme si le dépannage est possible à distance et vous indique le tarif avant l’intervention.</p>
 
-    <p>Pour un dépannage à distance :</p>
+<h3>3️⃣ Connexion sécurisée</h3>
+<p>Je vous fournis un lien pour installer un logiciel de prise en main à distance (ex. AnyDesk ou équivalent).</p>
 
-    <ul>
-        <li>L’ordinateur doit pouvoir s’allumer</li>
-        <li>Une connexion Internet fonctionnelle est nécessaire</li>
-    </ul>
+<h3>4️⃣ Intervention</h3>
+<p>Avec votre autorisation, je prends la main sur votre ordinateur et effectue le dépannage en direct.</p>
 
-    <p>
-        Si ces conditions ne sont pas réunies, une autre solution sera proposée.
-    </p>
+<h3>5️⃣ Fin de session</h3>
+<p>Une fois l’intervention terminée, la connexion est fermée automatiquement.</p>
 
-    <h2>📞 Besoin d’aide ?</h2>
+<h2>🔐 Sécurité et confidentialité</h2>
 
-    <p>Contactez-moi pour un dépannage rapide :</p>
+<ul>
+    <li>Accès uniquement avec votre accord</li>
+    <li>Connexion temporaire et sécurisée</li>
+    <li>Vous pouvez interrompre la session à tout moment</li>
+    <li>Aucune donnée personnelle n’est conservée sans votre consentement</li>
+</ul>
 
-    <ul>
-        <li>📞 Téléphone : [ton numéro]</li>
-        <li>✉️ Email : [ton email]</li>
-        <li>📅 Sur rendez-vous</li>
-    </ul>
+<h2>💶 Tarifs du dépannage à distance</h2>
 
-    <h2>ℹ️ Informations légales</h2>
+<p>(à adapter selon ta grille)</p>
 
-    <p>
-        Prestations réalisées par un auto-entrepreneur<br>
-        TVA non applicable – article 293B du CGI
-    </p>
+<ul>
+    <li>Forfait dépannage simple (30 min) : XX €</li>
+    <li>Dépannage à distance (1 heure) : XX €</li>
+    <li>Temps supplémentaire : facturation au prorata</li>
+</ul>
+
+<p>👉 Le tarif est toujours annoncé avant l’intervention.</p>
+
+<h2>⚠️ Conditions nécessaires</h2>
+
+<p>Pour un dépannage à distance :</p>
+
+<ul>
+    <li>L’ordinateur doit pouvoir s’allumer</li>
+    <li>Une connexion Internet fonctionnelle est nécessaire</li>
+</ul>
+
+<p>Si ces conditions ne sont pas réunies, une autre solution sera proposée.</p>
+
+<h2>📞 Besoin d’aide ?</h2>
+
+<ul>
+    <li>📞 Téléphone : [ton numéro]</li>
+    <li>✉️ Email : [ton email]</li>
+    <li>📅 Sur rendez-vous</li>
+</ul>
+
+<!-- BOUTON DE CONTACT / DEVIS -->
+<div style="text-align:center; margin-top:20px;">
+    <a href="index.html#contact" class="btn">💌 Demander un devis / Réserver</a>
+</div>
+    
+<h2>ℹ️ Informations légales</h2>
+
+<p>
+Prestations réalisées par un auto-entrepreneur<br>
+TVA non applicable – article 293B du CGI
+</p>
+
+</section>
 
 </body>
 </html>

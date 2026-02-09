@@ -2,10 +2,248 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>💻 Dépannage informatique à distance</title>
+    <title>💻 Dépannage informatique à distance | St Mars Informatique</title>
     <meta name="description" content="Dépannage informatique à distance : assistance rapide, sécurisée et sans déplacement.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <link rel="icon" href="favicon.png">
+
+    <!-- CSS copié depuis index.html -->
+    <style>
+    /* Texte "Menu" sous burger (mobile seulement) */
+    .burger-text {
+      display: none;
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .burger-text {
+        display: block;
+        margin-top: 3px;
+      }
+      .burger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+    }
+
+    header{
+    background:url('affichage.jpg') center/cover no-repeat;
+    text-align:center;
+    padding:130px 20px;
+    position:relative;
+    }
+
+    header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    }
+
+    header *{
+    position:relative;
+    z-index:2;
+    }
+
+    header h1{font-size:52px;margin:0;}
+    header p{font-size:22px;margin-top:15px;}
+
+    nav{
+    background:#000;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    }
+
+    nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-size:18px;
+    font-weight:bold;
+    }
+
+    nav a:hover{color:#4da3ff;}
+
+    section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:40px;
+    background:rgba(0,0,0,0.7);
+    border-radius:15px;
+    scroll-margin-top: 90px;
+    }
+
+    section h2{text-align:center;font-size:34px;margin-bottom:25px;}
+
+    .presentation{display:flex;gap:40px;align-items:center;}
+    .presentation img{width:230px;border-radius:15px;border:3px solid white;}
+    .presentation div{flex:1;font-size:18px;line-height:1.6;}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;}
+    .service{background:rgba(255,255,255,0.12);padding:25px;border-radius:12px;text-align:center;font-size:18px;font-weight:bold;}
+
+    .contact{text-align:center;font-size:20px;}
+
+    form{max-width:600px;margin:30px auto;text-align:center;}
+    form input,form textarea{width:100%;padding:12px;margin:8px 0;border-radius:6px;border:none;font-size:16px;}
+
+    .btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#0b5ed7;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+    }
+
+    .btn:hover{background:#0849a8;}
+
+    footer{background:#eee;color:black;text-align:center;padding:20px;margin-top:60px;}
+
+    @media(max-width:800px){
+
+    header{
+    padding:90px 15px;
+    }
+
+    header h1{
+    font-size:32px;
+    }
+
+    header p{
+    font-size:18px;
+    }
+
+    nav{
+    padding:10px 0;
+    }
+
+    nav a{
+    display:block;
+    margin:8px 0;
+    font-size:18px;
+    padding:10px 0;
+    border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    section{
+    margin:30px 10px;
+    padding:25px 20px;
+    }
+
+    section h2{
+    font-size:26px;
+    }
+
+    .presentation{
+    flex-direction:column;
+    text-align:center;
+    }
+
+    .presentation img{
+    width:180px;
+    margin-bottom:15px;
+    }
+
+    .services{
+    grid-template-columns:1fr;
+    }
+
+    .btn{
+    width:100%;
+    max-width:320px;
+    }
+    }
+
+    nav .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .burger {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 800px) {
+
+      .burger {
+        display: block;
+        text-align: center;
+      }
+
+      nav .menu {
+        display: none;
+      }
+
+      nav .menu.active {
+      position: fixed;
+      inset: 0;
+
+      background: rgba(0,0,0,0.97);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      padding-top: 80px;
+      overflow-y: auto;
+
+      z-index: 9999;
+    }
+
+    nav .menu a {
+      font-size: 17px;
+      margin: 1px 0;
+      line-height: 1.1;
+    }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 900px) and (orientation: landscape) {
+
+      nav .menu {
+        flex-wrap: wrap;
+        row-gap: 6px;
+        padding: 10px;
+      }
+
+      nav .menu a {
+      font-size: 16px;
+      margin: 4px 10px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    </style>
+
 
 <body>
 

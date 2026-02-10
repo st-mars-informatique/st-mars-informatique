@@ -32,6 +32,7 @@ body {
 </style>
 
 
+<style>
 /* ===== GLOBAL ===== */
 html, body {
   margin: 0;
@@ -43,7 +44,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 
-  /* MÊME IMAGE QUE LA PAGE D’ACCUEIL */
   background-image: url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
   background-size: cover;
   background-position: center;
@@ -51,136 +51,131 @@ body {
   background-attachment: fixed;
 }
 
-/* Mobile : éviter les bugs iOS/Android */
+/* Mobile fix */
 @media (max-width: 900px) {
   body {
     background-attachment: scroll;
   }
 }
 
-/* ===== HEADER ===== */
-header{
-background:rgba(0,0,0,0.45);
-backdrop-filter: blur(2px);
-text-align:center;
-padding:90px 20px;
+/* ===== BOUTONS ===== */
+.btn, .btn-avis {
+  display: inline-block;
+  background: #0d6efd;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
+.btn:hover, .btn-avis:hover {
+  background: #0b5ed7;
+  transform: scale(1.05);
+}
+
+/* ===== HEADER ===== */
+header{
+  background:rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  text-align:center;
+  padding:90px 20px;
+}
 
 /* ===== NAV ===== */
 nav{
-background:rgba(0,0,0,0.9);
-padding:12px;
-position:sticky;
-top:0;
-z-index:1000;
+  background:rgba(0,0,0,0.9);
+  padding:12px;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 #burger{
-display:none;
-font-size:28px;
-cursor:pointer;
-color:white;
-text-align:center;
-padding:10px 0;
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:white;
+  text-align:center;
+  padding:10px 0;
 }
 
 #menu{
-display:flex;
-justify-content:center;
-gap:25px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
 }
 
 #menu a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-font-size:17px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:17px;
 }
 
 #menu a:hover{
-color:#4ea3ff;
+  color:#4ea3ff;
 }
 
 @media(max-width:800px){
-#burger{display:block;}
-#menu{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:rgba(0,0,0,0.97);
-display:none;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:20px;
-z-index:9999;
-}
-#menu.active{display:flex;}
-#menu a{font-size:22px;}
-body.menu-open{overflow:hidden;}
+  #burger{display:block;}
+  #menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.97);
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    z-index:9999;
+  }
+  #menu.active{display:flex;}
+  #menu a{font-size:22px;}
+  body.menu-open{overflow:hidden;}
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 section{
-max-width:1100px;
-margin:40px auto;
-padding:35px 25px;
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:35px 25px;
+  background:rgba(0,0,0,0.7);
+  border-radius:15px;
 }
 
 h2{
-text-align:center;
-font-size:32px;
-margin-bottom:20px;
+  text-align:center;
+  font-size:32px;
+  margin-bottom:20px;
 }
 
-.intro-tarifs{
-text-align:center;
-font-size:16px;
-margin:15px auto 35px;
-max-width:800px;
-opacity:0.9;
-}
-
-/* ===== PRICING ===== */
+/* ===== CARTES TARIFS ===== */
 .pricing{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-  align-items: stretch;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:25px;
 }
-
 
 .card{
-background:rgba(255,255,255,0.15);
-border-radius:14px;
-padding:22px;
-text-align:center;
-position:relative;
-min-height:260px;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  background:rgba(255,255,255,0.15);
+  border-radius:14px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card h3{
-font-size:20px;
-margin-bottom:10px;
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.6);
 }
+</style>
 
-.price{
-font-size:26px;
-font-weight:bold;
-margin:10px 0;
-color:#4ea3ff;
-}
-
-.card p{
-  line-height: 1.6;
-}
 
 
 

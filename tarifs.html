@@ -152,6 +152,51 @@ border-radius:30px;
 font-size:13px;
 font-weight:bold;
 }
+/* ============================= */
+/* ANIMATIONS CARTES & ICÔNES */
+/* ============================= */
+
+.card{
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.25);
+}
+
+.card h3{
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover h3{
+  color: #4ea3ff;
+  transform: scale(1.05);
+}
+
+.badge{
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:translateX(-50%) scale(1);}
+  50%{transform:translateX(-50%) scale(1.08);}
+  100%{transform:translateX(-50%) scale(1);}
+}
+
+/* Prestations rentables */
+.card.rentable{
+  border: 2px solid #4ea3ff;
+  background: rgba(78,163,255,0.2);
+}
 
 </style>
 </head>
@@ -378,6 +423,20 @@ menu.classList.remove("active");
 document.body.classList.remove("menu-open");
 });
 });
+</script>
+<script>
+/* Apparition des cartes au scroll */
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>

@@ -287,6 +287,47 @@ nav .menu a {
   line-height: 1.2;
   white-space: nowrap;
 }
+/* ===== MENU PREMIUM ICONES ===== */
+
+nav .menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+nav .menu a i {
+  transition: 0.3s;
+}
+
+nav .menu a:hover {
+  color: #4da3ff;
+}
+
+nav .menu a:hover i {
+  transform: scale(1.2);
+  color: #4da3ff;
+}
+
+/* Ligne animée sous le menu */
+nav .menu a {
+  position: relative;
+}
+
+nav .menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #4da3ff;
+  transition: 0.3s;
+}
+
+nav .menu a:hover::after {
+  width: 100%;
+}
 
 </style>
 </head>

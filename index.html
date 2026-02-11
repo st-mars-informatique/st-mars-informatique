@@ -569,73 +569,77 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
   
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===== MENU BURGER ===== */
   const burger = document.getElementById("burger");
   const menu = document.getElementById("menu");
 
-  if (!burger || !menu) return;
+  if (burger && menu) {
 
-  const links = menu.querySelectorAll("a");
+    const links = menu.querySelectorAll("a");
 
-  burger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
+    burger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
 
-  links.forEach(link => {
-    link.addEventListener("click", () => {
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+    window.addEventListener("pageshow", () => {
       menu.classList.remove("active");
       document.body.classList.remove("menu-open");
     });
-  });
+  }
 
-  window.addEventListener("pageshow", () => {
-    menu.classList.remove("active");
-    document.body.classList.remove("menu-open");
-  });
+  /* ===== BOUTON PARTAGER ===== */
+  const shareBtn = document.querySelector(".share-btn");
+
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+
+      const url = window.location.href;
+
+      if (navigator.share) {
+        navigator.share({
+          title: "St Mars Informatique",
+          text: "Dépannage informatique à Saint-Mars-de-Coutais",
+          url: url
+        }).catch(() => {});
+        return;
+      }
+
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+
+      alert("Lien copié 👍 Vous pouvez le partager !");
+    });
+  }
+
 });
-/* PARTAGE DU SITE SIMPLE ET STABLE */
-function shareSite() {
 
-  const url = window.location.href;
-
-  // Si partage natif dispo (mobile)
-  if (navigator.share) {
-    navigator.share({
-      title: "St Mars Informatique",
-      text: "Dépannage informatique à Saint-Mars-de-Coutais",
-      url: url
-    }).catch(() => {});
-    return;
-  }
-
-  // Méthode universelle PC + mobile
-  const input = document.createElement("input");
-  input.value = url;
-  document.body.appendChild(input);
-  input.select();
-  input.setSelectionRange(0, 99999);
-
-  try {
-    document.execCommand("copy");
-    alert("Lien copié 👍 Vous pouvez le partager !");
-  } catch (err) {
-    prompt("Copiez ce lien :", url);
-  }
-
-  document.body.removeChild(input);
-}
-
-
+/* ===== EFFET SCROLL NAV ===== */
 window.addEventListener("scroll", function() {
-    const nav = document.querySelector("nav");
-    if (window.scrollY > 50) {
-        nav.style.background = "rgba(0,0,0,0.95)";
-        nav.style.boxShadow = "0 4px 25px rgba(0,0,0,0.6)";
-    } else {
-        nav.style.background = "rgba(0,0,0,0.75)";
-        nav.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
-    }
-}); 
+  const nav = document.querySelector("nav");
+  if (!nav) return;
+
+  if (window.scrollY > 50) {
+    nav.style.background = "rgba(0,0,0,0.95)";
+    nav.style.boxShadow = "0 4px 25px rgba(0,0,0,0.6)";
+  } else {
+    nav.style.background = "rgba(0,0,0,0.75)";
+    nav.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
+  }
+});
+</script>
 
 
 

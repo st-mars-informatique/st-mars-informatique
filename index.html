@@ -282,21 +282,24 @@ nav .menu {
 
   /* menu ouvert */
   nav .menu.active {
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0,0,0,0.97);
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  padding-top: 80px;
-  overflow-y: auto;
-
-  z-index: 9999;
+  background: rgba(0,0,0,0.95);
+  padding: 20px 0;
+  animation: slideDown 0.3s ease;
 }
+
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
 
 nav .menu a {
   font-size: 17px;

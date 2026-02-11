@@ -81,7 +81,7 @@ color:white;
 }
 
 header{
-background:url('affichage.jpg') center/cover no-repeat
+background:url('affichage.jpg') center/cover no-repeat;
 text-align:center;
 padding:130px 20px;
 position:relative;
@@ -253,71 +253,81 @@ max-width:320px;
 }
 
 /* =============================== */
-/* ===== BURGER PREMIUM FIX ===== */
+/* ===== BURGER PREMIUM FINAL ===== */
 /* =============================== */
-/* Position du burger sous le header */
+
 .burger {
-  text-align: center;
-  margin: 25px 0 10px 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin: 20px auto;
+  z-index: 10001;
 }
 
-@media (max-width: 800px) {
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.burger-text {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+/* Animation croix */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE */
+@media (max-width:800px){
+
+  .burger {
+    display: flex;
+  }
 
   nav .menu {
     position: fixed;
-    inset: 0; /* remplace top/left/width/height */
-
-    background: rgba(0,0,0,0.96);
-    backdrop-filter: blur(18px);
-
+    inset: 0;
+    background: rgba(0,0,0,0.97);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    gap: 18px;
-
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-
+    gap: 20px;
     transform: translateY(-100%);
-    transition: transform 0.45s ease;
-
-    z-index: 9999;
+    transition: 0.4s ease;
+    z-index: 10000;
   }
 
   nav .menu.active {
     transform: translateY(0);
   }
 
-}
-
-
   nav .menu a {
     font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-
-}
-
-  nav .menu.active {
-    transform: translateX(0);
-  }
-
-  nav .menu a {
-    font-size: 20px;
     margin: 0;
-    padding: 8px 0;
+    padding: 10px 0;
   }
 
-  .burger span {
-  width: 30px;
-  height: 3px;
-  background: white;
-  margin: 5px 0;
-  border-radius: 3px;
-  transition: 0.3s ease;
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
 
@@ -411,7 +421,7 @@ nav .menu a:hover::after {
     <div class="burger-text">MENU</div>
 </div>
 
-<<nav>
+<nav>
     <div class="menu" id="menu">
 
         <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>

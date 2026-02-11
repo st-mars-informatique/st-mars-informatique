@@ -272,21 +272,6 @@ nav .menu a {
     overflow: hidden;
   }
 }
-/* === Correction mobile paysage === */
-@media (max-width: 900px) and (orientation: landscape) {
-
-  nav .menu {
-    flex-wrap: wrap;
-    row-gap: 6px;
-    padding: 10px;
-  }
-
-  nav .menu a {
-  font-size: 16px;
-  margin: 4px 10px;
-  line-height: 1.2;
-  white-space: nowrap;
-}
 /* ===== MENU PREMIUM ICONES ===== */
 
 nav .menu a {
@@ -307,7 +292,7 @@ nav .menu a:hover {
 nav .menu a:hover i {
   transform: scale(1.2);
   color: #4da3ff;
-}
+}  
 
 /* Ligne animée sous le menu */
 nav .menu a {
@@ -327,8 +312,23 @@ nav .menu a::after {
 
 nav .menu a:hover::after {
   width: 100%;
-}
+}  
+/* === Correction mobile paysage === */
+@media (max-width: 900px) and (orientation: landscape) {
 
+  nav .menu {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding: 10px;
+  }
+
+  nav .menu a {
+  font-size: 16px;
+  margin: 4px 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+  
 </style>
 </head>
 

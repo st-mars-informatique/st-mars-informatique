@@ -48,24 +48,27 @@
 /* Texte "Menu" sous burger (mobile seulement) */
 .burger-text {
   display: none;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  opacity: 0.75;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
+
 /* Visible sur mobile/tablette */
-@media (max-width: 800px) {
+@media (max-width:800px) {
+.burger:hover .burger-text {
+  opacity: 1;
+}
 
   .burger-text {
     display: block;
-    margin-top: 3px;
-  }
-
-  .burger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
 }
+
 
 body{
 margin:0;
@@ -300,15 +303,6 @@ max-width:320px;
     padding: 8px 0;
   }
 
-  /* BURGER */
-  .burger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 11000;
-  }
-
   .burger span {
     width: 26px;
     height: 2px;
@@ -406,8 +400,8 @@ nav .menu a:hover::after {
   <span></span>
   <span></span>
   <span></span>
+  <div class="burger-text">MENU</div>
 </div>
-
 
 
 <div class="menu" id="menu">

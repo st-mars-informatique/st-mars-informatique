@@ -630,9 +630,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = menu.querySelectorAll("a");
 
     burger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
+     menu.classList.toggle("active");
+     burger.classList.toggle("active"); 
     });
+
 
     links.forEach(link => {
       link.addEventListener("click", () => {

@@ -249,51 +249,45 @@ max-width:320px;
 }
 }
 
-/* ===== MENU BURGER FINAL PROPRE ===== */
+/* =============================== */
+/* ===== BURGER PREMIUM FIX ===== */
+/* =============================== */
 
-/* PC */
-nav .menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.burger {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  padding: 10px 20px;
-}
-
-/* ============================= */
-/* ===== MENU BURGER PREMIUM ===== */
-/* ============================= */
-
-nav .menu {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-/* MOBILE */
 @media (max-width: 800px) {
 
+  /* NAV fixe */
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  /* MENU OVERLAY */
   nav .menu {
     position: fixed;
-    inset: 0;
-    background: rgba(5,5,5,0.97);
-    backdrop-filter: blur(15px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
 
+    background: rgba(5,5,5,0.98);
+    backdrop-filter: blur(20px);
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 24px;
 
     transform: translateX(-100%);
     transition: transform 0.4s ease;
 
-    gap: 28px;
-    z-index: 9999;
+    z-index: 10000;
   }
 
   nav .menu.active {
@@ -303,6 +297,7 @@ nav .menu {
   nav .menu a {
     font-size: 20px;
     margin: 0;
+    padding: 8px 0;
   }
 
   /* BURGER */
@@ -311,7 +306,7 @@ nav .menu {
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 11000;
   }
 
   .burger span {
@@ -334,6 +329,9 @@ nav .menu {
   .burger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
+
+}
+
 
 /* ===== MENU PREMIUM ICONES ===== */
 

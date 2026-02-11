@@ -92,17 +92,41 @@ position:relative;
 z-index:2;
 }
 
-header h1{font-size:52px;margin:0;}
-header p{font-size:22px;margin-top:15px;}
+header{
+animation:fadeInUp 1s ease forwards;
+opacity:0;
+}
+
+@keyframes fadeInUp{
+from{
+transform:translateY(40px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+header h1{
+    font-size:52px;
+    margin:0;
+    letter-spacing:1px;
+    text-shadow:0 0 20px rgba(77,163,255,0.4);
+}
 
 nav{
-background:#000;
-text-align:center;
-padding:15px;
 position:sticky;
 top:0;
 z-index:1000;
+text-align:center;
+padding:15px;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(10px);
+box-shadow:0 4px 20px rgba(0,0,0,0.4);
+transition:all 0.3s ease;
 }
+
 
 nav a{
 color:white;
@@ -154,6 +178,15 @@ cursor:pointer;
 .btn:hover{background:#0849a8;}
 
 footer{background:#eee;color:black;text-align:center;padding:20px;margin-top:60px;}
+
+  nav.scrolled{
+background:rgba(0,0,0,0.95);
+padding:8px 0;
+}
+
+nav.scrolled .menu a{
+font-size:16px;
+}
 
 /* OPTIMISATION MOBILE */
 
@@ -570,8 +603,21 @@ function shareSite() {
     alert("Lien du site copié 👍 Vous pouvez le partager !");
   }
 }
-</script>
 
-  
+window.addEventListener("scroll", function() {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.style.background = "rgba(0,0,0,0.95)";
+        nav.style.boxShadow = "0 4px 25px rgba(0,0,0,0.6)";
+    } else {
+        nav.style.background = "rgba(0,0,0,0.75)";
+        nav.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
+    }
+window.addEventListener("pageshow", () => {
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+});
+
 </body>
 </html>
+

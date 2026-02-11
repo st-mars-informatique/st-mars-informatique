@@ -135,7 +135,7 @@ transition:all 0.3s ease;
 }
 
 
-nav a{
+nav .menu a{
 color:white;
 text-decoration:none;
 margin:0 20px;
@@ -199,6 +199,14 @@ font-size:16px;
 
 @media(max-width:800px){
 
+nav .menu {
+  display: none;
+}
+
+nav .menu.active {
+  display: flex;
+}
+  
 header{
 padding:90px 15px;
 }
@@ -296,7 +304,7 @@ max-width:320px;
 }
 
 /* MOBILE */
-@media (max-width:800px){
+@media (max-width: 800px) {
 
   .burger {
     display: flex;

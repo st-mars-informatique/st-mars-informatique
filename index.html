@@ -606,17 +606,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const links = menu.querySelectorAll("a");
 
-    burger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      document.body.classList.toggle("menu-open");
-    });
+   burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  menu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
+
 
     links.forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      });
-    });
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+    burger.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});
+
 
     window.addEventListener("pageshow", () => {
       menu.classList.remove("active");

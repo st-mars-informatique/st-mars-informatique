@@ -265,42 +265,61 @@ nav .menu {
   cursor: pointer;
   padding: 10px 20px;
 }
-/* ===== MENU BURGER MOBILE (MANQUANT) ===== */
+/* ===== MENU MOBILE PREMIUM CLEAN ===== */
 
 @media (max-width: 800px) {
 
-  /* afficher le burger */
   .burger {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    cursor: pointer;
   }
 
-  /* cacher le menu par défaut */
+  .burger-text {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
   nav .menu {
-    display: none;
-  }
-
-  /* menu ouvert */
- nav .menu.active {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 100vh;              /* plein écran */
-    max-height: 100vh;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    backdrop-filter: blur(8px);
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    background: rgba(0,0,0,0.95);
-    padding: 80px 0 40px;       /* espace haut pour le header */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
 
-    overflow-y: auto;           /* ✅ active le scroll */
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     z-index: 9999;
+  }
+
+  nav .menu.active {
+    transform: translateY(0);
+  }
+
+  nav .menu a {
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
 }
+
+
 
 
 @keyframes slideDown {

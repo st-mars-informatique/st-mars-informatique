@@ -413,6 +413,10 @@ nav .menu a:hover::after {
   white-space: nowrap;
 }
   
+body.menu-open {
+  overflow: hidden;
+}
+  
 </style>
 </head>
 
@@ -630,8 +634,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     burger.addEventListener("click", () => {
      menu.classList.toggle("active");
-     burger.classList.toggle("active"); 
+     burger.classList.toggle("active");
+     document.body.classList.toggle("menu-open");
     });
+
 
 
     links.forEach(link => {

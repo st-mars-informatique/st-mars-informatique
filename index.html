@@ -281,13 +281,27 @@ nav .menu {
   }
 
   /* menu ouvert */
-  nav .menu.active {
-  display: flex;
-  flex-direction: column;
-  background: rgba(0,0,0,0.95);
-  padding: 20px 0;
-  animation: slideDown 0.3s ease;
+ nav .menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 100vh;              /* plein écran */
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(0,0,0,0.95);
+    padding: 80px 0 40px;       /* espace haut pour le header */
+
+    overflow-y: auto;           /* ✅ active le scroll */
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 9999;
 }
+
 
 @keyframes slideDown {
   from { 
@@ -307,11 +321,6 @@ nav .menu a {
   line-height: 1.1;
 }
 
-
-  body.menu-open {
-    overflow: hidden;
-  }
-}
 /* ===== MENU PREMIUM ICONES ===== */
 
 nav .menu a {

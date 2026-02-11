@@ -266,7 +266,9 @@ nav .menu {
   padding: 10px 20px;
 }
 
-  /* ===== MENU BURGER MOBILE PRO ===== */
+/* ============================= */
+/* ===== MENU BURGER ULTRA ===== */
+/* ============================= */
 
 @media (max-width: 800px) {
 
@@ -276,31 +278,56 @@ nav .menu {
     z-index: 1000;
   }
 
+  /* Burger container */
   .burger {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
-    padding: 12px 0;
+    gap: 4px;
+    padding: 14px 0;
     cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  /* Lignes burger animées */
+  .burger span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+  }
+
+  /* Animation croix */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   .burger-text {
-    font-size: 12px;
-    margin-top: 4px;
-    opacity: 0.7;
+    font-size: 11px;
     letter-spacing: 1px;
+    opacity: 0.6;
+    margin-top: 3px;
   }
 
+  /* Menu déroulant propre */
   nav .menu {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
 
-    background: rgba(0,0,0,0.96);
-    backdrop-filter: blur(10px);
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(12px);
 
     display: flex;
     flex-direction: column;
@@ -312,12 +339,20 @@ nav .menu {
   }
 
   nav .menu.active {
-    max-height: 700px;
+    max-height: 500px;
   }
 
   nav .menu a {
-    font-size: 18px;
-    margin: 18px 0;
+    font-size: 17px;
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: 0.25s ease;
+  }
+
+  nav .menu a:hover {
+    background: rgba(255,255,255,0.05);
   }
 
 }

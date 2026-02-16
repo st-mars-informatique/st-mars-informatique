@@ -219,6 +219,17 @@ font-weight:bold;
   background: rgba(78,163,255,0.25);
   border: 2px solid #4ea3ff;
 }
+/* ===== FIX SAFARI IPHONE BANDES GRISES ===== */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll !important;
+    min-height: -webkit-fill-available;
+  }
+
+  html {
+    height: -webkit-fill-available;
+  }
+}
 
 </style>
 </head>
@@ -574,7 +585,7 @@ assistance prioritaire
     À domicile ou à distance
   </p>
 </div>
-
+</div> 
 <h2>🧾 Aide administrative et outils en ligne</h2>
 <div class="pricing">
 
@@ -588,7 +599,6 @@ accompagnement complet
 </p>
 </div>
 
-</div>
 <div class="card rentable">
 <h3>🔑 Récupération mot de passe</h3>
 <p class="price">25€</p>
@@ -661,7 +671,8 @@ logiciel spécifique
 </p>
 </div>
 
-</div>
+</div> 
+
 </section>
 
 <script>

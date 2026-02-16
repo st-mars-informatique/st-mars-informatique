@@ -84,14 +84,21 @@ z-index:9999;
 #menu a{font-size:22px;}
 body.menu-open{overflow:hidden;}
 }
+/* FIX BANDES GRISES MOBILE */
+@media(max-width:800px){
+  section{
+    margin:0;
+    border-radius:0;
+  }
+}
 
 /* ===== SECTION ===== */
 section{
-max-width:1100px;
-margin:40px auto;
-padding:35px 25px;
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px;
+  background:rgba(0,0,0,0.7);
+  border-radius:0;
 }
 
 h2{

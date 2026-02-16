@@ -129,15 +129,19 @@ opacity:0.9;
 }
 
 /* ===== PRICING ===== */
-.pricing{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-  align-items: stretch;
+..pricing{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    align-items: stretch;
+
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
+  
 .card{
 background:rgba(255,255,255,0.15);
 border-radius:14px;
@@ -694,8 +698,10 @@ logiciel spécifique
 </div>
 
 <!-- OFFRES COMBINÉES -->
-<h2>🔥 Offres combinées (économiques)</h2>
-<div class="pricing">
+<div class="grid-title full">
+  🔥 Offres combinées (économiques)
+</div>
+
 
 <div class="card rentable">
 <div class="badge">Économie</div>

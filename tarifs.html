@@ -264,6 +264,32 @@ section > h2{
   text-align:center;
   display:block;
 }
+/* ===== BOUTON APPELER ===== */
+
+.call-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:60px;
+  margin-bottom:20px;
+}
+
+.call-btn{
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:white;
+  padding:18px 34px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.45);
+  transition:0.25s;
+}
+
+.call-btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
 
 </style>
 </head>
@@ -736,11 +762,18 @@ Installation + formation + aide démarches
 <p>
 Box + Wi-Fi + imprimante + appareils connectés
 </p>
-</div> <!-- fin pricing -->
 
 </div> <!-- fin section contenu -->
 
-<a href="tel:07 60 33 05 02" class="call-btn">📞 Appeler maintenant</a>
+</div> <!-- fin pricing -->
+</div> <!-- fin section contenu -->
+
+<div class="call-container">
+  <a href="tel:0760330502" class="call-btn">📞 Appeler maintenant</a>
+</div>
+
+</section>
+
 
 </section>
 

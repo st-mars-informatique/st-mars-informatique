@@ -290,6 +290,31 @@ section > h2{
   transform:translateY(-4px) scale(1.05);
   box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
+/* ===== ALIGNEMENT PARFAIT DES CARTES ===== */
+
+.pricing{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+  align-items:stretch !important;
+}
+
+.card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  height:100%;
+}
+
+/* le texte prend l'espace */
+.card p{
+  flex-grow:1;
+}
+
+/* prix toujours au même niveau */
+.price{
+  margin-bottom:12px;
+}
 
 </style>
 </head>

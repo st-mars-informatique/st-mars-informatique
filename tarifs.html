@@ -323,6 +323,45 @@ section > h2{
   margin-bottom:12px;
 }
 
+/* ===== FORMULAIRE ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
 </style>
 </head>
 
@@ -782,7 +821,29 @@ Box + Wi-Fi + imprimante + appareils connectés
 
 </section>
 
+<!-- FORMULAIRE DE CONTACT -->
+<section id="contact">
+<h2>📝 Formulaire de contact</h2>
 
+<form action="https://formsubmit.co/ifstmars@outlook.fr" method="POST">
+  <input type="hidden" name="_next" value="https://st-mars-informatique.github.io/st-mars-informatique/merci.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Demande de devis – Site Web">
+
+  <input type="text" name="nom" placeholder="Votre nom" required>
+  <input type="email" name="email" placeholder="Votre email" required>
+  <input type="tel" name="telephone" placeholder="Téléphone" required>
+  <textarea name="message" placeholder="Décrivez votre problème" required></textarea>
+
+  <button type="submit" class="btn">Envoyer la demande</button>
+</form>
+</section>
+  
+<footer>
+<p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
+<p><a href="legal.html">Informations légales</a></p>
+</footer>
+  
 <script>
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");

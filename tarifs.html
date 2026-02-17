@@ -295,12 +295,15 @@ section > h2{
 .pricing{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:25px;
-  align-items:stretch !important;
 
+  column-gap:25px;   /* espace entre colonnes */
+  row-gap:55px;      /* espace entre lignes ← IMPORTANT */
+
+  align-items:stretch !important;
   margin-top:50px;
   margin-bottom:20px;
 }
+
 
 
 .card{

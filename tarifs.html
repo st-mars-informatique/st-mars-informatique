@@ -35,6 +35,29 @@ body::before {
   z-index: -1;
 }
 
+/* ============================= */
+/* CENTRAGE GLOBAL DES BLOCS TARIFS */
+/* ============================= */
+
+section > h2,
+.intro-tarifs{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* centre les grilles */
+.pricing{
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* évite l’effet étiré à gauche */
+.pricing .card{
+  width:100%;
+}
+
 /* ===== CSS DÉPLACEMENT & ZONE D’INTERVENTION ===== */
 #deplacement {
   background: rgba(255,255,255,0.05);
@@ -89,8 +112,6 @@ body::before {
   border-radius: 10px;
 }
 </style>
-</head>
-
 
 /* ===== GLOBAL ===== */
 html, body {

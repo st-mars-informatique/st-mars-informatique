@@ -148,36 +148,12 @@ body.menu-open{overflow:hidden;}
 
 /* ===== SECTION ===== */
 section{
-  max-width:1100px;
-  margin:40px auto;
-  padding:35px 25px;
-  border-radius:15px;
-  background:transparent;   /* <-- IMPORTANT */
+max-width:1100px;
+margin:40px auto;
+padding:35px 25px;
+background:rgba(0,0,0,0.7);
+border-radius:15px;
 }
-
-.section-dark{
-  background:rgba(0,0,0,0.7);
-  border-radius:15px;
-  padding:35px 25px;
-}
-
-/* on enlève le fond sombre uniquement pour déplacement */
-#deplacement{
-  background:none;
-}
-
-#deplacement{
-  max-width:1200px;
-  margin:80px auto;
-  padding:90px 40px;
-  border-radius:20px;
-
-  background: linear-gradient(
-    rgba(77,163,255,0.55),
-    rgba(0,120,255,0.45)
-  );
-}
-
 
 h2{
 text-align:center;
@@ -426,37 +402,10 @@ form textarea {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
-/* ===== SECTION DÉPLACEMENT STYLE FINAL ===== */
-
-#deplacement{
-  width:100%;
-  max-width:100%;
-  margin:0;
-  padding:120px 0;
-  background: transparent; /* même bleu que ton fond */
-}
-
-#deplacement .cards-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:40px;
-}
+/* ===== AMÉLIORATION SECTION DÉPLACEMENT ===== */
 
 #deplacement .card{
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(16px);
-  border-radius:22px;
-  padding:40px 30px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  border:1px solid rgba(255,255,255,0.25);
-  transition:0.3s ease;
-}
-
-#deplacement .card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  padding:28px 22px;
 }
 
 #deplacement .card h3{
@@ -474,20 +423,6 @@ form textarea {
   font-weight:bold;
   margin-bottom:12px;
 }
-
-  /* ============================= */
-/* FORCE LE VISUEL BLEU LUMINEUX */
-/* ============================= */
-
-#deplacement{
-  width:100%;
-  max-width:100%;
-  margin:0;
-  padding:120px 0;
-  background: transparent;   /* ← IMPORTANT */
-  border-radius:0;
-}
-
 
 </style>
 </head>
@@ -521,27 +456,7 @@ form textarea {
 </div>
 </nav>
 
-<section class="section-dark">
-
-#deplacement{
-  width:100%;
-  max-width:100%;
-  margin:0;
-  padding:120px 0;
-  background: linear-gradient(
-    rgba(77,163,255,0.45),
-    rgba(77,163,255,0.45)
-  );
-}
-
-#deplacement .cards-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:40px;
-}
-
+<section>
 
 <p class="intro-tarifs">
 Prestations informatiques pour particuliers et professionnels.<br>
@@ -969,50 +884,69 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin section contenu -->
   
 <!-- ===== DÉPLACEMENT & ZONE D’INTERVENTION ===== -->
-<section id="deplacement" class="zone">
+<section id="deplacement" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
 
-  <h2>🚗 Déplacement & Zone d’intervention</h2>
+  <h2 style="text-align:center; margin-bottom:40px;">🚗 Déplacement & Zone d’intervention</h2>
 
-  <div class="cards-container">
+  <div class="cards-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
 
-    <div class="card">
-      <div class="badge blue">Local</div>
+    <!-- Local -->
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+      <div class="badge" style="background:#4da3ff; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px; margin-bottom:10px;">Local</div>
+
       <h3>🏠 Déplacement gratuit</h3>
-      <p class="highlight">Saint-Mars-de-Coutais (44680)</p>
-      <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
-      <div class="features">
+
+      <p class="highlight" style="font-weight:bold; font-size:16px; margin-bottom:15px;">
+        Saint-Mars-de-Coutais (44680)
+      </p>
+
+      <p>
+        Aucun frais de déplacement.<br>
+        Intervention rapide à domicile.
+      </p>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Réactivité locale<br>
         ✔ Intervention flexible<br>
         ✔ Devis gratuit
       </div>
     </div>
 
-    <div class="card">
+    <!-- Communes voisines -->
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
       <h3>📍 Communes voisines</h3>
-      <p class="price">💰 15 € – Communes proches :</p>
-      <p class="text">
-        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz,
-        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais,
+
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 15 € – Communes proches :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, 
+        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, 
         Sainte-Pazanne, Saint-Aignan-Grandlieu
       </p>
 
-      <p class="price">💰 39 € – Autres communes desservies :</p>
-      <p class="text">
-        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même,
-        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans,
-        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau,
-        Saint-Philbert-de-Grand-Lieu, Vertou
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 39 € – Autres communes desservies :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, 
+        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, 
+        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, 
+        Vertou
       </p>
 
-      <p class="center strong">Frais déplacement</p>
+      <p class="price" style="font-weight:bold; font-size:18px; text-align:center; margin-top:10px;">Frais déplacement</p>
     </div>
 
-    <div class="card">
-      <div class="badge orange">Sur devis</div>
+    <!-- Hors secteur -->
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3); position:relative;">
+      <div class="badge" style="position:absolute; top:15px; right:15px; background:#ff7f50; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px;">Sur devis</div>
+
       <h3>🌍 Hors secteur</h3>
-      <p class="highlight">Au-delà de 25 km</p>
-      <p>Intervention possible sur devis personnalisé.</p>
-      <div class="features">
+
+      <p style="font-size:17px; margin-bottom:10px;">Au-delà de 25 km</p>
+
+      <p style="line-height:1.5;">
+        Intervention possible sur devis personnalisé.
+      </p>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Tarification adaptée à la distance<br>
         ✔ Déplacement ponctuel possible<br>
         ✔ Solution sur mesure
@@ -1021,7 +955,6 @@ Box + Wi-Fi + imprimante + appareils connectés
 
   </div>
 </section>
-
 
 <!-- ===== FORMULAIRE DE CONTACT ===== -->
 <section id="contact" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
@@ -1051,6 +984,7 @@ Box + Wi-Fi + imprimante + appareils connectés
   <p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
   <p><a href="legal.html" style="color:#4ea3ff; text-decoration:none;">Informations légales</a></p>
 </footer>
+
 
   
 <script>

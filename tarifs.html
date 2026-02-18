@@ -424,29 +424,6 @@ form textarea {
   margin-bottom:12px;
 }
 
-/* ===== Déplacement : cartes plus compactes ===== */
-
-#deplacement .cards-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  max-width: 900px;   /* réduit la largeur totale */
-  margin: 0 auto;
-}
-
-#deplacement .card{
-  max-width: 300px;   /* cartes moins larges */
-  padding: 20px 18px; /* moins d'espace intérieur */
-}
-
-#deplacement .card h3{
-  font-size: 19px;
-}
-
-#deplacement .card p{
-  font-size: 15px;
-}
-
 </style>
 </head>
 
@@ -907,18 +884,28 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin section contenu -->
   
 <!-- ===== DÉPLACEMENT & ZONE D’INTERVENTION ===== -->
-<section id="deplacement">
-  <h2>🚗 Déplacement & Zone d’intervention</h2>
+<section id="deplacement" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
 
-  <div class="cards-container">
+  <h2 style="text-align:center; margin-bottom:40px;">🚗 Déplacement & Zone d’intervention</h2>
+
+  <div class="cards-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
 
     <!-- Local -->
-    <div class="card">
-      <div class="badge">Local</div>
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+      <div class="badge" style="background:#4da3ff; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px; margin-bottom:10px;">Local</div>
+
       <h3>🏠 Déplacement gratuit</h3>
-      <p class="highlight">Saint-Mars-de-Coutais (44680)</p>
-      <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
-      <div class="card-features">
+
+      <p class="highlight" style="font-weight:bold; font-size:16px; margin-bottom:15px;">
+        Saint-Mars-de-Coutais (44680)
+      </p>
+
+      <p>
+        Aucun frais de déplacement.<br>
+        Intervention rapide à domicile.
+      </p>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Réactivité locale<br>
         ✔ Intervention flexible<br>
         ✔ Devis gratuit
@@ -926,22 +913,40 @@ Box + Wi-Fi + imprimante + appareils connectés
     </div>
 
     <!-- Communes voisines -->
-    <div class="card">
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
       <h3>📍 Communes voisines</h3>
-      <p class="highlight">💰 15 € – Communes proches :</p>
-      <p>Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, Sainte-Pazanne, Saint-Aignan-Grandlieu</p>
-      <p class="highlight">💰 39 € – Autres communes desservies :</p>
-      <p>Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, Vertou</p>
-      <p class="price">Frais déplacement</p>
+
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 15 € – Communes proches :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, 
+        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, 
+        Sainte-Pazanne, Saint-Aignan-Grandlieu
+      </p>
+
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 39 € – Autres communes desservies :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, 
+        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, 
+        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, 
+        Vertou
+      </p>
+
+      <p class="price" style="font-weight:bold; font-size:18px; text-align:center; margin-top:10px;">Frais déplacement</p>
     </div>
 
     <!-- Hors secteur -->
-    <div class="card">
-      <div class="badge" style="background:#ff7f50;">Sur devis</div>
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3); position:relative;">
+      <div class="badge" style="position:absolute; top:15px; right:15px; background:#ff7f50; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px;">Sur devis</div>
+
       <h3>🌍 Hors secteur</h3>
-      <p class="highlight">Au-delà de 25 km</p>
-      <p>Intervention possible sur devis personnalisé.</p>
-      <div class="card-features">
+
+      <p style="font-size:17px; margin-bottom:10px;">Au-delà de 25 km</p>
+
+      <p style="line-height:1.5;">
+        Intervention possible sur devis personnalisé.
+      </p>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Tarification adaptée à la distance<br>
         ✔ Déplacement ponctuel possible<br>
         ✔ Solution sur mesure
@@ -950,7 +955,6 @@ Box + Wi-Fi + imprimante + appareils connectés
 
   </div>
 </section>
-
 
 <!-- ===== FORMULAIRE DE CONTACT ===== -->
 <section id="contact" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">

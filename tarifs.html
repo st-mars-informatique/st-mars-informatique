@@ -44,10 +44,29 @@ body::before {
 
 /* ===== HEADER ===== */
 header{
-background:rgba(0,0,0,0.6);
-text-align:center;
-padding:90px 20px;
+  background:rgba(0,0,0,0.6);
+  text-align:center;
+  padding:90px 20px;
 }
+
+/* ===== BARRE DE CONFIANCE ===== */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.trust-bar span {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  font-weight: bold;
+}
+
 
 /* ===== NAV ===== */
 nav{
@@ -389,9 +408,18 @@ form textarea {
 <body>
 
 <header>
-<h1>💶 Grille tarifaire</h1>
-<p>Dépannage informatique à Saint-Mars-de-Coutais</p>
+  <h1>💶 Grille tarifaire</h1>
+  <p>Dépannage informatique à Saint-Mars-de-Coutais</p>
+
+  <!-- Barre de confiance -->
+  <div class="trust-bar">
+    <span>⭐ Noté 5/5 par nos clients</span>
+    <span>📍 Entreprise locale – Saint-Mars-de-Coutais</span>
+    <span>⚡ Intervention rapide</span>
+    <span>🔒 Devis gratuit</span>
+  </div>
 </header>
+
 
 <nav>
 <div id="burger">☰</div>

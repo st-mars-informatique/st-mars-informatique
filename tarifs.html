@@ -146,28 +146,71 @@ z-index:9999;
 body.menu-open{overflow:hidden;}
 }
 
-/* ===== SECTION ===== */
-section{
-max-width:1100px;
-margin:40px auto;
-padding:35px 25px;
-background:rgba(0,0,0,0.7);
-border-radius:15px;
+/* ============================= */
+/* SECTION DÉPLACEMENT PREMIUM */
+/* ============================= */
+
+.zone-intervention {
+  margin: 80px auto;
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #0f4c75, #1b6ca8);
+  border-radius: 20px;
+  text-align: center;
 }
 
-h2{
-text-align:center;
-font-size:32px;
-margin-bottom:20px;
+.zone-intervention .section-title {
+  font-size: 30px;
+  margin-bottom: 50px;
 }
 
-.intro-tarifs{
-text-align:center;
-font-size:16px;
-margin:15px auto 35px;
-max-width:800px;
-opacity:0.9;
+.zone-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
+
+.zone-card {
+  width: 320px;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.35s ease;
+}
+
+.zone-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.15);
+}
+
+.zone-card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.zone-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.zone-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.zone-card ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
 
 /* ===== PRICING ===== */
 .pricing{
@@ -884,48 +927,42 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin section contenu -->
   
 <section class="zone-intervention">
-  <div class="container">
-    <h2 class="section-title">🚗 Déplacement & Zone d’intervention</h2>
+  <h2 class="section-title">🚗 Déplacement & Zone d’intervention</h2>
 
-    <div class="cards">
-      
-      <!-- Carte 1 -->
-      <div class="card">
-        <h3>🏠 Déplacement gratuit</h3>
-        <p><strong>Saint-Mars-de-Coutais (44680)</strong></p>
-        <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
-        <ul>
-          <li>✔ Réactivité locale</li>
-          <li>✔ Intervention flexible</li>
-          <li>✔ Devis gratuit</li>
-        </ul>
-      </div>
+  <div class="zone-cards">
 
-      <!-- Carte 2 -->
-      <div class="card">
-        <h3>📍 Communes voisines</h3>
-        <p><strong>15 € – Communes proches :</strong></p>
-        <p>Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz...</p>
-        <p><strong>39 € – Autres communes desservies :</strong></p>
-        <p>Couëron, Indre, La Chevrolière, La Montagne...</p>
-      </div>
-
-      <!-- Carte 3 -->
-      <div class="card">
-        <h3>🌍 Hors secteur</h3>
-        <p>Au-delà de 25 km</p>
-        <p>Intervention possible sur devis personnalisé.</p>
-        <ul>
-          <li>✔ Tarification adaptée à la distance</li>
-          <li>✔ Déplacement ponctuel possible</li>
-          <li>✔ Solution sur mesure</li>
-        </ul>
-      </div>
-
+    <div class="zone-card">
+      <h3>🏠 Déplacement gratuit</h3>
+      <p><strong>Saint-Mars-de-Coutais (44680)</strong></p>
+      <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
+      <ul>
+        <li>✔ Réactivité locale</li>
+        <li>✔ Intervention flexible</li>
+        <li>✔ Devis gratuit</li>
+      </ul>
     </div>
+
+    <div class="zone-card">
+      <h3>📍 Communes voisines</h3>
+      <p><strong>15 € – Communes proches :</strong></p>
+      <p>Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz...</p>
+      <p><strong>39 € – Autres communes :</strong></p>
+      <p>Couëron, Indre, La Chevrolière, La Montagne...</p>
+    </div>
+
+    <div class="zone-card">
+      <h3>🌍 Hors secteur</h3>
+      <p>Au-delà de 25 km</p>
+      <p>Intervention possible sur devis personnalisé.</p>
+      <ul>
+        <li>✔ Tarification adaptée</li>
+        <li>✔ Déplacement ponctuel</li>
+        <li>✔ Solution sur mesure</li>
+      </ul>
+    </div>
+
   </div>
 </section>
-
 
     <!-- Communes voisines -->
     <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">

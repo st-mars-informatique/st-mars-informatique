@@ -438,8 +438,36 @@ nav .menu a:hover::after {
 body.menu-open {
   overflow: hidden;
 }
-  
+
+/* ===== Barre de confiance header ===== */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 18px; /* Taille du texte principale */
+  font-weight: bold;
+}
+
+.trust-bar span {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 800px) {
+  .trust-bar {
+    font-size: 16px;
+    gap: 10px;
+  }
+  .trust-bar span {
+    padding: 6px 10px;
+  }
+}
 </style>
+
 </head>
 
 <body loading="lazy">

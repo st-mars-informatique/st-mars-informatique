@@ -423,6 +423,47 @@ form textarea {
   font-weight:bold;
   margin-bottom:12px;
 }
+  
+/* ===== DISPOSITION IDENTIQUE AUX TARIFS ===== */
+
+.zone-pricing {
+  margin-top: 40px;
+}
+
+.zone-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.zone-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.25);
+}
+
+.zone-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.zone-card p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.zone-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.zone-card ul li {
+  margin-bottom: 8px;
+}
 
 </style>
 </head>
@@ -845,7 +886,6 @@ Licence en supplément à la charge du client.
 <div class="pricing">
 
 
-
 <div class="card rentable">
 <div class="badge">Économie</div>
 <h3>🛡️ PC sécurisé + rapide</h3>
@@ -883,78 +923,44 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin pricing -->
 </div> <!-- fin section contenu -->
   
-<!-- ===== DÉPLACEMENT & ZONE D’INTERVENTION ===== -->
-<section id="deplacement" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
+<section>
+  <h2>🚗 Déplacement & Zone d’intervention</h2>
 
-  <h2 style="text-align:center; margin-bottom:40px;">🚗 Déplacement & Zone d’intervention</h2>
+  <div class="pricing zone-pricing">
 
-  <div class="cards-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-
-    <!-- Local -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
-      <div class="badge" style="background:#4da3ff; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px; margin-bottom:10px;">Local</div>
-
+    <div class="zone-card">
       <h3>🏠 Déplacement gratuit</h3>
-
-      <p class="highlight" style="font-weight:bold; font-size:16px; margin-bottom:15px;">
-        Saint-Mars-de-Coutais (44680)
-      </p>
-
-      <p>
-        Aucun frais de déplacement.<br>
-        Intervention rapide à domicile.
-      </p>
-
-      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
-        ✔ Réactivité locale<br>
-        ✔ Intervention flexible<br>
-        ✔ Devis gratuit
-      </div>
+      <p><strong>Saint-Mars-de-Coutais (44680)</strong></p>
+      <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
+      <ul>
+        <li>✔ Réactivité locale</li>
+        <li>✔ Intervention flexible</li>
+        <li>✔ Devis gratuit</li>
+      </ul>
     </div>
 
-    <!-- Communes voisines -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+    <div class="zone-card">
       <h3>📍 Communes voisines</h3>
-
-      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 15 € – Communes proches :</p>
-      <p style="margin-bottom:15px; line-height:1.5;">
-        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, 
-        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, 
-        Sainte-Pazanne, Saint-Aignan-Grandlieu
-      </p>
-
-      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 39 € – Autres communes desservies :</p>
-      <p style="margin-bottom:15px; line-height:1.5;">
-        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, 
-        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, 
-        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, 
-        Vertou
-      </p>
-
-      <p class="price" style="font-weight:bold; font-size:18px; text-align:center; margin-top:10px;">Frais déplacement</p>
+      <p><strong>15 € – Communes proches :</strong></p>
+      <p>Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz...</p>
+      <p><strong>39 € – Autres communes :</strong></p>
+      <p>Couëron, Indre, La Chevrolière, La Montagne...</p>
     </div>
 
-    <!-- Hors secteur -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3); position:relative;">
-      <div class="badge" style="position:absolute; top:15px; right:15px; background:#ff7f50; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px;">Sur devis</div>
-
+    <div class="zone-card">
       <h3>🌍 Hors secteur</h3>
-
-      <p style="font-size:17px; margin-bottom:10px;">Au-delà de 25 km</p>
-
-      <p style="line-height:1.5;">
-        Intervention possible sur devis personnalisé.
-      </p>
-
-      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
-        ✔ Tarification adaptée à la distance<br>
-        ✔ Déplacement ponctuel possible<br>
-        ✔ Solution sur mesure
-      </div>
+      <p>Au-delà de 25 km</p>
+      <p>Intervention possible sur devis personnalisé.</p>
+      <ul>
+        <li>✔ Tarification adaptée</li>
+        <li>✔ Déplacement ponctuel</li>
+        <li>✔ Solution sur mesure</li>
+      </ul>
     </div>
 
   </div>
 </section>
+
 
 <!-- ===== FORMULAIRE DE CONTACT ===== -->
 <section id="contact" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">

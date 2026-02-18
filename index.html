@@ -455,18 +455,22 @@ body.menu-open {
   padding: 8px 14px;
   border-radius: 12px;
   backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  gap: 6px; /* espace entre emoji et texte */
 }
 
+/* ===== Adaptation mobile ===== */
 @media (max-width: 800px) {
   .trust-bar {
-    font-size: 16px;
-    gap: 10px;
+    font-size: 17px; /* un peu plus grand que 16px pour lisibilité */
+    gap: 12px;
   }
   .trust-bar span {
-    padding: 6px 10px;
+    padding: 7px 12px; /* légèrement plus grand que ton précédent 6px/10px */
   }
 }
-</style>
+
 
 </head>
 

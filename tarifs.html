@@ -8,110 +8,6 @@
 <link rel="icon" href="favicon.png">
 
 <style>
-/* ===== GLOBAL ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: 
-    linear-gradient(rgba(77,163,255,0.4), rgba(0,0,0,0.6)),
-    url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
-/* ============================= */
-/* CENTRAGE GLOBAL DES BLOCS TARIFS */
-/* ============================= */
-
-section > h2,
-.intro-tarifs{
-  max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* centre les grilles */
-.pricing{
-  max-width:1000px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* évite l’effet étiré à gauche */
-.pricing .card{
-  width:100%;
-}
-
-/* ===== CSS DÉPLACEMENT & ZONE D’INTERVENTION ===== */
-#deplacement {
-  background: rgba(255,255,255,0.05);
-  padding: 60px 20px;
-  border-radius: 15px;
-  max-width: 1200px;
-  margin: 40px auto;
-  color: white;
-}
-
-#deplacement h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-#deplacement .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-#deplacement .card {
-  padding: 25px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.15);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  color: white;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-}
-
-#deplacement .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-#deplacement .card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-#deplacement .card p,
-#deplacement .card .highlight {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 8px;
-}
-
-#deplacement .badge {
-  font-size: 12px;
-  padding: 5px 12px;
-  border-radius: 10px;
-}
-</style>
 
 /* ===== GLOBAL ===== */
 html, body {
@@ -988,20 +884,28 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin section contenu -->
   
 <!-- ===== DÉPLACEMENT & ZONE D’INTERVENTION ===== -->
-<section id="deplacement">
-  <h2>🚗 Déplacement & Zone d’intervention</h2>
+<section id="deplacement" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
 
-  <div class="cards-container">
+  <h2 style="text-align:center; margin-bottom:40px;">🚗 Déplacement & Zone d’intervention</h2>
+
+  <div class="cards-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+
     <!-- Local -->
-    <div class="card">
-      <div class="badge">Local</div>
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+      <div class="badge" style="background:#4da3ff; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px; margin-bottom:10px;">Local</div>
+
       <h3>🏠 Déplacement gratuit</h3>
-      <p class="highlight">Saint-Mars-de-Coutais (44680)</p>
+
+      <p class="highlight" style="font-weight:bold; font-size:16px; margin-bottom:15px;">
+        Saint-Mars-de-Coutais (44680)
+      </p>
+
       <p>
         Aucun frais de déplacement.<br>
         Intervention rapide à domicile.
       </p>
-      <div>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Réactivité locale<br>
         ✔ Intervention flexible<br>
         ✔ Devis gratuit
@@ -1009,24 +913,40 @@ Box + Wi-Fi + imprimante + appareils connectés
     </div>
 
     <!-- Communes voisines -->
-    <div class="card">
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
       <h3>📍 Communes voisines</h3>
-      <p class="highlight">💰 15 € – Communes proches :</p>
-      <p>Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, ...</p>
 
-      <p class="highlight">💰 39 € – Autres communes desservies :</p>
-      <p>Couëron, Indre, La Chevrolière, La Montagne, ...</p>
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 15 € – Communes proches :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, 
+        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, 
+        Sainte-Pazanne, Saint-Aignan-Grandlieu
+      </p>
 
-      <p class="price">Frais déplacement</p>
+      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 39 € – Autres communes desservies :</p>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, 
+        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, 
+        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, 
+        Vertou
+      </p>
+
+      <p class="price" style="font-weight:bold; font-size:18px; text-align:center; margin-top:10px;">Frais déplacement</p>
     </div>
 
     <!-- Hors secteur -->
-    <div class="card">
-      <div class="badge">Sur devis</div>
+    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3); position:relative;">
+      <div class="badge" style="position:absolute; top:15px; right:15px; background:#ff7f50; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px;">Sur devis</div>
+
       <h3>🌍 Hors secteur</h3>
-      <p>Au-delà de 25 km</p>
-      <p>Intervention possible sur devis personnalisé.</p>
-      <div>
+
+      <p style="font-size:17px; margin-bottom:10px;">Au-delà de 25 km</p>
+
+      <p style="line-height:1.5;">
+        Intervention possible sur devis personnalisé.
+      </p>
+
+      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
         ✔ Tarification adaptée à la distance<br>
         ✔ Déplacement ponctuel possible<br>
         ✔ Solution sur mesure
@@ -1035,7 +955,6 @@ Box + Wi-Fi + imprimante + appareils connectés
 
   </div>
 </section>
-
 
 <!-- ===== FORMULAIRE DE CONTACT ===== -->
 <section id="contact" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">

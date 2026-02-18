@@ -424,49 +424,6 @@ form textarea {
   margin-bottom:12px;
 }
 
-  /* ===================================== */
-/* ISOLEMENT COMPLET SECTION DEPLACEMENT */
-/* ===================================== */
-
-/* annule les styles globaux des cartes */
-#deplacement .card{
-display:block !important;
-height:auto !important;
-min-height:unset !important;
-text-align:left;
-}
-
-/* badge position coin droit uniquement ici */
-#deplacement .badge{
-left:auto !important;
-transform:none !important;
-right:15px;
-top:15px;
-animation:none;
-}
-
-/* grille fixe parfaite */
-#deplacement .cards-container{
-display:grid;
-grid-template-columns: repeat(3, 320px);
-justify-content:center;
-gap:35px;
-}
-
-/* empêcher l'étirement flex global */
-#deplacement .card p{
-flex:unset !important;
-}
-
-/* responsive */
-@media (max-width:900px){
-#deplacement .cards-container{
-grid-template-columns:1fr;
-max-width:420px;
-margin:auto;
-}
-}
-
 </style>
 </head>
 

@@ -941,28 +941,35 @@ Box + Wi-Fi + imprimante + appareils connectés
 </section>
 
 
-<!-- FORMULAIRE DE CONTACT -->
-<section id="contact">
-<h2>📝 Formulaire de contact</h2>
+<!-- ===== FORMULAIRE DE CONTACT ===== -->
+<section id="contact" style="background:rgba(0,0,0,0.75); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
 
-<form action="https://formsubmit.co/ifstmars@outlook.fr" method="POST">
-  <input type="hidden" name="_next" value="https://st-mars-informatique.github.io/st-mars-informatique/merci.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="Demande de devis – Site Web">
+  <h2 style="text-align:center; margin-bottom:40px;">📝 Formulaire de contact</h2>
 
-  <input type="text" name="nom" placeholder="Votre nom" required>
-  <input type="email" name="email" placeholder="Votre email" required>
-  <input type="tel" name="telephone" placeholder="Téléphone" required>
-  <textarea name="message" placeholder="Décrivez votre problème" required></textarea>
+  <form action="https://formsubmit.co/ifstmars@outlook.fr" method="POST" style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
+    
+    <input type="hidden" name="_next" value="https://st-mars-informatique.github.io/st-mars-informatique/merci.html">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Demande de devis – Site Web">
 
-  <button type="submit" class="btn">Envoyer la demande</button>
-</form>
+    <input type="text" name="nom" placeholder="Votre nom" required style="padding:12px 15px; border-radius:8px; border:none; outline:none; font-size:16px;">
+    <input type="email" name="email" placeholder="Votre email" required style="padding:12px 15px; border-radius:8px; border:none; outline:none; font-size:16px;">
+    <input type="tel" name="telephone" placeholder="Téléphone" required style="padding:12px 15px; border-radius:8px; border:none; outline:none; font-size:16px;">
+    <textarea name="message" placeholder="Décrivez votre problème" required style="padding:12px 15px; border-radius:8px; border:none; outline:none; font-size:16px; min-height:120px; resize:vertical;"></textarea>
+
+    <button type="submit" class="btn" style="background:linear-gradient(135deg,#00c6ff,#0072ff); color:white; padding:18px 34px; border-radius:50px; font-weight:bold; font-size:20px; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,0.45); transition:0.25s;">
+      Envoyer la demande
+    </button>
+
+  </form>
 </section>
-  
-<footer>
-<p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
-<p><a href="legal.html">Informations légales</a></p>
+
+<!-- ===== FOOTER ===== -->
+<footer style="text-align:center; padding:25px 20px; color:white; opacity:0.85; font-size:14px; margin-top:40px;">
+  <p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
+  <p><a href="legal.html" style="color:#4ea3ff; text-decoration:none;">Informations légales</a></p>
 </footer>
+
   
 <script>
 const burger = document.getElementById("burger");

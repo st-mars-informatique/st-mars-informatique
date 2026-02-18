@@ -424,6 +424,49 @@ form textarea {
   margin-bottom:12px;
 }
 
+  /* ===================================== */
+/* ISOLEMENT COMPLET SECTION DEPLACEMENT */
+/* ===================================== */
+
+/* annule les styles globaux des cartes */
+#deplacement .card{
+display:block !important;
+height:auto !important;
+min-height:unset !important;
+text-align:left;
+}
+
+/* badge position coin droit uniquement ici */
+#deplacement .badge{
+left:auto !important;
+transform:none !important;
+right:15px;
+top:15px;
+animation:none;
+}
+
+/* grille fixe parfaite */
+#deplacement .cards-container{
+display:grid;
+grid-template-columns: repeat(3, 320px);
+justify-content:center;
+gap:35px;
+}
+
+/* empêcher l'étirement flex global */
+#deplacement .card p{
+flex:unset !important;
+}
+
+/* responsive */
+@media (max-width:900px){
+#deplacement .cards-container{
+grid-template-columns:1fr;
+max-width:420px;
+margin:auto;
+}
+}
+
 </style>
 </head>
 
@@ -884,69 +927,50 @@ Box + Wi-Fi + imprimante + appareils connectés
 </div> <!-- fin section contenu -->
   
 <!-- ===== DÉPLACEMENT & ZONE D’INTERVENTION ===== -->
-<section id="deplacement" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">
+<section id="deplacement" class="zone">
 
-  <h2 style="text-align:center; margin-bottom:40px;">🚗 Déplacement & Zone d’intervention</h2>
+  <h2>🚗 Déplacement & Zone d’intervention</h2>
 
-  <div class="cards-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+  <div class="cards-container">
 
-    <!-- Local -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
-      <div class="badge" style="background:#4da3ff; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px; margin-bottom:10px;">Local</div>
-
+    <div class="card">
+      <div class="badge blue">Local</div>
       <h3>🏠 Déplacement gratuit</h3>
-
-      <p class="highlight" style="font-weight:bold; font-size:16px; margin-bottom:15px;">
-        Saint-Mars-de-Coutais (44680)
-      </p>
-
-      <p>
-        Aucun frais de déplacement.<br>
-        Intervention rapide à domicile.
-      </p>
-
-      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
+      <p class="highlight">Saint-Mars-de-Coutais (44680)</p>
+      <p>Aucun frais de déplacement.<br>Intervention rapide à domicile.</p>
+      <div class="features">
         ✔ Réactivité locale<br>
         ✔ Intervention flexible<br>
         ✔ Devis gratuit
       </div>
     </div>
 
-    <!-- Communes voisines -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+    <div class="card">
       <h3>📍 Communes voisines</h3>
-
-      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 15 € – Communes proches :</p>
-      <p style="margin-bottom:15px; line-height:1.5;">
-        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz, 
-        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais, 
+      <p class="price">💰 15 € – Communes proches :</p>
+      <p class="text">
+        Brains, Bouaye, Bouguenais, Chaumes-en-Retz, Cheix-en-Retz,
+        Port-Saint-Père, Saint-Léger-les-Vignes, Saint-Lumine-de-Coutais,
         Sainte-Pazanne, Saint-Aignan-Grandlieu
       </p>
 
-      <p style="font-weight:bold; font-size:16px; margin-bottom:8px;">💰 39 € – Autres communes desservies :</p>
-      <p style="margin-bottom:15px; line-height:1.5;">
-        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même, 
-        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans, 
-        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau, Saint-Philbert-de-Grand-Lieu, 
-        Vertou
+      <p class="price">💰 39 € – Autres communes desservies :</p>
+      <p class="text">
+        Couëron, Indre, La Chevrolière, La Montagne, Machecoul-Saint-Même,
+        Nantes, Orvault, Paulx, Pont-Saint-Martin, Pornic, Rezé, Rouans,
+        Saint-Hilaire-de-Chaléons, Saint-Jean-de-Boiseau,
+        Saint-Philbert-de-Grand-Lieu, Vertou
       </p>
 
-      <p class="price" style="font-weight:bold; font-size:18px; text-align:center; margin-top:10px;">Frais déplacement</p>
+      <p class="center strong">Frais déplacement</p>
     </div>
 
-    <!-- Hors secteur -->
-    <div class="card" style="background:rgba(255,255,255,0.15); padding:25px; border-radius:15px; max-width:400px; color:white; box-shadow:0 4px 15px rgba(0,0,0,0.3); position:relative;">
-      <div class="badge" style="position:absolute; top:15px; right:15px; background:#ff7f50; color:white; font-weight:bold; padding:5px 12px; border-radius:10px; font-size:14px;">Sur devis</div>
-
+    <div class="card">
+      <div class="badge orange">Sur devis</div>
       <h3>🌍 Hors secteur</h3>
-
-      <p style="font-size:17px; margin-bottom:10px;">Au-delà de 25 km</p>
-
-      <p style="line-height:1.5;">
-        Intervention possible sur devis personnalisé.
-      </p>
-
-      <div style="margin-top:15px; font-size:14px; opacity:0.85;">
+      <p class="highlight">Au-delà de 25 km</p>
+      <p>Intervention possible sur devis personnalisé.</p>
+      <div class="features">
         ✔ Tarification adaptée à la distance<br>
         ✔ Déplacement ponctuel possible<br>
         ✔ Solution sur mesure
@@ -955,6 +979,7 @@ Box + Wi-Fi + imprimante + appareils connectés
 
   </div>
 </section>
+
 
 <!-- ===== FORMULAIRE DE CONTACT ===== -->
 <section id="contact" style="background:rgba(255,255,255,0.05); padding:60px 20px; border-radius:15px; max-width:1200px; margin:40px auto; color:white;">

@@ -27,11 +27,33 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+  background: 
+    linear-gradient(135deg, #0f2027, #203a43, #2c5364),
+    url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Animation du dégradé */
+@keyframes gradientShift {
+  0% {
+    background: 
+      linear-gradient(135deg, #0f2027, #203a43, #2c5364),
+      url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+  }
+  50% {
+    background: 
+      linear-gradient(225deg, #2c5364, #203a43, #0f2027),
+      url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+  }
+  100% {
+    background: 
+      linear-gradient(135deg, #0f2027, #203a43, #2c5364),
+      url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+  }
 }
 
 

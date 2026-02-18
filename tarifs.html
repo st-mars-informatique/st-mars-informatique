@@ -155,6 +155,24 @@ background:rgba(0,0,0,0.7);
 border-radius:15px;
 }
 
+/* on enlève le fond sombre uniquement pour déplacement */
+#deplacement{
+  background:none;
+}
+
+#deplacement{
+  max-width:1200px;
+  margin:80px auto;
+  padding:90px 40px;
+  border-radius:20px;
+
+  background: linear-gradient(
+    rgba(77,163,255,0.55),
+    rgba(0,120,255,0.45)
+  );
+}
+
+
 h2{
 text-align:center;
 font-size:32px;
@@ -422,6 +440,15 @@ form textarea {
   font-size:19px;
   font-weight:bold;
   margin-bottom:12px;
+}
+
+#deplacement .card{
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(12px);
+  border-radius:18px;
+  padding:35px 28px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.35);
 }
 
 #deplacement .card{

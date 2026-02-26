@@ -839,6 +839,23 @@ window.addEventListener("scroll", function() {
   cursor: pointer;
 }
 
+/* Animation fade-in + slide-up pour la bannière cookies */
+@keyframes slideFadeIn {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#cookie-banner.show {
+  display: block;
+  animation: slideFadeIn 0.6s ease forwards;
+}
+  
 .accept-btn { background: #0b5ed7; color: white; }
 .reject-btn { background: #555; color: white; }
 .settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }

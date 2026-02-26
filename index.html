@@ -477,41 +477,34 @@ body.menu-open {
   }
 }
 
-/* ===== ICÔNES RÉSEAUX SOCIAUX FOOTER PREMIUM ===== */
+/* ===== ICÔNES RÉSEAUX SOCIAUX VERSION PRO ===== */
+
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   margin-top: 15px;
 }
 
 .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, #0b5ed7, #4da3ff);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
 }
 
-.social-icons a img {
-  width: 35px;          /* taille du logo */
-  height: 35px;
-  object-fit: contain;
-  transition: transform 0.3s;
+.social-icons a i {
+  font-size: 20px;
+  color: white;
 }
 
 .social-icons a:hover {
-  transform: translateY(-4px) scale(1.15);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform: translateY(-4px) scale(1.1);
   background: linear-gradient(135deg, #ffc107, #ffdd66);
-}
-
-.social-icons a:hover img {
-  transform: scale(1.15);
 }
 </style>
 
@@ -749,13 +742,13 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
 
 <div class="social-icons">
   <a href="https://www.facebook.com/people/St-Mars-Informatique/61588209045815/" target="_blank" rel="noopener" aria-label="Facebook">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+    <i class="fa-brands fa-facebook-f"></i>
   </a>
   <a href="https://www.instagram.com/st_mars_informatique" target="_blank" rel="noopener" aria-label="Instagram">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" />
+    <i class="fa-brands fa-instagram"></i>
   </a>
   <a href="https://www.tiktok.com/@st.mars.informati" target="_blank" rel="noopener" aria-label="TikTok">
-    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" />
+    <i class="fa-brands fa-tiktok"></i>
   </a>
 </div>
   <!-- Fin icônes réseaux sociaux -->

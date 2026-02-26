@@ -477,34 +477,38 @@ body.menu-open {
   }
 }
 
-/* ===== ICÔNES RÉSEAUX SOCIAUX VERSION PRO ===== */
+/* ===== ICÔNES OFFICIELLES PROPORTIONNÉES ===== */
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 22px;
   margin-top: 15px;
 }
 
 .social-icons a {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0b5ed7, #4da3ff);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
   transition: 0.3s ease;
 }
 
-.social-icons a i {
-  font-size: 20px;
-  color: white;
+.social-icons a img {
+  max-width: 55%;
+  max-height: 55%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .social-icons a:hover {
-  transform: translateY(-4px) scale(1.1);
-  background: linear-gradient(135deg, #ffc107, #ffdd66);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 </style>
 

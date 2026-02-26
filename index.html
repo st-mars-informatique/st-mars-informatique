@@ -192,8 +192,18 @@ font-weight:bold;
 border:none;
 cursor:pointer;
 }
-
+  
 .btn:hover{background:#0849a8;}
+
+.contact .btn.pages-jaunes {
+  margin-top: 15px;
+  background-color: #ffc107; /* jaune Pages Jaunes */
+  color: black;
+}
+
+.contact .btn.pages-jaunes:hover {
+  background-color: #e0a800;
+}
 
 footer{background:#eee;color:black;text-align:center;padding:20px;margin-top:60px;}
 
@@ -567,24 +577,28 @@ Disponible, réactif et à l’écoute, je privilégie un service de proximité 
 <section id="contact">
 <h2>📞 Contact & Devis</h2>
 <div class="contact">
-<iframe 
-src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint-Mars-de-Coutais&output=embed"
-width="100%" 
-height="300" 
-style="border:0;border-radius:12px;margin-top:20px;" 
-allowfullscreen 
-loading="lazy">
-</iframe>
+  <iframe 
+    src="https://www.google.com/maps?q=2+rue+des+Millauds+44680+Saint-Mars-de-Coutais&output=embed"
+    width="100%" 
+    height="300" 
+    style="border:0;border-radius:12px;margin-top:20px;" 
+    allowfullscreen 
+    loading="lazy">
+  </iframe>
 
-<p><strong>Fabrice Ropers</strong></p>
-<p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
-<p>📱 07 60 33 05 02</p>
-<a href="tel:0760330502" class="btn">Appeler</a>
-<a class="btn" href="https://wa.me/33760330502" target="_blank">WhatsApp</a>
-<button class="btn share-btn" onclick="shareSite()">📤 Partager</button>
+  <p><strong>Fabrice Ropers</strong></p>
+  <p>📍 2 rue des Millauds – 44680 Saint-Mars-de-Coutais</p>
+  <p>📱 07 60 33 05 02</p>
 
+  <!-- Boutons contact -->
+  <a href="tel:0760330502" class="btn">Appeler</a>
+  <a class="btn" href="https://wa.me/33760330502" target="_blank">WhatsApp</a>
+  <a href="https://www.pagesjaunes.fr/pros/64734269" class="btn pages-jaunes" target="_blank" rel="noopener">
+    ⭐ Voir notre fiche Pages Jaunes
+  </a>
+  <button class="btn share-btn" onclick="shareSite()">📤 Partager</button>
 </div>
-
+  
 <h2>📝 Formulaire de contact</h2>
 
 <form action="https://formsubmit.co/faropers@gmail.com" method="POST">

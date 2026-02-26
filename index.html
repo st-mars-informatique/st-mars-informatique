@@ -804,7 +804,6 @@ window.addEventListener("scroll", function() {
 </script>
 
 <!-- ===== BANNIERE COOKIES PREMIUM ===== -->
-
 <style>
 #cookie-banner {
   position: fixed;
@@ -855,7 +854,7 @@ window.addEventListener("scroll", function() {
   display: block;
   animation: slideFadeIn 0.6s ease forwards;
 }
-  
+
 .accept-btn { background: #0b5ed7; color: white; }
 .reject-btn { background: #555; color: white; }
 .settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
@@ -878,30 +877,38 @@ window.addEventListener("scroll", function() {
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
+  const cookieBanner = document.getElementById("cookie-banner");
+
+  // Vérifie si le consentement existe déjà
   if (!localStorage.getItem("cookieConsent")) {
-    const cookieBanner = document.getElementById("cookie-banner");
-cookieBanner.classList.add("show");
+    // Affiche la bannière avant d'ajouter l'animation
+    cookieBanner.style.display = "block";
+    cookieBanner.classList.add("show");
   } else if (localStorage.getItem("cookieConsent") === "accepted") {
     loadGTM();
   }
 
 });
 
+// Boutons
 function acceptCookies() {
   localStorage.setItem("cookieConsent", "accepted");
-  document.getElementById("cookie-banner").style.display = "none";
+  const cookieBanner = document.getElementById("cookie-banner");
+  cookieBanner.style.display = "none";
   loadGTM();
 }
 
 function rejectCookies() {
   localStorage.setItem("cookieConsent", "rejected");
-  document.getElementById("cookie-banner").style.display = "none";
+  const cookieBanner = document.getElementById("cookie-banner");
+  cookieBanner.style.display = "none";
 }
 
 function showSettings() {
   alert("Fonctionnalité de personnalisation avancée à ajouter si besoin.");
 }
 
+// Fonction pour charger Google Tag Manager
 function loadGTM() {
   (function(w,d,s,l,i){
     w[l]=w[l]||[];

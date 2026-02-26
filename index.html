@@ -482,23 +482,24 @@ body.menu-open {
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 25px;
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-}
-
-.social-icons a img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  font-size: 22px; /* taille des icônes */
+  color: #333; /* couleur par défaut */
+  transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons a:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
+  color: #4da3ff; /* effet hover bleu */
 }
 </style>
 
@@ -730,25 +731,24 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
   <p><a href="legal.html">Informations légales</a></p>
 
   <!-- Début icônes réseaux sociaux -->
- <div class="social-follow">
-  <p>📲 Suivez-moi sur les réseaux sociaux :</p>
-</div>
+  <div class="social-follow">
+    <p>📲 Suivez-moi sur les réseaux sociaux :</p>
+  </div>
 
-<div class="social-icons">
-  <a href="https://www.facebook.com/people/St-Mars-Informatique/61588209045815/" target="_blank" rel="noopener">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
-  </a>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/people/St-Mars-Informatique/61588209045815/" target="_blank" rel="noopener">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-  <a href="https://www.instagram.com/st_mars_informatique" target="_blank" rel="noopener">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
-  </a>
+    <a href="https://www.instagram.com/st_mars_informatique" target="_blank" rel="noopener">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
 
-  <a href="https://www.tiktok.com/@st.mars.informati" target="_blank" rel="noopener">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok">
-  </a>
-</div>
+    <a href="https://www.tiktok.com/@st.mars.informati" target="_blank" rel="noopener">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+  </div>
   <!-- Fin icônes réseaux sociaux -->
-
 </footer>
   
 <script>

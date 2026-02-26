@@ -482,27 +482,19 @@ body.menu-open {
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 35px;
   margin-top: 25px;
 }
 
 .social-icons a {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.25s ease;
-}
-
-.social-icons a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  font-size: 42px;   /* taille visible et propre */
+  color: #111;       /* noir net */
+  transition: 0.25s ease;
 }
 
 .social-icons a:hover {
-  transform: scale(1.12);
+  transform: scale(1.15);
+  color: #4da3ff;
 }
 </style>
 
@@ -733,25 +725,23 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
   <p>© 2026 – St Mars Informatique – Loire-Atlantique</p>
   <p><a href="legal.html">Informations légales</a></p>
 
-  <!-- Début icônes réseaux sociaux -->
   <div class="social-follow">
     <p>📲 Suivez-moi sur les réseaux sociaux :</p>
   </div>
 
   <div class="social-icons">
     <a href="https://www.facebook.com/people/St-Mars-Informatique/61588209045815/" target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+      <i class="fa-brands fa-facebook"></i>
     </a>
 
     <a href="https://www.instagram.com/st_mars_informatique" target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+      <i class="fa-brands fa-instagram"></i>
     </a>
 
     <a href="https://www.tiktok.com/@st.mars.informati" target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok">
+      <i class="fa-brands fa-tiktok"></i>
     </a>
   </div>
-  <!-- Fin icônes réseaux sociaux -->
 </footer>
   
 <script>

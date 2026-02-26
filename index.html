@@ -2,18 +2,6 @@
 <html lang="fr">
 <head>
   
-<!-- Google Tag Manager -->
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];
-w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-j.async=true;
-j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WR64J7QP');
-</script>
-<!-- End Google Tag Manager -->
   
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -502,12 +490,6 @@ body.menu-open {
 
 <body loading="lazy">
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR64J7QP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <header>
 <h1>St Mars Informatique</h1>
@@ -821,7 +803,99 @@ window.addEventListener("scroll", function() {
 });
 </script>
 
+<!-- ===== BANNIERE COOKIES PREMIUM ===== -->
 
+<style>
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15,15,15,0.98);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 25px;
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 -5px 25px rgba(0,0,0,0.6);
+}
+
+#cookie-banner h3 {
+  margin-top: 0;
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accept-btn { background: #0b5ed7; color: white; }
+.reject-btn { background: #555; color: white; }
+.settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
+</style>
+
+<div id="cookie-banner">
+  <h3>🍪 Gestion des cookies</h3>
+  <p>
+    Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience.
+    Vous pouvez accepter, refuser ou personnaliser votre choix.
+  </p>
+
+  <div class="cookie-buttons">
+    <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
+    <button class="reject-btn" onclick="rejectCookies()">Refuser</button>
+    <button class="settings-btn" onclick="showSettings()">Personnaliser</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  if (!localStorage.getItem("cookieConsent")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  } else if (localStorage.getItem("cookieConsent") === "accepted") {
+    loadGTM();
+  }
+
+});
+
+function acceptCookies() {
+  localStorage.setItem("cookieConsent", "accepted");
+  document.getElementById("cookie-banner").style.display = "none";
+  loadGTM();
+}
+
+function rejectCookies() {
+  localStorage.setItem("cookieConsent", "rejected");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+function showSettings() {
+  alert("Fonctionnalité de personnalisation avancée à ajouter si besoin.");
+}
+
+function loadGTM() {
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id=GTM-WR64J7QP'+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WR64J7QP');
+}
+</script>
 
 </body>
 </html>

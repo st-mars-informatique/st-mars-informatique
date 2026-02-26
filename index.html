@@ -879,7 +879,8 @@ window.addEventListener("scroll", function() {
 document.addEventListener("DOMContentLoaded", function() {
 
   if (!localStorage.getItem("cookieConsent")) {
-    document.getElementById("cookie-banner").style.display = "block";
+    const cookieBanner = document.getElementById("cookie-banner");
+cookieBanner.classList.add("show");
   } else if (localStorage.getItem("cookieConsent") === "accepted") {
     loadGTM();
   }

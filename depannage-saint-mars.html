@@ -334,8 +334,8 @@ h2, h3 {
   </div>
 
   <div id="cookie-settings" style="display:none; margin-top:15px;">
-  <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label>
-  <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label>
+  <label><input type="checkbox" id="analytics-cb"> Analytics (Google Analytics)</label>
+  <label><input type="checkbox" id="marketing-cb"> Marketing / Publicité</label>
   <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
 </div>
 </div>
@@ -577,11 +577,15 @@ document.addEventListener("DOMContentLoaded", function() {
     banner.classList.remove("show");
   });
 
-  // Préremplir selon le localStorage
-  if(localStorage.getItem("cookiesAccepted") === "custom") {
-    analyticsCb.checked = localStorage.getItem("analyticsConsent") === "yes";
-    marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
-  }
+ // Préremplir selon le localStorage
+if(localStorage.getItem("cookiesAccepted") === "custom") {
+  analyticsCb.checked = localStorage.getItem("analyticsConsent") === "yes";
+  marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
+} else {
+  // Pas encore de choix → décocher par défaut
+  analyticsCb.checked = false;
+  marketingCb.checked = false;
+}
 });
 </script>
 

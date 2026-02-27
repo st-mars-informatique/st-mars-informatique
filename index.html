@@ -862,8 +862,8 @@ window.addEventListener("scroll", function() {
   </div>
 
   <div id="cookie-settings" style="display:none; margin-top:15px; text-align:left;">
-    <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label><br>
-    <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label><br>
+    <label><input type="checkbox" id="analytics-cb" > Analytics (Google Analytics)</label><br>
+    <label><input type="checkbox" id="marketing-cb" > Marketing / Publicité</label><br>
     <button class="accept-btn" onclick="saveSettings()">Enregistrer</button>
   </div>
 </div>
@@ -877,9 +877,9 @@ document.addEventListener("DOMContentLoaded", function() {
     cookieBanner.style.display = "block";
     cookieBanner.classList.add("show");
 
-    // ✅ Cocher par défaut sur l'accueil
-    document.getElementById("analytics-cb").checked = true;
-    document.getElementById("marketing-cb").checked = true;
+    // ❌ Décocher par défaut
+document.getElementById("analytics-cb").checked = false;
+document.getElementById("marketing-cb").checked = false;
   } else {
     document.getElementById("analytics-cb").checked = savedConsent.analytics;
     document.getElementById("marketing-cb").checked = savedConsent.marketing;

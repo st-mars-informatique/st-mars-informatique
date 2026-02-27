@@ -329,10 +329,66 @@ document.addEventListener("DOMContentLoaded", function() {
     banner.classList.remove("show");
   });
 
- settingsBtn.addEventListener("click", () => {
-  // Redirection vers la page de gestion des cookies
-  window.location.href = "politique-confidentialite.html";
-});
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".accept-btn");
+  const rejectBtn = banner.querySelector(".reject-btn");
+  const settingsBtn = banner.querySelector(".settings-btn");
+
+  // Créer dynamiquement la section personnalisée
+  const cookieSettings = document.createElement("div");
+  cookieSettings.id = "cookie-settings";
+  cookieSettings.style.display = "none";
+  cookieSettings.style.marginTop = "15px";
+  cookieSettings.innerHTML = `
+    <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label><br>
+    <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label><br>
+    <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
+  `;
+  banner.appendChild(cookieSettings);
+
+  const analyticsCb = cookieSettings.querySelector("#analytics-cb");
+  const marketingCb = cookieSettings.querySelector("#marketing-cb");
+  const saveSettingsBtn = cookieSettings.querySelector("#save-settings-btn");
+
+  // Afficher la bannière si pas encore de choix
+  if(!localStorage.getItem("cookiesAccepted")) banner.classList.add("show");
+
+  // Accepter tous
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "yes");
+    localStorage.setItem("analyticsConsent", "yes");
+    localStorage.setItem("marketingConsent", "yes");
+    banner.classList.remove("show");
+  });
+
+  // Refuser tous
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "no");
+    localStorage.setItem("analyticsConsent", "no");
+    localStorage.setItem("marketingConsent", "no");
+    banner.classList.remove("show");
+  });
+
+  // Personnaliser
+  settingsBtn.addEventListener("click", () => {
+    cookieSettings.style.display = cookieSettings.style.display === "none" ? "block" : "none";
+  });
+
+  // Enregistrer les choix personnalisés
+  saveSettingsBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "custom");
+    localStorage.setItem("analyticsConsent", analyticsCb.checked ? "yes" : "no");
+    localStorage.setItem("marketingConsent", marketingCb.checked ? "yes" : "no");
+    banner.classList.remove("show");
+  });
+
+  // Préremplir selon le localStorage
+  if(localStorage.getItem("cookiesAccepted") === "custom") {
+    analyticsCb.checked = localStorage.getItem("analyticsConsent") === "yes";
+    marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
+  }
 });
 </script>
     

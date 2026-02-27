@@ -845,67 +845,46 @@ window.addEventListener("scroll", function() {
 }
 
 #cookie-banner.show { display: block; animation: slideFadeIn 0.6s ease forwards; }
-<style>
-/* Animation fade-in + slide-up pour la bannière cookies */
-@keyframes slideFadeIn {
-  0% { transform: translateY(40px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-#cookie-banner.show { 
-  display: block; 
-  animation: slideFadeIn 0.6s ease forwards; 
-}
-
-.accept-btn { background: #0b5ed7; color: white; }
-.reject-btn { background: #555; color: white; }
-.settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
 </style>
 
 <div id="cookie-banner">
   <h3>🍪 Gestion des cookies</h3>
- <p>
-  Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience.
-  Vous pouvez accepter, refuser ou personnaliser votre choix. 
-  <a href="politique-confidentialite.html" target="_blank" style="color:#4da3ff;text-decoration:underline;">En savoir plus</a>
-</p>
+  <p>
+    Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience.
+    Vous pouvez accepter, refuser ou personnaliser votre choix. 
+    <a href="politique-confidentialite.html" target="_blank" style="color:#4da3ff;text-decoration:underline;">En savoir plus</a>
+  </p>
 
-<div class="cookie-buttons">
-  <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
-  <button class="reject-btn" onclick="rejectCookies()">Refuser</button>
-  <button class="settings-btn" onclick="showSettings()">Personnaliser</button>
-</div>
+  <div class="cookie-buttons">
+    <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
+    <button class="reject-btn" onclick="rejectCookies()">Refuser</button>
+    <button class="settings-btn" onclick="showSettings()">Personnaliser</button>
+  </div>
 
-<!-- Panneau de personnalisation avec cases à cocher -->
-<div id="cookie-settings" style="display:none; margin-top:15px; text-align:left;">
-  <label><input type="checkbox" id="analytics-cb"> Analytics (Google Analytics)</label><br>
-  <label><input type="checkbox" id="marketing-cb"> Marketing / Publicité</label><br>
-  <button class="accept-btn" onclick="saveSettings()">Enregistrer</button>
+  <div id="cookie-settings" style="display:none; margin-top:15px; text-align:left;">
+    <label><input type="checkbox" id="analytics-cb"> Analytics (Google Analytics)</label><br>
+    <label><input type="checkbox" id="marketing-cb"> Marketing / Publicité</label><br>
+    <button class="accept-btn" onclick="saveSettings()">Enregistrer</button>
+  </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
   const cookieBanner = document.getElementById("cookie-banner");
+  let savedConsent = JSON.parse(localStorage.getItem("cookieConsent"));
 
-  // Vérifie si le consentement existe déjà
-  if (!localStorage.getItem("cookieConsent")) {
+  if(!savedConsent){
     cookieBanner.style.display = "block";
     cookieBanner.classList.add("show");
-  } else if (localStorage.getItem("cookieConsent") === "accepted") {
-    loadGTM();
+  } else {
+    // Pré-remplir les cases si déjà choisi
+    document.getElementById("analytics-cb").checked = savedConsent.analytics;
+    document.getElementById("marketing-cb").checked = savedConsent.marketing;
+    // Charger GTM si au moins une option est acceptée
+    if(savedConsent.analytics || savedConsent.marketing) loadGTM();
   }
-
-  // ⚡ Pré-remplit les cases à cocher si l'utilisateur a déjà fait un choix
-  const saved = JSON.parse(localStorage.getItem("cookieConsent"));
-  if(saved) {
-    document.getElementById("analytics-cb").checked = saved.analytics;
-    document.getElementById("marketing-cb").checked = saved.marketing;
-  }
-
 });
 
-// Boutons
 function acceptCookies() {
   localStorage.setItem("cookieConsent", JSON.stringify({analytics:true, marketing:true}));
   document.getElementById("cookie-banner").style.display = "none";
@@ -917,31 +896,26 @@ function rejectCookies() {
   document.getElementById("cookie-banner").style.display = "none";
 }
 
-// Ouvre le mini-formulaire de personnalisation
 function showSettings() {
   document.getElementById("cookie-settings").style.display = "block";
 }
 
-// Sauvegarde les choix personnalisés
 function saveSettings() {
   const analytics = document.getElementById("analytics-cb").checked;
   const marketing = document.getElementById("marketing-cb").checked;
-
   localStorage.setItem("cookieConsent", JSON.stringify({analytics, marketing}));
   document.getElementById("cookie-banner").style.display = "none";
-
-  if(analytics || marketing) loadGTM(); // charger seulement si accepté
+  if(analytics || marketing) loadGTM();
 }
 
-// Fonction pour charger Google Tag Manager
 function loadGTM() {
   (function(w,d,s,l,i){
     w[l]=w[l]||[];
     w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
     var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
     j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id=GTM-WR64J7QP'+dl;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
     f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-WR64J7QP');
 }

@@ -339,60 +339,6 @@ h2, h3 {
     <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
   </div>
 </div>
-
-<script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = banner.querySelector(".accept-btn");
-  const rejectBtn = banner.querySelector(".reject-btn");
-  const settingsBtn = banner.querySelector(".settings-btn");
-  const cookieSettings = document.getElementById("cookie-settings");
-  const saveSettingsBtn = document.getElementById("save-settings-btn");
-  const analyticsCb = document.getElementById("analytics-cb");
-  const marketingCb = document.getElementById("marketing-cb");
-
-  // Afficher la bannière si pas encore de choix
-  if(!localStorage.getItem("cookiesAccepted")) {
-    banner.classList.add("show");
-  }
-
-  // Accepter tous
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "yes");
-    localStorage.setItem("analyticsConsent", "yes");
-    localStorage.setItem("marketingConsent", "yes");
-    banner.classList.remove("show");
-  });
-
-  // Refuser tous
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "no");
-    localStorage.setItem("analyticsConsent", "no");
-    localStorage.setItem("marketingConsent", "no");
-    banner.classList.remove("show");
-  });
-
-  // Afficher / masquer le panneau de personnalisation
-  settingsBtn.addEventListener("click", () => {
-    cookieSettings.style.display = cookieSettings.style.display === "none" ? "block" : "none";
-  });
-
-  // Enregistrer les choix personnalisés
-  saveSettingsBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "custom");
-    localStorage.setItem("analyticsConsent", analyticsCb.checked ? "yes" : "no");
-    localStorage.setItem("marketingConsent", marketingCb.checked ? "yes" : "no");
-    banner.classList.remove("show");
-  });
-
-  // Préremplir selon le localStorage
-  if(localStorage.getItem("cookiesAccepted") === "custom") {
-    analyticsCb.checked = localStorage.getItem("analyticsConsent") === "yes";
-    marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
-  }
-});
-</script>
   
 <nav>
   <div class="nav-container">
@@ -575,6 +521,7 @@ font-size:16px;">
 <footer style="text-align:center;padding:20px;background:#eee;color:black;">
 © 2026 – St Mars Informatique
 </footer>
+  
 <script>
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("nav-links");
@@ -585,29 +532,6 @@ burger.addEventListener("click", () => {
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = banner.querySelector(".accept-btn");
-  const rejectBtn = banner.querySelector(".reject-btn");
-  const settingsBtn = banner.querySelector(".settings-btn");
-
-  // Afficher la bannière si pas encore de choix
-  if(!localStorage.getItem("cookiesAccepted")) {
-    banner.classList.add("show");
-  }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "yes");
-    banner.classList.remove("show");
-  });
-
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "no");
-    banner.classList.remove("show");
-  });
-
-</script>
-
 document.addEventListener("DOMContentLoaded", function() {
   const banner = document.getElementById("cookie-banner");
   const acceptBtn = banner.querySelector(".accept-btn");
@@ -659,6 +583,7 @@ document.addEventListener("DOMContentLoaded", function() {
     marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
   }
 });
+</script>
 
 </body>
 </html>

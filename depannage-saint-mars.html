@@ -15,6 +15,7 @@
   z-index: 9999;
   display: none;
   box-shadow: 0 -5px 25px rgba(0,0,0,0.6);
+  font-size: 14px;
 }
 
 #cookie-banner h3 { margin-top: 0; }
@@ -37,6 +38,11 @@
 .accept-btn { background: #0b5ed7; color: white; }
 .reject-btn { background: #555; color: white; }
 .settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
+
+#cookie-settings label {
+  display: block;
+  margin-top: 10px;
+}
 
 @keyframes slideFadeIn {
   0% { transform: translateY(40px); opacity: 0; }
@@ -312,18 +318,21 @@ h2, h3 {
 
 <body class="page-local">
 
-<!-- BANNIERE COOKIES -->
+<!-- BANNIERE COOKIES COMPLETE -->
 <div id="cookie-banner">
   <h3>🍪 Gestion des cookies</h3>
-  <p>
-    Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience. 
-    Vous pouvez accepter, refuser ou personnaliser votre choix. 
-    <a href="politique-confidentialite.html" style="color:#4da3ff; text-decoration:underline;">En savoir plus</a>
-  </p>
+  <p>Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience. Vous pouvez accepter, refuser ou personnaliser votre choix. <a href="politique-confidentialite.html" target="_blank" style="color:#4da3ff;text-decoration:underline;">En savoir plus</a></p>
+
   <div class="cookie-buttons">
     <button class="accept-btn">Accepter</button>
     <button class="reject-btn">Refuser</button>
     <button class="settings-btn">Personnaliser</button>
+  </div>
+
+  <div id="cookie-settings" style="display:none; margin-top:15px;">
+    <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label><br>
+    <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label><br>
+    <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
   </div>
 </div>
   
@@ -545,6 +554,58 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 });
 </script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".accept-btn");
+  const rejectBtn = banner.querySelector(".reject-btn");
+  const settingsBtn = banner.querySelector(".settings-btn");
+  const cookieSettings = document.getElementById("cookie-settings");
+  const saveSettingsBtn = document.getElementById("save-settings-btn");
+
+  const analyticsCb = document.getElementById("analytics-cb");
+  const marketingCb = document.getElementById("marketing-cb");
+
+  // Afficher le bandeau si pas encore de choix
+  if(!localStorage.getItem("cookiesAccepted")) {
+    banner.classList.add("show");
+  }
+
+  // Accepter tous
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "yes");
+    localStorage.setItem("analyticsConsent", "yes");
+    localStorage.setItem("marketingConsent", "yes");
+    banner.classList.remove("show");
+  });
+
+  // Refuser tous
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "no");
+    localStorage.setItem("analyticsConsent", "no");
+    localStorage.setItem("marketingConsent", "no");
+    banner.classList.remove("show");
+  });
+
+  // Afficher / masquer le panneau de personnalisation
+  settingsBtn.addEventListener("click", () => {
+    cookieSettings.style.display = cookieSettings.style.display === "none" ? "block" : "none";
+  });
+
+  // Enregistrer les choix personnalisés
+  saveSettingsBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "custom");
+    localStorage.setItem("analyticsConsent", analyticsCb.checked ? "yes" : "no");
+    localStorage.setItem("marketingConsent", marketingCb.checked ? "yes" : "no");
+    banner.classList.remove("show");
+  });
+
+  // Préremplir selon le localStorage
+  if(localStorage.getItem("cookiesAccepted") === "custom") {
+    analyticsCb.checked = localStorage.getItem("analyticsConsent") === "yes";
+    marketingCb.checked = localStorage.getItem("marketingConsent") === "yes";
+  }
+});
   
 </body>
 </html>

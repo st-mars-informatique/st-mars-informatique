@@ -522,7 +522,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const banner = document.getElementById("cookie-banner");
   const acceptBtn = banner.querySelector(".accept-btn");
   const rejectBtn = banner.querySelector(".reject-btn");
+  const settingsBtn = banner.querySelector(".settings-btn");
 
+  // Afficher la bannière si pas encore de choix
   if(!localStorage.getItem("cookiesAccepted")) {
     banner.classList.add("show");
   }
@@ -535,6 +537,11 @@ document.addEventListener("DOMContentLoaded", function() {
   rejectBtn.addEventListener("click", () => {
     localStorage.setItem("cookiesAccepted", "no");
     banner.classList.remove("show");
+  });
+
+  settingsBtn.addEventListener("click", () => {
+    // Redirection vers la page de gestion des cookies
+    window.location.href = "politique-cookies.html";
   });
 });
 </script>

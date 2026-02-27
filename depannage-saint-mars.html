@@ -311,6 +311,17 @@ h2, h3 {
 </head>
 
 <body class="page-local">
+
+<!-- BANNIERE COOKIES -->
+<div id="cookie-banner">
+  <h3>Nous utilisons des cookies pour améliorer votre expérience</h3>
+  <div class="cookie-buttons">
+    <button class="accept-btn">Accepter</button>
+    <button class="reject-btn">Refuser</button>
+    <button class="settings-btn">Paramètres</button>
+  </div>
+</div>
+  
 <nav>
   <div class="nav-container">
 
@@ -501,5 +512,27 @@ burger.addEventListener("click", () => {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".accept-btn");
+  const rejectBtn = banner.querySelector(".reject-btn");
+
+  if(!localStorage.getItem("cookiesAccepted")) {
+    banner.classList.add("show");
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "yes");
+    banner.classList.remove("show");
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "no");
+    banner.classList.remove("show");
+  });
+});
+</script>
+  
 </body>
 </html>

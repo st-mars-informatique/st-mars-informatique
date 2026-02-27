@@ -243,10 +243,75 @@
     }
 
     </style>
+
+<!-- CSS du bandeau cookies -->
+<style>
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15,15,15,0.98);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 25px;
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 -5px 25px rgba(0,0,0,0.6);
+}
+
+#cookie-banner h3 { margin-top: 0; }
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accept-btn { background: #0b5ed7; color: white; }
+.reject-btn { background: #555; color: white; }
+.settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
+
+@keyframes slideFadeIn {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+#cookie-banner.show { display: block; animation: slideFadeIn 0.6s ease forwards; }
+</style>
 </head>
 
 <body>
 
+<body>
+
+<!-- BANNIERE COOKIES -->
+<div id="cookie-banner">
+  <h3>Nous utilisons des cookies pour améliorer votre expérience</h3>
+  <div class="cookie-buttons">
+    <button class="accept-btn">Accepter</button>
+    <button class="reject-btn">Refuser</button>
+    <button class="settings-btn">Paramètres</button>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="burger" id="burger">
+    ☰
+    <span class="burger-text">Menu</span>
+  </div>
+  ...
+</nav>
 <!-- NAVIGATION -->
 <nav>
 

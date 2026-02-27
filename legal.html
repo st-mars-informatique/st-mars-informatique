@@ -7,123 +7,142 @@
 
 <style>
 
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  background:#f4f4f4;
-  margin:0;
-  padding:0;
-  color:#222;
+/* ===== VERSION PREMIUM ===== */
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #f4f7fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
 }
 
 /* MENU */
-
-nav{
-  background:#000;
-  padding:15px;
-  position:sticky;
-  top:0;
-  z-index:1000;
+nav {
+  background: #0b0b0b;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-nav .menu{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap; /* autorise retour à la ligne */
-  max-width:1200px;
-  margin:0 auto;
+nav .menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.2s;
 }
 
-.burger{
-  display:none;
-  font-size:28px;
-  color:white;
-  cursor:pointer;
-  text-align:center;
-  width:100%;
-  padding:10px 0;
+nav a:hover {
+  color: #4da3ff;
+  transform: scale(1.05);
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
 }
 
 /* MOBILE */
+@media(max-width: 800px) {
+  .burger { display: block; }
 
-@media(max-width:800px){
-
-  .burger{
-    display:block;
+  nav .menu {
+    display: none;
   }
 
-  nav .menu{
-    display:none;
+  nav .menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.97);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
   }
 
-  nav .menu.active{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:rgba(0,0,0,0.97);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
+  nav .menu a {
+    font-size: 22px;
+    margin: 15px 0;
   }
 
-  nav .menu a{
-    font-size:22px;
-    margin:15px 0;
+  body.menu-open {
+    overflow: hidden;
   }
-
-  body.menu-open{
-    overflow:hidden;
-  }
-
 }
 
 /* CONTENU */
-
-.container{
-  max-width:900px;
-  margin:40px auto;
-  background:white;
-  padding:30px 40px;
-  border-radius:12px;
-  box-shadow:0 0 15px rgba(0,0,0,0.1);
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-top: 5px solid #0b5ed7;
 }
 
-h1,h2{
-  color:#0b5ed7;
-  text-align:center;
+h1, h2 {
+  color: #0b5ed7;
+  text-align: center;
 }
 
-h1{margin-bottom:40px;}
-h2{margin-top:40px;}
+h1 { margin-bottom: 50px; font-size: 2.8em; }
+h2 { margin-top: 45px; font-size: 2em; }
 
-p,li{
-  line-height:1.7;
-  font-size:16px;
+p, li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
 }
 
-ul{margin-left:20px;}
-
-.footer{
-  text-align:center;
-  margin-top:40px;
-  font-size:14px;
-  color:#666;
+ul {
+  margin-left: 25px;
+  padding-left: 0;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Bonus premium: titres avec soulignement et iconographie */
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0b5ed7;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
 
 </style>
 </head>
@@ -254,44 +273,46 @@ St Mars Informatique met en œuvre toutes les mesures techniques et organisation
 
 <h3 style="color:#e53935;">1️⃣ Objet</h3>
 <p>
-Les présentes Conditions Générales de Vente régissent les prestations de services proposées par St Mars Informatique.
+Les présentes Conditions Générales de Vente régissent les prestations de services proposées par St Mars Informatique, notamment le dépannage, la maintenance et l’assistance informatique, à distance ou sur site.
 </p>
 
 <h3 style="color:#e53935;">2️⃣ Services</h3>
 <p>St Mars Informatique propose notamment :</p>
 <ul>
 <li>💻 Dépannage informatique</li>
-<li>🛠️ Maintenance</li>
-<li>💾 Installation de matériel et logiciels</li>
-<li>📊 Conseil</li>
-<li>🖥️ Assistance informatique</li>
+<li>🛠️ Maintenance et optimisation</li>
+<li>📊 Conseil et assistance personnalisée</li>
+<li>🖥️ Intervention à distance ou sur site</li>
 </ul>
+<p>
+💡 Remarque : Tout matériel éventuellement acheté pour la réparation (ex. composants informatiques) est inclus dans la prestation et **n’est pas vendu séparément**.
+</p>
 
 <h3 style="color:#e53935;">3️⃣ Commande</h3>
 <p>
 Toute prestation fait l’objet d’un accord préalable entre les parties, matérialisé par un devis ou un accord verbal. <br>
-📌 **Acceptation du devis** : le devis doit être signé, daté et accompagné d’un "Bon pour accord" par le client pour être valide.
+📌 <strong>Acceptation du devis</strong> : le devis doit être signé, daté et accompagné d’un "Bon pour accord" pour être valide.
 </p>
 
 <h3 style="color:#e53935;">4️⃣ Tarifs</h3>
 <p>
-Les prix sont exprimés en euros TTC et communiqués avant toute intervention.
+Les prix sont exprimés en euros TTC et communiqués avant toute intervention. Tout coût éventuel pour le matériel nécessaire à la réparation est inclus dans le devis.
 </p>
 
 <h3 style="color:#e53935;">5️⃣ Paiement 💳</h3>
 <ul>
 <li>Le paiement de la prestation est exigible à la fin de l’intervention.</li>
-<li>Pour certaines prestations, **un acompte de 30 % du montant total** peut être demandé à la signature du devis.</li>
+<li>Pour certaines prestations, <strong>un acompte de 30 % du montant total</strong> peut être demandé à la signature du devis.</li>
 <li>Le solde sera réglé à la fin de la prestation.</li>
 <li>Modes de paiement acceptés : 
   <ul>
     <li>Espèces</li>
     <li>Virement bancaire</li>
     <li>Carte bancaire (selon disponibilité)</li>
-    <li>Chèque non accepté</li>
   </ul>
 </li>
-<li>Le paiement de l’acompte vaut **acceptation du devis et engagement ferme**. En cas d’annulation après le versement, l’acompte pourra être conservé pour couvrir les frais engagés.</li>
+<li>Le paiement de l’acompte vaut <strong>acceptation du devis et engagement ferme</strong>. En cas d’annulation après le versement, l’acompte pourra être conservé pour couvrir les frais engagés.
+</li>
 </ul>
 
 <h3 style="color:#e53935;">6️⃣ Délais ⏱️</h3>
@@ -307,7 +328,9 @@ Il appartient au client d’effectuer une sauvegarde de ses données avant toute
 
 <h3 style="color:#e53935;">8️⃣ Droit de rétractation 🔄</h3>
 <p>
-Conformément à la législation, le client dispose d’un délai de rétractation de 14 jours, sauf intervention immédiate demandée expressément.
+Conformément à la législation, le client dispose d’un délai de rétractation de 14 jours uniquement pour les prestations **non commencées**. <br>
+Dès que l’intervention est démarrée (ex. dépannage à distance ou sur site avec accord du client), le droit de rétractation ne s’applique plus.  
+Le matériel acheté pour effectuer la réparation est considéré comme partie intégrante de la prestation et ne peut pas être remboursé séparément.
 </p>
 
 <h3 style="color:#e53935;">9️⃣ Litiges ⚖️</h3>

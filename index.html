@@ -803,7 +803,6 @@ window.addEventListener("scroll", function() {
 });
 </script>
 
-<!-- ===== BANNIERE COOKIES PREMIUM ===== -->
 <style>
 #cookie-banner {
   position: fixed;
@@ -819,9 +818,7 @@ window.addEventListener("scroll", function() {
   box-shadow: 0 -5px 25px rgba(0,0,0,0.6);
 }
 
-#cookie-banner h3 {
-  margin-top: 0;
-}
+#cookie-banner h3 { margin-top: 0; }
 
 .cookie-buttons {
   margin-top: 15px;
@@ -837,6 +834,18 @@ window.addEventListener("scroll", function() {
   font-weight: bold;
   cursor: pointer;
 }
+
+.accept-btn { background: #0b5ed7; color: white; }
+.reject-btn { background: #555; color: white; }
+.settings-btn { background: transparent; color: #4da3ff; text-decoration: underline; }
+
+@keyframes slideFadeIn {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+#cookie-banner.show { display: block; animation: slideFadeIn 0.6s ease forwards; }
+</style>
 
 /* Animation fade-in + slide-up pour la bannière cookies */
 @keyframes slideFadeIn {

@@ -301,6 +301,27 @@
     <button class="settings-btn">Paramètres</button>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".accept-btn");
+  const rejectBtn = banner.querySelector(".reject-btn");
+
+  if(!localStorage.getItem("cookiesAccepted")) {
+    banner.classList.add("show");
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "yes");
+    banner.classList.remove("show");
+  });
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "no");
+    banner.classList.remove("show");
+  });
+});
+</script>
     
 <!-- NAVIGATION -->
 <nav>
@@ -457,28 +478,6 @@ TVA non applicable – article 293B du CGI
 </p>
 
 </section>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = banner.querySelector(".accept-btn");
-  const rejectBtn = banner.querySelector(".reject-btn");
-
-  // Vérifie si l'utilisateur a déjà choisi
-  if(!localStorage.getItem("cookiesAccepted")) {
-    banner.classList.add("show");
-  }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "yes");
-    banner.classList.remove("show");
-  });
-
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "no");
-    banner.classList.remove("show");
-  });
-});
-</script>
     
 </body>
 </html>

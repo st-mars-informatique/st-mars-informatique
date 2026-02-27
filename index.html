@@ -862,16 +862,23 @@ window.addEventListener("scroll", function() {
 
 <div id="cookie-banner">
   <h3>🍪 Gestion des cookies</h3>
-  <p>
-    Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience.
-    Vous pouvez accepter, refuser ou personnaliser votre choix.
-  </p>
+ <p>
+  Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience.
+  Vous pouvez accepter, refuser ou personnaliser votre choix. 
+  <a href="politique-confidentialite.html" target="_blank" style="color:#4da3ff;text-decoration:underline;">En savoir plus</a>
+</p>
 
-  <div class="cookie-buttons">
-    <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
-    <button class="reject-btn" onclick="rejectCookies()">Refuser</button>
-    <button class="settings-btn" onclick="showSettings()">Personnaliser</button>
-  </div>
+<div class="cookie-buttons">
+  <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
+  <button class="reject-btn" onclick="rejectCookies()">Refuser</button>
+  <button class="settings-btn" onclick="showSettings()">Personnaliser</button>
+</div>
+
+<!-- Panneau de personnalisation avec cases à cocher -->
+<div id="cookie-settings" style="display:none; margin-top:15px; text-align:left;">
+  <label><input type="checkbox" id="analytics-cb"> Analytics (Google Analytics)</label><br>
+  <label><input type="checkbox" id="marketing-cb"> Marketing / Publicité</label><br>
+  <button class="accept-btn" onclick="saveSettings()">Enregistrer</button>
 </div>
 
 <script>
@@ -881,31 +888,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Vérifie si le consentement existe déjà
   if (!localStorage.getItem("cookieConsent")) {
-    // Affiche la bannière avant d'ajouter l'animation
     cookieBanner.style.display = "block";
     cookieBanner.classList.add("show");
   } else if (localStorage.getItem("cookieConsent") === "accepted") {
     loadGTM();
   }
 
+  // ⚡ Pré-remplit les cases à cocher si l'utilisateur a déjà fait un choix
+  const saved = JSON.parse(localStorage.getItem("cookieConsent"));
+  if(saved) {
+    document.getElementById("analytics-cb").checked = saved.analytics;
+    document.getElementById("marketing-cb").checked = saved.marketing;
+  }
+
 });
 
 // Boutons
 function acceptCookies() {
-  localStorage.setItem("cookieConsent", "accepted");
-  const cookieBanner = document.getElementById("cookie-banner");
-  cookieBanner.style.display = "none";
+  localStorage.setItem("cookieConsent", JSON.stringify({analytics:true, marketing:true}));
+  document.getElementById("cookie-banner").style.display = "none";
   loadGTM();
 }
 
 function rejectCookies() {
-  localStorage.setItem("cookieConsent", "rejected");
-  const cookieBanner = document.getElementById("cookie-banner");
-  cookieBanner.style.display = "none";
+  localStorage.setItem("cookieConsent", JSON.stringify({analytics:false, marketing:false}));
+  document.getElementById("cookie-banner").style.display = "none";
 }
 
+// Ouvre le mini-formulaire de personnalisation
 function showSettings() {
-  alert("Fonctionnalité de personnalisation avancée à ajouter si besoin.");
+  document.getElementById("cookie-settings").style.display = "block";
+}
+
+// Sauvegarde les choix personnalisés
+function saveSettings() {
+  const analytics = document.getElementById("analytics-cb").checked;
+  const marketing = document.getElementById("marketing-cb").checked;
+
+  localStorage.setItem("cookieConsent", JSON.stringify({analytics, marketing}));
+  document.getElementById("cookie-banner").style.display = "none";
+
+  if(analytics || marketing) loadGTM(); // charger seulement si accepté
 }
 
 // Fonction pour charger Google Tag Manager

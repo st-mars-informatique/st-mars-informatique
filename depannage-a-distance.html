@@ -298,12 +298,18 @@
   <p>
     Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience. 
     Vous pouvez accepter, refuser ou personnaliser votre choix. 
-    <a href="politique-confidentialite.html" style="color:#4da3ff; text-decoration:underline;">En savoir plus</a>
+    <a href="politique-confidentialite.html" target="_blank" style="color:#4da3ff; text-decoration:underline;">En savoir plus</a>
   </p>
   <div class="cookie-buttons">
     <button class="accept-btn">Accepter</button>
     <button class="reject-btn">Refuser</button>
     <button class="settings-btn">Personnaliser</button>
+  </div>
+
+  <div id="cookie-settings" style="display:none; margin-top:15px;">
+    <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label><br>
+    <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label><br>
+    <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
   </div>
 </div>
 
@@ -313,47 +319,15 @@ document.addEventListener("DOMContentLoaded", function() {
   const acceptBtn = banner.querySelector(".accept-btn");
   const rejectBtn = banner.querySelector(".reject-btn");
   const settingsBtn = banner.querySelector(".settings-btn");
+  const cookieSettings = document.getElementById("cookie-settings");
+  const saveSettingsBtn = document.getElementById("save-settings-btn");
+  const analyticsCb = document.getElementById("analytics-cb");
+  const marketingCb = document.getElementById("marketing-cb");
 
   // Afficher la bannière si pas encore de choix
   if(!localStorage.getItem("cookiesAccepted")) {
     banner.classList.add("show");
   }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "yes");
-    banner.classList.remove("show");
-  });
-
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "no");
-    banner.classList.remove("show");
-  });
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = banner.querySelector(".accept-btn");
-  const rejectBtn = banner.querySelector(".reject-btn");
-  const settingsBtn = banner.querySelector(".settings-btn");
-
-  // Créer dynamiquement la section personnalisée
-  const cookieSettings = document.createElement("div");
-  cookieSettings.id = "cookie-settings";
-  cookieSettings.style.display = "none";
-  cookieSettings.style.marginTop = "15px";
-  cookieSettings.innerHTML = `
-    <label><input type="checkbox" id="analytics-cb" checked> Analytics (Google Analytics)</label><br>
-    <label><input type="checkbox" id="marketing-cb" checked> Marketing / Publicité</label><br>
-    <button id="save-settings-btn" style="margin-top:10px; padding:8px 16px; border:none; border-radius:6px; background:#0b5ed7; color:white; font-weight:bold; cursor:pointer;">Enregistrer</button>
-  `;
-  banner.appendChild(cookieSettings);
-
-  const analyticsCb = cookieSettings.querySelector("#analytics-cb");
-  const marketingCb = cookieSettings.querySelector("#marketing-cb");
-  const saveSettingsBtn = cookieSettings.querySelector("#save-settings-btn");
-
-  // Afficher la bannière si pas encore de choix
-  if(!localStorage.getItem("cookiesAccepted")) banner.classList.add("show");
 
   // Accepter tous
   acceptBtn.addEventListener("click", () => {

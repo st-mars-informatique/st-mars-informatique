@@ -782,37 +782,35 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.remove("menu-open");
     });
   }
+/* ===== BOUTON PARTAGER ===== */
+const shareBtn = document.querySelector(".share-btn");
 
-  /* ===== BOUTON PARTAGER ===== */
-  const shareBtn = document.querySelector(".share-btn");
+if (shareBtn) {
+  shareBtn.addEventListener("click", function () {
 
-  if (shareBtn) {
-    shareBtn.addEventListener("click", function () {
+    const url = window.location.href;
 
-      const url = window.location.href;
+    // Utilisation du Web Share API si disponible (mobile / PWA)
+    if (navigator.share) {
+      navigator.share({
+        title: "St Mars Informatique",
+        text: "Dépannage informatique à Saint-Mars-de-Coutais",
+        url: url
+      }).catch(() => {});
+      return;
+    }
 
-      if (navigator.share) {
-        navigator.share({
-          title: "St Mars Informatique",
-          text: "Dépannage informatique à Saint-Mars-de-Coutais",
-          url: url
-        }).catch(() => {});
-        return;
-      }
+    // Sinon, copie dans le presse-papiers avec navigator.clipboard
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        alert("Lien copié 👍 Vous pouvez le partager !");
+      })
+      .catch(() => {
+        alert("Impossible de copier le lien, veuillez le copier manuellement.");
+      });
 
-      const input = document.createElement("input");
-      input.value = url;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-
-      alert("Lien copié 👍 Vous pouvez le partager !");
-    });
-  }
-
-});
-
+  });
+}
 /* ===== EFFET SCROLL NAV ===== */
 window.addEventListener("scroll", function() {
   const nav = document.querySelector("nav");

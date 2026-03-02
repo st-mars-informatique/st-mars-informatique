@@ -73,6 +73,8 @@ body{
   background-position:center;
   background-attachment:scroll;
   color:white;
+  position: relative; /* ajouté ici */
+  height: 100%;       /* pour que ::before couvre tout */
 }
 
 @media (min-width: 1024px){
@@ -86,17 +88,6 @@ header{
   text-align:center;
   padding:130px 20px;
   position:relative;
-}
-
-body {
-  position: relative; /* nécessaire pour que ::before se positionne par rapport à body */
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background-image:url('background.webp');
-  background-size:cover;
-  background-position:center;
-  background-attachment:scroll;
-  color:white;
 }
 
 body::before{

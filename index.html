@@ -3,10 +3,6 @@
 <head>
   
   
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-  
 <meta charset="UTF-8">
 <title>Dépannage informatique à Saint-Mars-de-Coutais et Nantes | St Mars Informatique</title>
 <meta name="description" content="Dépannage informatique à Saint-Mars-de-Coutais et Nantes. Réparation PC & Mac, suppression virus, assistance à domicile en Loire-Atlantique (44). Intervention rapide.">
@@ -72,20 +68,48 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background-image:url('https://raw.githubusercontent.com/st-mars-informatique/st-mars-informatique/main/ChatGPT%20Image%203%20f%C3%A9vr.%202026%2C%2012_27_29.png');
+  background-image:url('background.webp');
   background-size:cover;
   background-position:center;
-  background-attachment:fixed;
+  background-attachment:scroll;
   color:white;
 }
 
-header{
-background:url('affichage.jpg') center/cover no-repeat;
-text-align:center;
-padding:130px 20px;
-position:relative;
+@media (min-width: 1024px){
+  body{
+    background-attachment:fixed;
+  }
 }
 
+header{
+  background:url('affichage.webp') center / cover no-repeat;
+  text-align:center;
+  padding:130px 20px;
+  position:relative;
+}
+
+body {
+  position: relative; /* nécessaire pour que ::before se positionne par rapport à body */
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background-image:url('background.webp');
+  background-size:cover;
+  background-position:center;
+  background-attachment:scroll;
+  color:white;
+}
+
+body::before{
+  content:"";
+  position:absolute;   /* ✅ important */
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  z-index:-1;
+}
+  
 header::after{
 content:"";
 position:absolute;
@@ -721,6 +745,7 @@ N’hésitez pas à me contacter pour toute demande d’intervention, même en d
     </a>
 
     <a href="https://www.tiktok.com/@st.mars.informati" target="_blank" rel="noopener">
+
       <i class="fa-brands fa-tiktok"></i>
     </a>
   </div>

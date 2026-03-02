@@ -65,62 +65,66 @@
 
 }
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background-image:url('background.webp');
-  background-size:cover;
-  background-position:center;
-  background-attachment:scroll;
-  color:white;
-  position: relative; /* ajouté ici */
-  height: 100%;       /* pour que ::before couvre tout */
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: relative; /* pour pseudo éléments */
+  min-height: 100vh;
+  background: #111; /* fallback si l'image ne charge pas */
 }
 
-@media (min-width: 1024px){
-  body{
-    background-attachment: fixed;
+/* Si tu veux un background global, tu peux mettre : */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('background.webp') center / cover no-repeat;
+  z-index: -2; /* sous tout */
+}
+
+/* ===== HEADER ===== */
+header {
+  position: relative;
+  background: url('affichage.webp') center / cover no-repeat;
+  text-align: center;
+  padding: 130px 20px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Overlay léger */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* opacité à ajuster */
+  z-index: 1;
+}
+
+/* Texte du header au-dessus de l'overlay */
+header * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HEADER H1 ===== */
+header h1 {
+  font-size: 52px;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(77,163,255,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  header {
+    padding: 90px 15px;
   }
-
-  /* Overlay uniquement sur desktop */
-  body::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.45);
-    z-index:-1;
+  header h1 {
+    font-size: 32px;
   }
-}
-
-header *{
-position:relative;
-z-index:2;
-}
-
-header{
-animation:fadeInUp 1s ease forwards;
-opacity:0;
-}
-
-@keyframes fadeInUp{
-from{
-transform:translateY(40px);
-opacity:0;
-}
-to{
-transform:translateY(0);
-opacity:1;
-}
-}
-
-header h1{
-    font-size:52px;
-    margin:0;
-    letter-spacing:1px;
-    text-shadow:0 0 20px rgba(77,163,255,0.4);
 }
 
 nav{
